@@ -38,7 +38,7 @@
   :root{
     --navy:#0A1628;
     --navy-2:#10203A;
-    --navy-dark:#040912;
+    --navy-dark:#060C17;
     --white:#FFFFFF;
     --paper:#F4F5F7;
     --graphite:#232A33;
@@ -48,14 +48,14 @@
     --copper:#C47A3A;
     --green-ok:#10B981;
     --line-l:rgba(35,42,51,0.13);
-    --line-d:rgba(255,255,255,0.14);
+    --line-d:rgba(255,255,255,0.12);
     --serif:'Fraunces', serif;
     --sans:'IBM Plex Sans', sans-serif;
     --mono:'IBM Plex Mono', monospace;
     --maxw:1180px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top: 80px;}
   body{
     font-family:var(--sans);
     color:var(--graphite);
@@ -68,10 +68,10 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
   @media (max-width:640px){ .wrap{padding:0 24px;} }
 
-  /* HEADER */
+  /* HEADER & NAVIGATION */
   header{
     position:sticky;top:0;z-index:80;
-    background:rgba(255,255,255,0.95);
+    background:rgba(255,255,255,0.96);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-l);
   }
@@ -183,65 +183,44 @@
   }
   .head p{color:var(--slate);font-size:15px;margin-top:16px;max-width:58ch;line-height:1.75;}
 
-  /* WHAT WE DO & DASHBOARD ENTERPRISE */
+  /* WHAT WE DO & DASHBOARD NOC ENTERPRISE COMPLETO */
   .whatwedo{background:var(--navy-dark);color:#EDEEF0;padding:90px 0;}
   .whatwedo .head h2{color:#F5F6F7;}
   .whatwedo .head p{color:#A9B2C0;}
-  
-  .noc-dashboard-container {
-    background: #080F1E;
+
+  .noc-suite {
+    background: #091220;
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: 4px;
     padding: 28px;
     margin-top: 40px;
     font-family: var(--mono);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
   }
-  .noc-header {
+  .noc-top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     padding-bottom: 16px;
     margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
-  .noc-title { font-size: 12px; color: #8A96A8; letter-spacing: 0.08em; display:flex; align-items:center; gap:10px; }
-  .noc-status { font-size: 11px; color: var(--green-ok); display: flex; align-items: center; gap: 6px; }
-  
-  .noc-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 24px;
-  }
-  @media(max-width:860px){ .noc-grid { grid-template-columns: 1fr; } }
+  .noc-title-tag { font-size: 11.5px; color: #8A96A8; letter-spacing: 0.08em; display:flex; align-items:center; gap:10px; }
+  .noc-timer { font-size: 12px; color: var(--copper); background: rgba(196,122,58,0.1); padding: 4px 10px; border-radius: 2px; }
 
-  .noc-chart-card {
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.06);
-    padding: 20px;
-    border-radius: 3px;
-    position: relative;
-  }
-  .chart-overlay-grid {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-size: 30px 30px;
-    background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    pointer-events: none;
-  }
-  .noc-svg { width: 100%; height: 160px; overflow: visible; }
-  .line-primary { fill: none; stroke: var(--copper); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(196,122,58,0.4)); }
-  .line-secondary { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.7; }
-  
-  .noc-gauges {
-    display: flex;
-    flex-direction: column;
+  /* GRADE DE MÉTRICAS NUMÉRICAS E GAUGES */
+  .noc-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    margin-bottom: 24px;
   }
-  .gauge-box {
-    background: rgba(0,0,0,0.3);
+  @media(max-width:860px){ .noc-metrics-grid { grid-template-columns: repeat(2, 1fr); } }
+  
+  .noc-metric-card {
+    background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     padding: 16px;
     border-radius: 3px;
@@ -249,21 +228,51 @@
     align-items: center;
     gap: 16px;
   }
-  .gauge-val { font-size: 22px; font-weight: 600; color: #fff; font-family: var(--sans); }
-  .gauge-lbl { font-size: 11px; color: #788596; margin-top: 2px; }
+  .gauge-svg { width: 50px; height: 50px; }
+  .gauge-bg { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 4; }
+  .gauge-fill { fill: none; stroke: var(--copper); stroke-width: 4; stroke-dasharray: 100; stroke-dashoffset: 20; transition: stroke-dashoffset 0.8s ease; }
+  .gauge-fill.blue { stroke: var(--blue-accent); stroke-dashoffset: 35; }
+  
+  .metric-card-data { display: flex; flex-direction: column; }
+  .metric-card-num { font-size: 20px; font-weight: 600; color: #fff; font-family: var(--sans); }
+  .metric-card-lbl { font-size: 10.5px; color: #788596; margin-top: 2px; }
 
-  .noc-log-bar {
-    margin-top: 20px;
-    background: #03060D;
+  /* MAIN GRAPH SECTION */
+  .noc-main-chart {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 20px;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .chart-grid-pattern {
+    position: absolute; top:0; left:0; right:0; bottom:0;
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    pointer-events: none;
+  }
+  .noc-svg-chart { width: 100%; height: 150px; overflow: visible; }
+  .line-main { fill: none; stroke: var(--copper); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(196,122,58,0.3)); }
+  .line-sub { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.8; }
+
+  /* CLUSTER NODES STATUS */
+  .noc-nodes-row {
+    display: flex;
+    justify-content: space-between;
+    background: #040912;
     border: 1px solid rgba(255,255,255,0.05);
-    padding: 12px 16px;
+    padding: 12px 18px;
     border-radius: 2px;
     font-size: 11px;
     color: #94A3B8;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
   }
+  .node-item { display: flex; align-items: center; gap: 6px; }
+  .node-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-ok); }
 
   /* PRICING GRID NEUTRA */
   .pricing-grid{
@@ -300,7 +309,7 @@
   }
   .btn-card:hover{ background:var(--navy); color:#fff; }
 
-  /* WIDGET DE SUPORTE EXECUTIVO (SEM DUPLICIDADE) */
+  /* WIDGET STATUS BAR BARRA FIXA */
   .status-widget-bar {
     position: fixed;
     bottom: 24px;
@@ -322,13 +331,14 @@
   .widget-action {
     background: var(--blue-accent);
     color: #fff;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 2px;
     font-size: 11px;
     cursor: pointer;
     border: none;
     font-family: var(--sans);
     font-weight: 600;
+    transition: background 0.2s ease;
   }
   .widget-action:hover { background: var(--blue-accent-hover); }
 
@@ -352,12 +362,9 @@
   
   .form-group{margin-bottom:14px;}
   .form-group label{display:block;font-size:11px;font-family:var(--mono);color:var(--slate);margin-bottom:4px;}
-  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea, .form-group select{
+  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea{
     width:100%;padding:9px 12px;border:1px solid var(--line-l);font-family:var(--sans);font-size:13.5px;
   }
-  
-  .checkbox-group{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
-  .checkbox-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--graphite);}
 
   .lgpd-consent{
     display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--slate);
@@ -395,7 +402,7 @@
         <button id="btn-en" class="active" onclick="setLang('en')">EN ($)</button>
         <button id="btn-pt" onclick="setLang('pt')">PT (R$)</button>
       </div>
-      <a class="btn-contact" onclick="openModal('General')" data-i18n="nav_contact">Contact</a>
+      <a class="btn-contact" onclick="openModal('General Contact')" data-i18n="nav_contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -443,51 +450,77 @@
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="wwd_title">From operational data to operational intelligence.</h2>
-      <p data-i18n="wwd_sub">Real-time observability stream across all active enterprise nodes.</p>
+      <p data-i18n="wwd_sub">Real-time observability suite across enterprise nodes.</p>
     </div>
 
-    <!-- PAINEL NOC ENTERPRISE (RE-DESIGN COMPLETO) -->
-    <div class="noc-dashboard-container">
-      <div class="noc-header">
-        <div class="noc-title"><span>PRIMEOPS // NOC NOC TELEMETRY ENGINE</span></div>
-        <div class="noc-status"><span class="widget-dot"></span> <span id="noc-node-count">48 Nodes Monitored (100% Health)</span></div>
+    <!-- PAINEL NOC ENTERPRISE COMPLETO -->
+    <div class="noc-suite">
+      <div class="noc-top-bar">
+        <div class="noc-title-tag"><span>PRIMEOPS // OBSERVABILITY NOC SUITE</span></div>
+        <div class="noc-timer">UPTIME: <span id="uptime-clock">142d 08h 12m 34s</span></div>
       </div>
 
-      <div class="noc-grid">
-        <div class="noc-chart-card">
-          <div class="chart-overlay-grid"></div>
-          <svg class="noc-svg" viewBox="0 0 500 160" preserveAspectRatio="none">
-            <path id="svg-line-2" class="line-secondary" d="M0,90 L100,110 L200,70 L300,95 L400,60 L500,80" />
-            <path id="svg-line-1" class="line-primary" d="M0,50 L100,30 L200,85 L300,20 L400,65 L500,35" />
+      <!-- MÉTRICAS COM CIRCULAR GAUGES & NÚMEROS -->
+      <div class="noc-metrics-grid">
+        <div class="noc-metric-card">
+          <svg class="gauge-svg" viewBox="0 0 36 36">
+            <path class="gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="gauge-fill" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
           </svg>
+          <div class="metric-card-data">
+            <div class="metric-card-num">99.99%</div>
+            <div class="metric-card-lbl">HEALTH SLA</div>
+          </div>
         </div>
 
-        <div class="noc-gauges">
-          <div class="gauge-box">
-            <div>
-              <div class="gauge-val" id="val-throughput">1.42 GB/s</div>
-              <div class="gauge-lbl">ACTIVE TELEMETRY STREAM</div>
-            </div>
+        <div class="noc-metric-card">
+          <svg class="gauge-svg" viewBox="0 0 36 36">
+            <path class="gauge-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="gauge-fill blue" id="ram-gauge" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          </svg>
+          <div class="metric-card-data">
+            <div class="metric-card-num" id="val-ram">48.2%</div>
+            <div class="metric-card-lbl">RAM ALLOCATION</div>
           </div>
-          <div class="gauge-box">
-            <div>
-              <div class="gauge-val" id="val-latency">12.4 ms</div>
-              <div class="gauge-lbl">AVERAGE EDGE LATENCY</div>
-            </div>
+        </div>
+
+        <div class="noc-metric-card">
+          <div class="metric-card-data">
+            <div class="metric-card-num" id="val-rps">4,820</div>
+            <div class="metric-card-lbl">REQUESTS / SEC</div>
+          </div>
+        </div>
+
+        <div class="noc-metric-card">
+          <div class="metric-card-data">
+            <div class="metric-card-num" id="val-threats">0</div>
+            <div class="metric-card-lbl">ACTIVE THREATS</div>
           </div>
         </div>
       </div>
 
-      <div class="noc-log-bar">
-        <span id="log-text">[16:20:04] NOC ENGINE: Automated health ping verified on US-East & SA-East clusters.</span>
-        <span style="color:var(--copper)">SECURE CONNECTION</span>
+      <!-- MAIN CHART -->
+      <div class="noc-main-chart">
+        <div class="chart-grid-pattern"></div>
+        <svg class="noc-svg-chart" viewBox="0 0 500 150" preserveAspectRatio="none">
+          <path id="svg-line-2" class="line-sub" d="M0,90 L100,110 L200,70 L300,95 L400,60 L500,80" />
+          <path id="svg-line-1" class="line-main" d="M0,50 L100,30 L200,85 L300,20 L400,65 L500,35" />
+        </svg>
+      </div>
+
+      <!-- NODES STATUS -->
+      <div class="noc-nodes-row">
+        <div class="node-item"><span class="node-dot"></span> US-East Cluster (Healthy)</div>
+        <div class="node-item"><span class="node-dot"></span> EU-West Cluster (Healthy)</div>
+        <div class="node-item"><span class="node-dot"></span> SA-East Cluster (Healthy)</div>
+        <div style="color:var(--copper);">LATENCY: 11.2ms</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- SEÇÃO DE PREÇOS NEUTRA E DINÂMICA -->
+<!-- SEÇÃO DE PREÇOS -->
 <section class="block" id="pricing">
   <div class="wrap">
     <div class="head">
@@ -543,11 +576,31 @@
   </div>
 </section>
 
+<!-- METHOD SECTION -->
+<section class="block" id="method">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="method_title">A method before a solution.</h2>
+      <p data-i18n="method_sub">PrimeOps approaches technology through understanding, evidence and controlled execution.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="about_title">Built to understand before changing.</h2>
+      <p data-i18n="about_body">PrimeOps was created around a simple principle: technology decisions become stronger when they are based on understanding, evidence and operational context.</p>
+    </div>
+  </div>
+</section>
+
 <!-- WIDGET STATUS BAR BARRA FIXA -->
 <div class="status-widget-bar">
   <span class="widget-dot"></span>
   <span>System Status: Operational</span>
-  <button class="widget-action" onclick="openModal('Executive Consultation')">Schedule Architecture Call</button>
+  <button class="widget-action" onclick="openModal('Architecture Meeting Request')">Schedule Architecture Call</button>
 </div>
 
 <!-- MODAL FORM -->
@@ -610,12 +663,14 @@ const translations = {
     hero_cta1:"View Products & Pricing →", hero_cta2:"Our Method →",
     m1:"Uptime SLA Monitoring", m2:"AI Agent Response Time", m3:"Cloud Encryption Standard", m4:"Professional Liability Insured",
     diag_infra:"Infrastructure", diag_telemetry:"Telemetry", diag_exposure:"Exposure", diag_intelligence:"INTELLIGENCE", diag_decision:"DECISION",
-    wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability stream across all active enterprise nodes.",
+    wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability suite across enterprise nodes.",
     p_title:"Products & Pricing", p_sub:"Select an operational tier to configure requirements with our engineering team.",
     p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup.", p1_s:"No setup fee",
     p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM workflow triggers.",
     p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.", p3_s:"Min. 10 Workstations",
     p4_h:"On-Site & Smart IoT", p4_desc:"Hardware setup, network reorganization, or residential & industrial IoT automation projects.", p4_s:"Includes Site Survey",
+    method_title:"A method before a solution.", method_sub:"PrimeOps approaches technology through understanding, evidence and controlled execution.",
+    about_title:"Built to understand before changing.", about_body:"PrimeOps was created around a simple principle: technology decisions become stronger when based on evidence.",
     btn_stripe:"Request Drive Setup", btn_scope:"Configure Agent Scope", btn_quote:"Get Per-Device Quote", btn_wise:"Request Custom Invoice",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
     lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
@@ -628,12 +683,14 @@ const translations = {
     hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
     m1:"Monitoramento SLA Uptime", m2:"Resposta do Agente IA", m3:"Padrão Criptográfico Cloud", m4:"Seguro Responsabilidade Civil E&O",
     diag_infra:"Infraestrutura", diag_telemetry:"Telemetria", diag_exposure:"Exposição", diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO",
-    wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Stream de observabilidade em tempo real em todos os nós ativos.",
+    wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Suíte de observabilidade em tempo real em nós corporativos.",
     p_title:"Produtos & Preços", p_sub:"Selecione um nível operacional para configurar requisitos com nossa equipe.",
     p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup.", p1_s:"Sem taxa de setup",
     p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, agendamento e gatilhos de CRM.",
     p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo 10 Máquinas",
     p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes corporativas e automação industrial/predial.", p4_s:"Inclui Estudo de Viabilidade",
+    method_title:"Um método antes de uma solução.", method_sub:"A PrimeOps trata tecnologia com entendimento, evidência e execução controlada.",
+    about_title:"Construída para entender antes de mudar.", about_body:"A PrimeOps foi criada em torno de um princípio simples: decisões de tecnologia ficam mais fortes quando baseadas em evidências.",
     btn_stripe:"Solicitar Setup Drive", btn_scope:"Configurar Escopo Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
     lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
@@ -673,13 +730,15 @@ function handleFormSubmit(event) {
   });
 }
 
-// ANIMAÇÃO DE TELEMETRIA DO NOC (NÍVEL ENTERPRISE)
+// ANIMAÇÃO DE TELEMETRIA DO NOC (GAUGES, GRÁFICOS E CRONÔMETRO)
+let secondsCounter = 0;
 setInterval(() => {
-  const throughput = (Math.random() * 0.5 + 1.2).toFixed(2);
-  const latency = (Math.random() * 4 + 10.1).toFixed(1);
-  
-  document.getElementById('val-throughput').innerText = `${throughput} GB/s`;
-  document.getElementById('val-latency').innerText = `${latency} ms`;
+  secondsCounter++;
+  const ramVal = (Math.random() * 5 + 45).toFixed(1);
+  const rpsVal = Math.floor(Math.random() * 200 + 4700);
+
+  document.getElementById('val-ram').innerText = `${ramVal}%`;
+  document.getElementById('val-rps').innerText = rpsVal.toLocaleString();
 
   const y1 = Math.floor(Math.random() * 40) + 20;
   const y2 = Math.floor(Math.random() * 50) + 30;
