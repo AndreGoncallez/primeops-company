@@ -18,34 +18,27 @@
 <meta property="og:description" content="Transforming operational data into actionable intelligence. Managed IT, AI Virtual Agents, and Cloud Infrastructure.">
 <meta property="og:image" content="https://primeops.company/assets/og-image.jpg">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://primeops.company/">
-<meta property="twitter:title" content="PrimeOps — Operational Intelligence & Exposure Management">
-<meta property="twitter:description" content="Transforming operational data into actionable intelligence. Managed IT, AI Virtual Agents, and Cloud Infrastructure.">
-<meta property="twitter:image" content="https://primeops.company/assets/og-image.jpg">
-
 <!-- Favicon -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<!-- Google tag (gtag.js) - Google Analytics -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=LHYWCFYYLT"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'LHYWCFYYLT');
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --navy:#0A1628;
     --navy-2:#10203A;
+    --navy-dark:#040912;
     --white:#FFFFFF;
     --paper:#F4F5F7;
     --graphite:#232A33;
@@ -53,6 +46,7 @@
     --blue-accent:#2E5578;
     --blue-accent-hover:#3A6790;
     --copper:#C47A3A;
+    --green-ok:#10B981;
     --line-l:rgba(35,42,51,0.13);
     --line-d:rgba(255,255,255,0.14);
     --serif:'Fraunces', serif;
@@ -70,9 +64,6 @@
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important; animation:none !important;}
-  }
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
   @media (max-width:640px){ .wrap{padding:0 24px;} }
@@ -80,22 +71,22 @@
   /* HEADER */
   header{
     position:sticky;top:0;z-index:80;
-    background:rgba(255,255,255,0.94);
-    backdrop-filter:blur(6px);
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-l);
   }
   nav{
-    max-width:var(--maxw);margin:0 auto;padding:22px 40px;
+    max-width:var(--maxw);margin:0 auto;padding:20px 40px;
     display:flex;align-items:center;justify-content:space-between;
   }
   .brand{
-    font-family:var(--serif);font-weight:600;font-size:19px;
+    font-family:var(--serif);font-weight:600;font-size:20px;
     color:var(--navy);letter-spacing:0.01em;
   }
-  .navlinks{display:flex;gap:38px;}
+  .navlinks{display:flex;gap:36px;}
   .navlinks a{font-size:14px;color:var(--slate);transition:color .15s;}
   .navlinks a:hover{color:var(--navy);}
-  .nav-right{display:flex;align-items:center;gap:26px;}
+  .nav-right{display:flex;align-items:center;gap:24px;}
   .lang-toggle{display:flex;gap:2px;font-family:var(--mono);font-size:11.5px;}
   .lang-toggle button{
     background:none;border:1px solid var(--line-l);
@@ -112,41 +103,41 @@
   @media (max-width:860px){ .navlinks{display:none;} }
 
   /* HERO */
-  .hero{padding:100px 0 90px;}
+  .hero{padding:90px 0 80px;}
   .hero-grid{
-    display:grid;grid-template-columns:1.08fr 0.92fr;gap:70px;align-items:center;
+    display:grid;grid-template-columns:1.08fr 0.92fr;gap:60px;align-items:center;
   }
-  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;gap:56px;} }
+  @media (max-width:940px){ .hero-grid{grid-template-columns:1fr;gap:48px;} }
 
   .eyebrow{
     font-size:12.5px;letter-spacing:0.12em;color:var(--copper);
-    margin-bottom:22px;font-weight:600;
+    margin-bottom:20px;font-weight:600;
   }
   h1{
     font-family:var(--serif);font-weight:500;
     font-size:clamp(32px,4vw,46px);
     line-height:1.22;color:var(--navy);
-    letter-spacing:-0.01em;margin-bottom:28px;
+    letter-spacing:-0.01em;margin-bottom:24px;
   }
   .hero-sub{
     color:var(--slate);font-size:16px;max-width:48ch;
-    line-height:1.75;margin-bottom:38px;
+    line-height:1.75;margin-bottom:36px;
   }
-  .hero-ctas{display:flex;gap:28px;align-items:center;flex-wrap:wrap;}
+  .hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
   .btn-primary{
     background:var(--blue-accent);color:#fff;
     padding:14px 26px;font-size:14px;font-weight:600;
     border-radius:2px;
-    transition:background-color .15s ease, transform .15s ease;
+    transition:background-color .15s ease;
     display:inline-block;cursor:pointer;border:none;
   }
-  .btn-primary:hover{background:var(--blue-accent-hover);transform:translateY(-1px);}
+  .btn-primary:hover{background:var(--blue-accent-hover);}
   .btn-ghost{font-size:14px;color:var(--navy);border-bottom:1px solid var(--line-l);padding-bottom:2px;}
 
-  /* DIAGRAM */
+  /* DIAGRAM PANEL */
   .diagram-panel{
     border:1px solid var(--line-l);border-radius:2px;
-    padding:48px 36px 40px;background:var(--paper);
+    padding:44px 32px;background:var(--paper);
   }
   .diagram{display:flex;flex-direction:column;align-items:center;}
   .d-top{
@@ -158,237 +149,123 @@
     box-shadow: 0 0 8px rgba(196,122,58,0.8);
     animation: pulse 2s infinite;
   }
-  @keyframes pulse {
-    0% { opacity: 0.4; }
-    50% { opacity: 1; }
-    100% { opacity: 0.4; }
-  }
-  .d-trunk{width:1px;height:26px;background:var(--line-l);}
-  .d-trunk.short{height:20px;}
+  @keyframes pulse { 0%,100% { opacity:0.3; } 50% { opacity:1; } }
+  .d-trunk{width:1px;height:24px;background:var(--line-l);}
+  .d-trunk.short{height:18px;}
   .d-branches{
     display:flex;width:100%;justify-content:space-between;
     border-top:1px solid var(--line-l);padding-top:0;
   }
   .d-branch{flex:1;display:flex;flex-direction:column;align-items:center;}
-  .d-drop{width:1px;height:20px;background:var(--line-l);}
-  .d-leaf{font-size:12.5px;color:var(--slate);margin-top:10px;text-align:center;}
+  .d-drop{width:1px;height:18px;background:var(--line-l);}
+  .d-leaf{font-size:12px;color:var(--slate);margin-top:8px;text-align:center;}
   .d-node{
     font-family:var(--serif);font-size:15px;letter-spacing:0.03em;
     color:var(--navy);text-align:center;
   }
 
-  .brandstrip{
-    border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);
-    padding:34px 0;text-align:center;
-  }
-  .brandstrip .b1{font-family:var(--serif);font-size:15px;letter-spacing:0.06em;color:var(--navy);margin-bottom:6px;}
-  .brandstrip .b2{font-size:13px;color:var(--slate);}
-
   /* METRICS STRIP */
   .metrics-strip{
     display:grid;grid-template-columns:repeat(4,1fr);
-    background:var(--paper);border-bottom:1px solid var(--line-l);padding:30px 0;
+    background:var(--paper);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);padding:28px 0;
   }
   @media (max-width:760px){ .metrics-strip{grid-template-columns:repeat(2,1fr);gap:20px;} }
   .metric-item{text-align:center;padding:0 10px;}
   .metric-val{font-family:var(--serif);font-size:28px;color:var(--navy);font-weight:600;}
   .metric-lbl{font-size:12px;color:var(--slate);margin-top:4px;font-family:var(--mono);}
 
-  section.block{padding:96px 0;}
-  .head{max-width:660px;margin-bottom:56px;}
+  section.block{padding:88px 0;}
+  .head{max-width:660px;margin-bottom:48px;}
   h2{
     font-family:var(--serif);font-weight:500;
     font-size:clamp(26px,3vw,34px);line-height:1.28;
     color:var(--navy);letter-spacing:-0.01em;
   }
-  .head p{color:var(--slate);font-size:15px;margin-top:18px;max-width:58ch;line-height:1.75;}
+  .head p{color:var(--slate);font-size:15px;margin-top:16px;max-width:58ch;line-height:1.75;}
 
-  .problem-cols{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    border-top:1px solid var(--line-l);
-  }
-  @media (max-width:820px){ .problem-cols{grid-template-columns:1fr;} }
-  .problem-col{
-    padding:34px 34px 34px 0;border-right:1px solid var(--line-l);
-    transition: background-color 0.2s ease;
-  }
-  .problem-col:hover{ background:rgba(244,245,247,0.5); }
-  .problem-col:last-child{border-right:none;}
-  @media (max-width:820px){ .problem-col{border-right:none;border-bottom:1px solid var(--line-l);padding:28px 0;} }
-  .problem-col .pk{font-size:12px;letter-spacing:0.1em;color:var(--copper);font-weight:600;margin-bottom:14px;}
-  .problem-col h3{font-family:var(--serif);font-size:20px;color:var(--navy);font-weight:500;}
-
-  /* WHAT WE DO */
-  .whatwedo{background:var(--navy);color:#EDEEF0;}
+  /* WHAT WE DO & DASHBOARD ENTERPRISE */
+  .whatwedo{background:var(--navy-dark);color:#EDEEF0;padding:90px 0;}
   .whatwedo .head h2{color:#F5F6F7;}
   .whatwedo .head p{color:#A9B2C0;}
-  .wwd-grid{
-    display:grid;grid-template-columns:1fr 1fr;
-    border-top:1px solid var(--line-d);
-  }
-  @media (max-width:760px){ .wwd-grid{grid-template-columns:1fr;} }
-  .wwd-cell{
-    padding:38px 40px 38px 0;
-    border-bottom:1px solid var(--line-d);
-  }
-  .wwd-grid > .wwd-cell:nth-child(odd){border-right:1px solid var(--line-d);padding-right:40px;}
-  @media (max-width:760px){ .wwd-grid > .wwd-cell:nth-child(odd){border-right:none;} }
-  .wwd-cell .wnum{font-family:var(--mono);font-size:12px;color:var(--copper);margin-bottom:16px;}
-  .wwd-cell h3{font-family:var(--serif);font-size:19px;font-weight:500;color:#F5F6F7;margin-bottom:10px;}
-  .wwd-cell p{color:#9BA5B4;font-size:14px;line-height:1.7;max-width:38ch;}
-
-  /* PAINEL DE TELEMETRIA CORPORATIVO (ESTILO DATADOG) */
-  .telemetry-dashboard {
-    margin-top: 40px;
-    background: #050B14;
-    border: 1px solid var(--line-d);
+  
+  .noc-dashboard-container {
+    background: #080F1E;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 4px;
-    padding: 24px;
+    padding: 28px;
+    margin-top: 40px;
     font-family: var(--mono);
-    position: relative;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
-  .dash-header {
+  .noc-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--line-d);
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-    font-size: 11.5px;
-    color: #8A96A8;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
   }
-  .dash-grid {
+  .noc-title { font-size: 12px; color: #8A96A8; letter-spacing: 0.08em; display:flex; align-items:center; gap:10px; }
+  .noc-status { font-size: 11px; color: var(--green-ok); display: flex; align-items: center; gap: 6px; }
+  
+  .noc-grid {
     display: grid;
-    grid-template-columns: 2.2fr 1fr;
-    gap: 20px;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
   }
-  @media (max-width:760px){ .dash-grid{grid-template-columns:1fr;} }
-  
-  .graph-container {
-    background: radial-gradient(circle at 50% 50%, rgba(46,85,120,0.15), rgba(5,11,20,0.8));
-    border: 1px solid var(--line-d);
-    border-radius: 2px;
-    padding: 16px;
+  @media(max-width:860px){ .noc-grid { grid-template-columns: 1fr; } }
+
+  .noc-chart-card {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 20px;
+    border-radius: 3px;
     position: relative;
-    overflow: hidden;
   }
-  .chart-svg { width: 100%; height: 130px; }
-  .chart-line {
-    fill: none;
-    stroke: var(--copper);
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    filter: drop-shadow(0 0 6px rgba(196,122,58,0.5));
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  .chart-overlay-grid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    pointer-events: none;
   }
-  .chart-area {
-    fill: url(#chart-gradient);
-    opacity: 0.25;
-  }
-
-  .stat-bars { display: flex; flex-direction: column; gap: 14px; }
-  .bar-item { font-size: 11px; color: #A9B2C0; }
-  .bar-info { display: flex; justify-content: space-between; margin-bottom: 4px; }
-  .bar-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; }
-  .bar-fill { height: 100%; background: var(--blue-accent); width: 42%; transition: width 0.8s ease; }
+  .noc-svg { width: 100%; height: 160px; overflow: visible; }
+  .line-primary { fill: none; stroke: var(--copper); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(196,122,58,0.4)); }
+  .line-secondary { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.7; }
   
-  .live-logs {
-    margin-top: 16px;
-    background: rgba(0,0,0,0.4);
+  .noc-gauges {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .gauge-box {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 16px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .gauge-val { font-size: 22px; font-weight: 600; color: #fff; font-family: var(--sans); }
+  .gauge-lbl { font-size: 11px; color: #788596; margin-top: 2px; }
+
+  .noc-log-bar {
+    margin-top: 20px;
+    background: #03060D;
     border: 1px solid rgba(255,255,255,0.05);
+    padding: 12px 16px;
     border-radius: 2px;
-    padding: 10px 14px;
     font-size: 11px;
-    color: #4CAF50;
-    height: 48px;
-    overflow: hidden;
-    line-height: 1.5;
+    color: #94A3B8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  /* AGENT PREVIEW */
-  .agent-preview-section{
-    background:var(--navy-2);padding:70px 0;color:#fff;border-top:1px solid var(--line-d);
-  }
-  .chat-mockup{
-    max-width:720px;margin:30px auto 0;background:var(--navy);
-    border:1px solid var(--line-d);border-radius:4px;padding:24px;
-    font-family:var(--sans);font-size:13.5px;box-shadow:0 12px 40px rgba(0,0,0,0.3);
-  }
-  .chat-header{
-    display:flex;align-items:center;justify-content:space-between;
-    border-bottom:1px solid var(--line-d);padding-bottom:12px;margin-bottom:20px;
-  }
-  .chat-status{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;color:#8A96A8;}
-  .chat-status-dot{width:8px;height:8px;border-radius:50%;background:#4CAF50;}
-  .chat-msg{margin-bottom:14px;display:flex;flex-direction:column;}
-  .chat-msg.user{align-items:flex-end;}
-  .chat-msg.bot{align-items:flex-start;}
-  .chat-bubble{
-    padding:10px 16px;border-radius:4px;max-width:80%;line-height:1.5;
-  }
-  .chat-msg.user .chat-bubble{background:var(--blue-accent);color:#fff;}
-  .chat-msg.bot .chat-bubble{background:rgba(255,255,255,0.07);color:#E0E4EC;border:1px solid var(--line-d);}
-  .chat-time{font-size:10px;color:#707D8F;margin-top:4px;font-family:var(--mono);}
-
-  /* INDUSTRIES GRID */
-  .ind-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px;
-  }
-  @media (max-width:900px){ .ind-grid{grid-template-columns:repeat(2,1fr);} }
-  @media (max-width:500px){ .ind-grid{grid-template-columns:1fr;} }
-  .ind-card{
-    border:1px solid var(--line-l);padding:24px;background:var(--white);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  .ind-card:hover { transform: translateY(-2px); border-color: var(--blue-accent); }
-  .ind-card .icon{font-size:22px;margin-bottom:12px;color:var(--copper);}
-  .ind-card h4{font-family:var(--serif);color:var(--navy);font-size:16px;margin-bottom:8px;}
-  .ind-card p{font-size:12.5px;color:var(--slate);line-height:1.5;}
-
-  /* METHOD */
-  .method-device{
-    margin:0 0 60px;padding:40px 0;
-    border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);
-    overflow-x:auto;
-  }
-  .method-row{
-    display:flex;align-items:flex-end;gap:0;min-width:640px;
-  }
-  .method-unit{
-    display:flex;flex-direction:column;align-items:center;
-    flex:1;text-align:center;position:relative;
-  }
-  .method-unit .mletter{
-    font-family:var(--mono);font-weight:600;font-size:26px;color:var(--copper);
-  }
-  .method-unit .mword{
-    font-size:12px;color:var(--slate);margin-top:10px;letter-spacing:0.02em;
-  }
-  .method-connector{
-    flex:0 0 auto;width:28px;height:1px;background:var(--line-l);
-    align-self:center;margin-bottom:26px;
-  }
-  .method-quote{
-    font-family:var(--serif);font-style:italic;
-    font-size:clamp(19px,2.2vw,24px);color:var(--navy);
-    text-align:center;max-width:56ch;margin:0 auto;line-height:1.55;
-  }
-
-  /* SOLUTIONS */
-  .solutions{background:var(--paper);}
-  .sol-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
-    background:var(--line-l);border:1px solid var(--line-l);
-    margin-top:8px;
-  }
-  @media (max-width:760px){ .sol-grid{grid-template-columns:1fr;} }
-  .sol-cell{background:var(--paper);padding:36px 34px; transition: background 0.2s ease;}
-  .sol-cell:hover{ background: #EAECEF; }
-  .sol-cell h3{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--navy);margin-bottom:12px;}
-  .sol-cell p{color:var(--slate);font-size:14px;line-height:1.7;}
-
-  /* PRICING MODULAR GRID - SELEÇÃO DINÂMICA */
+  /* PRICING GRID NEUTRA */
   .pricing-grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
     margin-top:24px;
@@ -400,21 +277,12 @@
     border:1px solid var(--line-l);border-radius:2px;
     padding:30px 22px;background:var(--white);
     display:flex;flex-direction:column;justify-content:space-between;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
-  .price-card:hover { transform: translateY(-3px); }
-  
-  /* Estado Ativo Selecionado Dinamicamente */
-  .price-card.selected {
+  .price-card:hover {
     border-color: var(--navy);
-    box-shadow: 0 10px 30px rgba(10,22,40,0.12);
+    box-shadow: 0 8px 24px rgba(10,22,40,0.06);
   }
-  .price-card.selected .btn-card {
-    background: var(--navy);
-    color: #fff;
-  }
-
   .price-tag{font-family:var(--mono);font-size:10px;color:var(--copper);letter-spacing:0.1em;margin-bottom:12px;font-weight:600;}
   .price-card h3{font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:8px;}
   .price-card .desc{font-size:13px;color:var(--slate);margin-bottom:18px;line-height:1.5;}
@@ -430,34 +298,39 @@
     border:1px solid var(--navy);color:var(--navy);border-radius:2px;display:block;cursor:pointer;
     background: transparent; transition: all 0.2s ease;
   }
+  .btn-card:hover{ background:var(--navy); color:#fff; }
 
-  /* EVIDENCE */
-  .evidence-cols{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    border-top:1px solid var(--line-l);
+  /* WIDGET DE SUPORTE EXECUTIVO (SEM DUPLICIDADE) */
+  .status-widget-bar {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--navy-dark);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    padding: 12px 18px;
+    color: #fff;
+    font-family: var(--mono);
+    font-size: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: 14px;
   }
-  @media (max-width:820px){ .evidence-cols{grid-template-columns:1fr 1fr;} }
-  .evidence-col{padding:30px 28px 30px 0;border-right:1px solid var(--line-l);}
-  .evidence-col:last-child{border-right:none;}
-  @media (max-width:820px){
-    .evidence-col{border-right:none;border-bottom:1px solid var(--line-l);padding:24px 0;}
+  .widget-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-ok); box-shadow:0 0 8px var(--green-ok); }
+  .widget-action {
+    background: var(--blue-accent);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 11px;
+    cursor: pointer;
+    border: none;
+    font-family: var(--sans);
+    font-weight: 600;
   }
-  .evidence-col .ek{font-family:var(--serif);font-size:17px;color:var(--navy);margin-bottom:8px;}
-  .evidence-col p{color:var(--slate);font-size:13.5px;line-height:1.6;}
-
-  /* ABOUT */
-  .about-inner{max-width:660px;}
-  .about-kicker{font-size:12.5px;letter-spacing:0.1em;color:var(--copper);font-weight:600;margin-bottom:18px;}
-  .about-inner p{color:var(--slate);font-size:15px;line-height:1.8;margin-top:20px;max-width:58ch;}
-
-  /* CTA */
-  .finalcta{background:var(--navy);color:#fff;text-align:center;padding:120px 0;}
-  .finalcta h2{
-    color:#F5F6F7;font-size:clamp(26px,3.6vw,40px);
-    letter-spacing:0.01em;margin-bottom:20px;
-  }
-  .finalcta p{color:#A9B2C0;font-size:15.5px;margin-bottom:38px;}
-  .finalcta .email-contacts{margin-top:24px;font-size:13px;color:#8A96A8;}
+  .widget-action:hover { background: var(--blue-accent-hover); }
 
   /* MODAL POPUP */
   .modal-overlay{
@@ -479,92 +352,30 @@
   
   .form-group{margin-bottom:14px;}
   .form-group label{display:block;font-size:11px;font-family:var(--mono);color:var(--slate);margin-bottom:4px;}
-  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea{
+  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea, .form-group select{
     width:100%;padding:9px 12px;border:1px solid var(--line-l);font-family:var(--sans);font-size:13.5px;
   }
   
   .checkbox-group{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
   .checkbox-item{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--graphite);}
-  .checkbox-item input{cursor:pointer;}
 
   .lgpd-consent{
     display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--slate);
     margin-top:14px;margin-bottom:16px;line-height:1.4;
   }
-  .lgpd-consent input{margin-top:2px;cursor:pointer;}
 
   .btn-submit{
     width:100%;padding:12px;background:var(--navy);color:#fff;font-weight:600;font-size:14px;border:none;cursor:pointer;
-    transition: background 0.2s ease;
-  }
-  .btn-submit:hover{ background: var(--blue-accent); }
-
-  /* MENSAGEM DE SUCESSO DO MODAL */
-  .modal-success-state {
-    display: none;
-    text-align: center;
-    padding: 20px 10px;
-  }
-  .modal-success-state h4 {
-    font-family: var(--serif);
-    font-size: 20px;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
-  .modal-success-state p {
-    font-size: 13.5px;
-    color: var(--slate);
-    line-height: 1.6;
-  }
-
-  /* WIDGET FLUTUANTE DISCRETO CORPORATIVO (SUBSTITUIU WHATSAPP VERDE) */
-  .contact-float-corp {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background-color: var(--navy);
-    color: #FFF;
-    border: 1px solid var(--line-d);
-    border-radius: 4px;
-    padding: 10px 18px;
-    font-size: 12.5px;
-    font-weight: 600;
-    font-family: var(--sans);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 20px rgba(10,22,40,0.25);
-    z-index: 99;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
-  }
-  .contact-float-corp:hover { transform: translateY(-2px); background-color: var(--blue-accent); }
-  .pulse-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #4CAF50;
-    box-shadow: 0 0 6px #4CAF50;
   }
 
   /* FOOTER */
-  footer{padding:50px 0 34px;border-top:1px solid var(--line-l);}
-  .footer-top{
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;margin-bottom:30px;
-  }
+  footer{padding:48px 0 32px;border-top:1px solid var(--line-l);}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:28px;}
   .footer-brand .fb1{font-family:var(--serif);font-size:17px;color:var(--navy);}
   .footer-brand .fb2{font-size:12.5px;color:var(--slate);margin-top:4px;}
   .footer-links{display:flex;gap:24px;}
   .footer-links a{font-size:13px;color:var(--slate);}
-  .footer-links a:hover{color:var(--navy);}
-  .footer-bottom{
-    border-top:1px solid var(--line-l);padding-top:22px;
-    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
-    font-size:12px;color:var(--slate);
-  }
-  .lgpd-footer{
-    margin-top:12px;font-size:11.5px;color:var(--slate);line-height:1.5;
-  }
+  .footer-bottom{border-top:1px solid var(--line-l);padding-top:20px;display:flex;justify-content:space-between;font-size:12px;color:var(--slate);}
 </style>
 </head>
 <body>
@@ -581,10 +392,10 @@
     </div>
     <div class="nav-right">
       <div class="lang-toggle">
-        <button id="btn-en" class="active" onclick="setLang('en')" aria-label="Switch to English">EN ($)</button>
-        <button id="btn-pt" onclick="setLang('pt')" aria-label="Mudar para Português">PT (R$)</button>
+        <button id="btn-en" class="active" onclick="setLang('en')">EN ($)</button>
+        <button id="btn-pt" onclick="setLang('pt')">PT (R$)</button>
       </div>
-      <a class="btn-contact" onclick="openModal('General Contact')" data-i18n="nav_contact">Contact</a>
+      <a class="btn-contact" onclick="openModal('General')" data-i18n="nav_contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -621,792 +432,260 @@
 <!-- FAIXA DE MÉTRICAS -->
 <div class="metrics-strip">
   <div class="wrap" style="display:contents;">
-    <div class="metric-item">
-      <div class="metric-val">99.9%</div>
-      <div class="metric-lbl" data-i18n="m1">Uptime SLA Monitoring</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-val">&lt; 2 min</div>
-      <div class="metric-lbl" data-i18n="m2">AI Agent Response Time</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-val">AES-256</div>
-      <div class="metric-lbl" data-i18n="m3">Cloud Encryption Standard</div>
-    </div>
-    <div class="metric-item">
-      <div class="metric-val">E&amp;O Covered</div>
-      <div class="metric-lbl" data-i18n="m4">Professional Liability Insured</div>
-    </div>
+    <div class="metric-item"><div class="metric-val">99.9%</div><div class="metric-lbl" data-i18n="m1">Uptime SLA Monitoring</div></div>
+    <div class="metric-item"><div class="metric-val">&lt; 2 min</div><div class="metric-lbl" data-i18n="m2">AI Agent Response Time</div></div>
+    <div class="metric-item"><div class="metric-val">AES-256</div><div class="metric-lbl" data-i18n="m3">Cloud Encryption Standard</div></div>
+    <div class="metric-item"><div class="metric-val">E&amp;O Covered</div><div class="metric-lbl" data-i18n="m4">Professional Liability Insured</div></div>
   </div>
 </div>
-
-<div class="brandstrip">
-  <div class="b1">PRIMEOPS</div>
-  <div class="b2">Operational Intelligence &amp; Exposure Management</div>
-</div>
-
-<section class="block" id="approach">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i18n="problem_title">Technology creates visibility.<br>Intelligence creates understanding.</h2>
-      <p data-i18n="problem_body">Modern environments generate enormous amounts of operational data. The challenge is not simply collecting it — it is understanding what matters, what is exposed and what requires action.</p>
-    </div>
-    <div class="problem-cols">
-      <div class="problem-col">
-        <div class="pk" data-i18n="pc1_k">VISIBILITY</div>
-        <h3 data-i18n="pc1_q">What is happening?</h3>
-      </div>
-      <div class="problem-col">
-        <div class="pk" data-i18n="pc2_k">EXPOSURE</div>
-        <h3 data-i18n="pc2_q">What is at risk?</h3>
-      </div>
-      <div class="problem-col">
-        <div class="pk" data-i18n="pc3_k">DECISION</div>
-        <h3 data-i18n="pc3_q">What should change?</h3>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="whatwedo" id="whatwedo">
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="wwd_title">From operational data to operational intelligence.</h2>
-    </div>
-    <div class="wwd-grid">
-      <div class="wwd-cell">
-        <div class="wnum">01</div>
-        <h3 data-i18n="wwd1_h">Observability</h3>
-        <p data-i18n="wwd1_p">Understand systems, performance and events.</p>
-      </div>
-      <div class="wwd-cell">
-        <div class="wnum">02</div>
-        <h3 data-i18n="wwd2_h">Exposure Management</h3>
-        <p data-i18n="wwd2_p">Identify weaknesses, risks and attack surfaces.</p>
-      </div>
-      <div class="wwd-cell">
-        <div class="wnum">03</div>
-        <h3 data-i18n="wwd3_h">Operational Intelligence</h3>
-        <p data-i18n="wwd3_p">Transform telemetry into actionable insight.</p>
-      </div>
-      <div class="wwd-cell">
-        <div class="wnum">04</div>
-        <h3 data-i18n="wwd4_h">Autonomous Workflows</h3>
-        <p data-i18n="wwd4_p">Turn knowledge into repeatable automated operations.</p>
-      </div>
+      <p data-i18n="wwd_sub">Real-time observability stream across all active enterprise nodes.</p>
     </div>
 
-    <!-- PAINEL DE TELEMETRIA CORPORATIVO -->
-    <div class="telemetry-dashboard">
-      <div class="dash-header">
-        <span>PRIMEOPS // NOC NOC REAL-TIME STREAM</span>
-        <span style="color:#4CAF50;">● SYSTEM ACTIVE</span>
+    <!-- PAINEL NOC ENTERPRISE (RE-DESIGN COMPLETO) -->
+    <div class="noc-dashboard-container">
+      <div class="noc-header">
+        <div class="noc-title"><span>PRIMEOPS // NOC NOC TELEMETRY ENGINE</span></div>
+        <div class="noc-status"><span class="widget-dot"></span> <span id="noc-node-count">48 Nodes Monitored (100% Health)</span></div>
       </div>
-      <div class="dash-grid">
-        <div class="graph-container">
-          <svg class="chart-svg" viewBox="0 0 500 130" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#C47A3A" stop-opacity="0.8"/>
-                <stop offset="100%" stop-color="#050B14" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path id="live-area" class="chart-area" d="M0,130 L0,60 L100,40 L200,80 L300,30 L400,70 L500,40 L500,130 Z" />
-            <path id="live-line" class="chart-line" d="M0,60 L100,40 L200,80 L300,30 L400,70 L500,40" />
+
+      <div class="noc-grid">
+        <div class="noc-chart-card">
+          <div class="chart-overlay-grid"></div>
+          <svg class="noc-svg" viewBox="0 0 500 160" preserveAspectRatio="none">
+            <path id="svg-line-2" class="line-secondary" d="M0,90 L100,110 L200,70 L300,95 L400,60 L500,80" />
+            <path id="svg-line-1" class="line-primary" d="M0,50 L100,30 L200,85 L300,20 L400,65 L500,35" />
           </svg>
         </div>
-        <div class="stat-bars">
-          <div class="bar-item">
-            <div class="bar-info"><span>CPU LOAD</span><span id="stat-cpu">38%</span></div>
-            <div class="bar-bg"><div id="fill-cpu" class="bar-fill" style="width: 38%;"></div></div>
+
+        <div class="noc-gauges">
+          <div class="gauge-box">
+            <div>
+              <div class="gauge-val" id="val-throughput">1.42 GB/s</div>
+              <div class="gauge-lbl">ACTIVE TELEMETRY STREAM</div>
+            </div>
           </div>
-          <div class="bar-item">
-            <div class="bar-info"><span>RAM USAGE</span><span id="stat-ram">52%</span></div>
-            <div class="bar-bg"><div id="fill-ram" class="bar-fill" style="width: 52%; background: var(--copper);"></div></div>
-          </div>
-          <div class="bar-item">
-            <div class="bar-info"><span>THROUGHPUT</span><span id="stat-net">1.2 Gbps</span></div>
-            <div class="bar-bg"><div id="fill-net" class="bar-fill" style="width: 74%;"></div></div>
+          <div class="gauge-box">
+            <div>
+              <div class="gauge-val" id="val-latency">12.4 ms</div>
+              <div class="gauge-lbl">AVERAGE EDGE LATENCY</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="live-logs" id="log-terminal">
-        [16:08:10] NOC: Active health check pinged 42 enterprise servers - Status 200 OK<br>
-        [16:08:14] AI AGENT: Executive meeting confirmed for client #1084
+
+      <div class="noc-log-bar">
+        <span id="log-text">[16:20:04] NOC ENGINE: Automated health ping verified on US-East & SA-East clusters.</span>
+        <span style="color:var(--copper)">SECURE CONNECTION</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- SEÇÃO VISUAL: AGENTE CONVERSACIONAL EM AÇÃO -->
-<section class="agent-preview-section">
-  <div class="wrap">
-    <div class="head" style="margin-bottom:20px;">
-      <h2 style="color:#fff;" data-i18n="agent_preview_h">Autonomous Conversational Agents in Action</h2>
-      <p style="color:#A9B2C0;" data-i18n="agent_preview_sub">Replacing legacy bots with context-aware virtual agents that schedule meetings, trigger confirmation calls, and update CRMs seamlessly.</p>
-    </div>
-
-    <div class="chat-mockup">
-      <div class="chat-header">
-        <span>PrimeOps Virtual Agent (Calendar &amp; Booking)</span>
-        <div class="chat-status"><span class="chat-status-dot"></span> Active Session</div>
-      </div>
-      <div class="chat-msg user">
-        <div class="chat-bubble" data-i18n="chat_u1">Hello, I'd like to schedule an executive discovery session for next Tuesday morning.</div>
-        <div class="chat-time">10:14 AM</div>
-      </div>
-      <div class="chat-msg bot">
-        <div class="chat-bubble" data-i18n="chat_b1">I checked the team schedule. Tuesday at 10:00 AM EST is open. Shall I confirm this slot and issue a calendar invite with a voice reminder?</div>
-        <div class="chat-time">10:14 AM</div>
-      </div>
-      <div class="chat-msg user">
-        <div class="chat-bubble" data-i18n="chat_u2">Yes, please. Send it to john@acme.com.</div>
-        <div class="chat-time">10:15 AM</div>
-      </div>
-      <div class="chat-msg bot">
-        <div class="chat-bubble" data-i18n="chat_b2">Confirmed! Invite sent to john@acme.com, CRM record updated, and automated voice confirmation scheduled 2 hours prior.</div>
-        <div class="chat-time">10:15 AM</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SEÇÃO: SETORES ATENDIDOS (INDUSTRIES) -->
-<section class="block">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i18n="ind_h">Target Environments &amp; Industries</h2>
-      <p data-i18n="ind_sub">Tailored operational setups designed for high-requirement sectors.</p>
-    </div>
-    <div class="ind-grid">
-      <div class="ind-card" onclick="openModal('Healthcare & Clinics')" style="cursor:pointer;">
-        <div class="icon">🏥</div>
-        <h4 data-i18n="ind1_h">Healthcare &amp; Clinics</h4>
-        <p data-i18n="ind1_p">Autonomous booking agents, patient confirmation calls, and HIPAA/LGPD-aligned cloud backup.</p>
-      </div>
-      <div class="ind-card" onclick="openModal('Legal & Financial')" style="cursor:pointer;">
-        <div class="icon">⚖️</div>
-        <h4 data-i18n="ind2_h">Legal &amp; Financial Offices</h4>
-        <p data-i18n="ind2_p">Encrypted cloud drive, Active Directory server management, and 24/7 lead qualification agents.</p>
-      </div>
-      <div class="ind-card" onclick="openModal('Logistics & Services')" style="cursor:pointer;">
-        <div class="icon">🚛</div>
-        <h4 data-i18n="ind3_h">Logistics &amp; Services</h4>
-        <p data-i18n="ind3_p">Active NOC server monitoring, automated WhatsApp/SMS status triggers, and managed helpdesk.</p>
-      </div>
-      <div class="ind-card" onclick="openModal('Smart Spaces & IoT')" style="cursor:pointer;">
-        <div class="icon">🏭</div>
-        <h4 data-i18n="ind4_h">Smart Spaces &amp; IoT</h4>
-        <p data-i18n="ind4_p">Industrial telemetry sensoring, access control systems, and residential automation setup.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block solutions" id="solutions">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i18n="sol_title">Solutions</h2>
-      <p data-i18n="sol_sub">Four areas of work, applied together against the same operational map.</p>
-    </div>
-    <div class="sol-grid">
-      <div class="sol-cell" onclick="openModal('Operational Visibility')" style="cursor:pointer;">
-        <h3 data-i18n="sol1_h">Operational Visibility</h3>
-        <p data-i18n="sol1_p">Monitoring, telemetry, hardware setup and network reorganization for SMBs and enterprise environments.</p>
-      </div>
-      <div class="sol-cell" onclick="openModal('Managed IT & Windows Admin')" style="cursor:pointer;">
-        <h3 data-i18n="sol2_h">Managed IT &amp; Windows Admin</h3>
-        <p data-i18n="sol2_p">Windows Server administration, active directory, automated data backups and infrastructure maintenance.</p>
-      </div>
-      <div class="sol-cell" onclick="openModal('AI Conversational Agents')" style="cursor:pointer;">
-        <h3 data-i18n="sol3_h">AI Conversational Agents &amp; Scheduling</h3>
-        <p data-i18n="sol3_p">Autonomous customer service virtual agents, calendar booking orchestration, and CRM workflow triggers.</p>
-      </div>
-      <div class="sol-cell" onclick="openModal('Smart Spaces & IoT')" style="cursor:pointer;">
-        <h3 data-i18n="sol4_h">Smart Spaces &amp; IoT</h3>
-        <p data-i18n="sol4_p">Residential and industrial automation, access control systems and telemetry sensoring.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING SECTION - COM SELEÇÃO VISUAL DINÂMICA -->
+<!-- SEÇÃO DE PREÇOS NEUTRA E DINÂMICA -->
 <section class="block" id="pricing">
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="p_title">Products &amp; Pricing</h2>
-      <p data-i18n="p_sub">Enterprise-grade SLAs and competitive tier rates. Choose standalone SaaS or per-device IT support.</p>
+      <p data-i18n="p_sub">Select an operational tier to configure requirements with our engineering team.</p>
     </div>
 
     <div class="pricing-grid">
-      <!-- ITEM 1 -->
-      <div class="price-card" onclick="selectCard(this, 'Cloud Drive & Backup Subscription')">
+      <div class="price-card">
         <div>
           <div class="price-tag">STANDALONE / STRIPE</div>
           <h3 data-i18n="p1_h">Cloud Drive &amp; Backup</h3>
-          <p class="desc" data-i18n="p1_desc">High-speed secure storage, cloud drive hosting and automated redundancy backup (up to 1TB / 20 users).</p>
+          <p class="desc" data-i18n="p1_desc">High-speed secure storage, cloud drive hosting and automated redundancy backup.</p>
           <div class="price-amount" id="p1-amt">$69 <span>/ mo</span></div>
           <div class="price-setup" data-i18n="p1_s">No setup fee</div>
-          <ul class="price-features">
-            <li data-i18n="p1_f1">Encrypted Cloud Storage</li>
-            <li data-i18n="p1_f2">Daily Redundant Backups</li>
-            <li data-i18n="p1_f3">Self-managed Drive Portal</li>
-          </ul>
         </div>
-        <button class="btn-card" data-i18n="btn_stripe">Request Drive Setup</button>
+        <button onclick="openModal('Cloud Drive Setup')" class="btn-card" data-i18n="btn_stripe">Request Drive Setup</button>
       </div>
 
-      <!-- ITEM 2 -->
-      <div class="price-card" onclick="selectCard(this, 'AI Virtual Agents Scope')">
+      <div class="price-card">
         <div>
           <div class="price-tag">CUSTOMIZABLE / AI AGENTS</div>
           <h3 data-i18n="p2_h">AI Virtual Agents</h3>
-          <p class="desc" data-i18n="p2_desc">Autonomous conversational agents, appointment scheduling, and optional voice confirmation calls &amp; WhatsApp alerts.</p>
+          <p class="desc" data-i18n="p2_desc">Autonomous conversational agents, appointment scheduling, and CRM workflow triggers.</p>
           <div class="price-amount" id="p2-amt">$99 <span>/ mo</span></div>
           <div class="price-setup" id="p2-setup">$499 One-time Setup Fee</div>
-          <ul class="price-features">
-            <li data-i18n="p2_f1">Autonomous Conversational Agent</li>
-            <li data-i18n="p2_f2">Automated Calendar Integration</li>
-            <li data-i18n="p2_f3">Optional Voice &amp; SMS Triggers</li>
-          </ul>
         </div>
-        <button class="btn-card" data-i18n="btn_scope">Configure Agent Scope</button>
+        <button onclick="openModal('AI Agent Scope')" class="btn-card" data-i18n="btn_scope">Configure Agent Scope</button>
       </div>
 
-      <!-- ITEM 3 -->
-      <div class="price-card selected" onclick="selectCard(this, 'Managed IT Support')">
+      <div class="price-card">
         <div>
           <div class="price-tag">PREMIUM IT / PER DEVICE</div>
           <h3 data-i18n="p3_h">Managed IT &amp; Helpdesk</h3>
-          <p class="desc" data-i18n="p3_desc">Full remote IT support, Windows Admin, server maintenance &amp; NOC active monitoring.</p>
+          <p class="desc" data-i18n="p3_desc">Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.</p>
           <div class="price-amount" id="p3-amt">$45 <span>/ workstation / mo</span></div>
           <div class="price-setup" data-i18n="p3_s">Min. 10 Workstations</div>
-          <ul class="price-features">
-            <li data-i18n="p3_f1">10, 20 or 40+ Workstations</li>
-            <li data-i18n="p3_f2">Windows Server Admin &amp; AD</li>
-            <li data-i18n="p3_f3">E&amp;O Covered IT Support</li>
-          </ul>
         </div>
-        <button class="btn-card" data-i18n="btn_quote">Get Per-Device Quote</button>
+        <button onclick="openModal('Managed IT Quote')" class="btn-card" data-i18n="btn_quote">Get Per-Device Quote</button>
       </div>
 
-      <!-- ITEM 4 -->
-      <div class="price-card" onclick="selectCard(this, 'Custom Wise Project')">
+      <div class="price-card">
         <div>
           <div class="price-tag">CUSTOM / WISE INVOICE</div>
           <h3 data-i18n="p4_h">On-Site &amp; Smart IoT</h3>
-          <p class="desc" data-i18n="p4_desc">Hardware setup, network reorganization, or residential &amp; industrial IoT automation projects.</p>
+          <p class="desc" data-i18n="p4_desc">Hardware setup, network reorganization, or residential & industrial IoT automation projects.</p>
           <div class="price-amount" data-i18n="p4_amt">Custom Scope</div>
           <div class="price-setup" data-i18n="p4_s">Includes Site Survey</div>
-          <ul class="price-features">
-            <li data-i18n="p4_f1">On-Site Network &amp; Hardware</li>
-            <li data-i18n="p4_f2">Industrial &amp; Home Automation</li>
-            <li data-i18n="p4_f3">Wise Invoice (USD / EUR / BRL)</li>
-          </ul>
         </div>
-        <button class="btn-card" data-i18n="btn_wise">Request Custom Invoice</button>
+        <button onclick="openModal('Wise Custom Invoice')" class="btn-card" data-i18n="btn_wise">Request Custom Invoice</button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="block" id="method">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i18n="method_title">A method before a solution.</h2>
-      <p data-i18n="method_sub">PrimeOps approaches technology through understanding, evidence and controlled execution.</p>
-    </div>
+<!-- WIDGET STATUS BAR BARRA FIXA -->
+<div class="status-widget-bar">
+  <span class="widget-dot"></span>
+  <span>System Status: Operational</span>
+  <button class="widget-action" onclick="openModal('Executive Consultation')">Schedule Architecture Call</button>
+</div>
 
-    <div class="method-device">
-      <div class="method-row" id="method-row"></div>
-    </div>
-
-    <p class="method-quote" data-i18n="method_quote">Think before acting. Understand before changing. Document to evolve.</p>
-  </div>
-</section>
-
-<section class="block">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i18n="ev_title">Built around measurable outcomes.</h2>
-    </div>
-    <div class="evidence-cols">
-      <div class="evidence-col">
-        <div class="ek" data-i18n="ev1_k">Visibility</div>
-        <p data-i18n="ev1_p">Know what is happening.</p>
-      </div>
-      <div class="evidence-col">
-        <div class="ek" data-i18n="ev2_k">Context</div>
-        <p data-i18n="ev2_p">Understand why it matters.</p>
-      </div>
-      <div class="evidence-col">
-        <div class="ek" data-i18n="ev3_k">Action</div>
-        <p data-i18n="ev3_p">Know what should change.</p>
-      </div>
-      <div class="evidence-col">
-        <div class="ek" data-i18n="ev4_k">Standardization</div>
-        <p data-i18n="ev4_p">Make improvement repeatable.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="about">
-  <div class="wrap about-inner">
-    <div class="about-kicker" data-i18n="about_kicker">ABOUT PRIMEOPS</div>
-    <h2 data-i18n="about_title">Built to understand before changing.</h2>
-    <p data-i18n="about_body">PrimeOps was created around a simple principle: technology decisions become stronger when they are based on understanding, evidence and operational context.</p>
-  </div>
-</section>
-
-<section class="finalcta" id="contact">
-  <div class="wrap">
-    <h2 data-i18n="cta_title">UNDERSTAND BEFORE YOU CHANGE.</h2>
-    <p data-i18n="cta_sub">Let's turn operational complexity into intelligence.</p>
-    <button onclick="openModal('Direct Executive Inquiry')" class="btn-primary" data-i18n="cta_btn">Talk to PrimeOps</button>
-    <div class="email-contacts">
-      Direct Contact: <a href="mailto:contact@primeops.company" style="color:#A9B2C0;text-decoration:underline;">contact@primeops.company</a> | 
-      Support: <a href="mailto:support@primeops.company" style="color:#A9B2C0;text-decoration:underline;">support@primeops.company</a>
-    </div>
-  </div>
-</section>
-
-<!-- MODAL POPUP DE ORÇAMENTO -->
-<div id="contact-modal" class="modal-overlay" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+<!-- MODAL FORM -->
+<div id="contact-modal" class="modal-overlay">
   <div class="modal-box">
-    <span class="modal-close" onclick="closeModal()" role="button" aria-label="Close modal">✕</span>
-    
+    <span class="modal-close" onclick="closeModal()">✕</span>
     <div id="modal-form-content">
       <h3 id="modal-title" data-i18n="modal_h">Request Proposal / Scope</h3>
-      <p data-i18n="modal_p">Select the services and features you need for a tailored proposal.</p>
+      <p data-i18n="modal_p">Select required parameters for a tailored proposal.</p>
       
       <form id="modal-form" action="https://formspree.io/f/mrpevljb" method="POST" onsubmit="handleFormSubmit(event)">
         <div class="form-group">
-          <label for="input-name" data-i18n="lbl_name">NAME / COMPANY</label>
+          <label data-i18n="lbl_name">NAME / COMPANY</label>
           <input type="text" id="input-name" name="name" required placeholder="John Doe / Acme Corp">
         </div>
         <div class="form-group">
-          <label for="input-email" data-i18n="lbl_email">WORK EMAIL</label>
+          <label data-i18n="lbl_email">WORK EMAIL</label>
           <input type="email" id="input-email" name="email" required placeholder="john@company.com">
         </div>
-
         <div class="form-group">
-          <label data-i18n="lbl_services">SELECT REQUIRED SERVICES / FEATURES:</label>
-          <div class="checkbox-group">
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="AI Virtual Agent" id="cb-bot"> <span data-i18n="cb_bot">AI Virtual Agent</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Calendar Orchestration" id="cb-cal"> <span data-i18n="cb_cal">Calendar Orchestration</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Voice Calls" id="cb-voice"> <span data-i18n="cb_voice">Voice Confirmation Calls</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="SMS/WhatsApp" id="cb-msg"> <span data-i18n="cb_msg">WhatsApp / SMS Alerts</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Managed IT" id="cb-it"> <span data-i18n="cb_it">Managed IT / Helpdesk</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Cloud Drive" id="cb-drive"> <span data-i18n="cb_drive">Cloud Drive & Backup</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Smart IoT" id="cb-iot"> <span data-i18n="cb_iot">Smart Spaces / IoT</span></label>
-          </div>
+          <label data-i18n="lbl_msg">PROJECT PARAMETERS</label>
+          <textarea id="modal-msg" name="message" rows="3" placeholder="Describe requirements..."></textarea>
         </div>
-
-        <div class="form-group">
-          <label for="modal-msg" data-i18n="lbl_msg">ADDITIONAL DETAILS (E.G. NUMBER OF WORKSTATIONS / SPECIAL REQUIREMENTS)</label>
-          <textarea id="modal-msg" name="message" rows="3" placeholder="Specify workstation count, integration preferences or custom scope..."></textarea>
-        </div>
-
-        <!-- CONSENTIMENTO LGPD / GDPR -->
         <div class="lgpd-consent">
-          <input type="checkbox" id="lgpd_agree" name="lgpd_consent" value="given" required>
-          <label for="lgpd_agree" data-i18n="lbl_lgpd">I consent to the processing of my personal data in accordance with LGPD &amp; GDPR privacy guidelines for proposal requests.</label>
+          <input type="checkbox" id="lgpd_agree" required>
+          <label for="lgpd_agree" data-i18n="lbl_lgpd">I consent to LGPD & GDPR privacy guidelines for proposal requests.</label>
         </div>
-
-        <button type="submit" class="btn-submit" id="btn-submit-text" data-i18n="btn_send">Submit Request</button>
+        <button type="submit" class="btn-submit" data-i18n="btn_send">Submit Request</button>
       </form>
     </div>
-
-    <!-- MENSAGEM DE CONFIRMAÇÃO ELEGANTE (ENTERPRISE) -->
-    <div id="modal-success" class="modal-success-state">
-      <div style="font-size:32px;margin-bottom:12px;">✓</div>
-      <h4 data-i18n="succ_h">Request Received</h4>
-      <p data-i18n="succ_p">Thank you for reaching out. A PrimeOps solutions architect has received your parameters and will respond with a tailored scope within 2 business hours.</p>
+    <div id="modal-success" style="display:none;text-align:center;padding:20px;">
+      <h4>Request Submitted</h4>
+      <p style="color:var(--slate);font-size:14px;margin-top:10px;">Our engineering team will review your parameters and reach out shortly.</p>
     </div>
-
   </div>
-</div>
-
-<!-- WIDGET FLUTUANTE CORPORATIVO DISCRETO -->
-<div class="contact-float-corp" onclick="openModal('Executive Support Widget')" aria-label="Executive Support">
-  <span class="pulse-dot"></span>
-  <span data-i18n="float_txt">Executive Support</span>
 </div>
 
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div class="footer-brand">
-        <div class="fb1">PRIMEOPS</div>
-        <div class="fb2">Operational Intelligence &amp; Exposure Management</div>
-      </div>
+      <div class="footer-brand"><div class="fb1">PRIMEOPS</div><div class="fb2">Operational Intelligence &amp; Exposure Management</div></div>
       <div class="footer-links">
-        <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
-        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-        <a href="#method" data-i18n="nav_method">Method</a>
-        <a href="#whatwedo" data-i18n="nav_intel">Intelligence</a>
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a onclick="openModal('Footer Contact')" style="cursor:pointer;" data-i18n="nav_contact">Contact</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#method">Method</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>
-        <span data-i18n="footer_rights">© 2026 PrimeOps LLC. All rights reserved. Covered by Errors &amp; Omissions (E&amp;O) Insurance.</span>
-        <div class="lgpd-footer" data-i18n="lgpd_footer_text">
-          Data Processing Notice: PrimeOps complies with LGPD (Lei Geral de Proteção de Dados - Lei 13.709/2018) and EU GDPR standards. Data collected is exclusively used for contractual proposals and service communication.
-        </div>
-      </div>
-      <span>PrimeOps LLC</span>
+      <div>© 2026 PrimeOps LLC. All rights reserved. Covered by E&amp;O Insurance.</div>
     </div>
   </div>
 </footer>
 
 <script>
-// CONFIGURAÇÃO FUTURA DO N8N
-const CONFIG = {
-  n8nWebhookUrl: "" 
-};
-
 const translations = {
   en: {
     nav_solutions:"Solutions", nav_pricing:"Products & Pricing", nav_method:"Method", nav_intel:"Intelligence", nav_about:"About", nav_contact:"Contact",
-    hero_eyebrow:"OPERATIONAL INTELLIGENCE",
-    hero_title:"Understand your environment.<br>Improve your operations.<br>Reduce exposure.",
+    hero_eyebrow:"OPERATIONAL INTELLIGENCE", hero_title:"Understand your environment.<br>Improve your operations.<br>Reduce exposure.",
     hero_sub:"PrimeOps combines operational intelligence, observability and exposure management to help organizations understand what is happening before they decide what to change.",
     hero_cta1:"View Products & Pricing →", hero_cta2:"Our Method →",
     m1:"Uptime SLA Monitoring", m2:"AI Agent Response Time", m3:"Cloud Encryption Standard", m4:"Professional Liability Insured",
-    diag_infra:"Infrastructure", diag_telemetry:"Telemetry", diag_exposure:"Exposure",
-    diag_intelligence:"INTELLIGENCE", diag_decision:"DECISION",
-    problem_title:"Technology creates visibility.<br>Intelligence creates understanding.",
-    problem_body:"Modern environments generate enormous amounts of operational data. The challenge is not simply collecting it — it is understanding what matters, what is exposed and what requires action.",
-    pc1_k:"VISIBILITY", pc1_q:"What is happening?",
-    pc2_k:"EXPOSURE", pc2_q:"What is at risk?",
-    pc3_k:"DECISION", pc3_q:"What should change?",
-    wwd_title:"From data to operational intelligence.",
-    wwd1_h:"Observability", wwd1_p:"Understand systems, performance and events.",
-    wwd2_h:"Exposure Management", wwd2_p:"Identify weaknesses, risks and attack surfaces.",
-    wwd3_h:"Operational Intelligence", wwd3_p:"Transform telemetry into actionable insight.",
-    wwd4_h:"Autonomous Workflows", wwd4_p:"Turn knowledge into repeatable automated operations.",
-    agent_preview_h:"Autonomous Conversational Agents in Action",
-    agent_preview_sub:"Replacing legacy bots with context-aware virtual agents that schedule meetings, trigger confirmation calls, and update CRMs seamlessly.",
-    chat_u1:"Hello, I'd like to schedule an executive discovery session for next Tuesday morning.",
-    chat_b1:"I checked the team schedule. Tuesday at 10:00 AM EST is open. Shall I confirm this slot and issue a calendar invite with a voice reminder?",
-    chat_u2:"Yes, please. Send it to john@acme.com.",
-    chat_b2:"Confirmed! Invite sent to john@acme.com, CRM record updated, and automated voice confirmation scheduled 2 hours prior.",
-    ind_h:"Target Environments & Industries", ind_sub:"Tailored operational setups designed for high-requirement sectors.",
-    ind1_h:"Healthcare & Clinics", ind1_p:"Autonomous booking agents, patient confirmation calls, and HIPAA/LGPD-aligned cloud backup.",
-    ind2_h:"Legal & Financial Offices", ind2_p:"Encrypted cloud drive, Active Directory server management, and 24/7 lead qualification agents.",
-    ind3_h:"Logistics & Services", ind3_p:"Active NOC server monitoring, automated WhatsApp/SMS status triggers, and managed helpdesk.",
-    ind4_h:"Smart Spaces & IoT", ind4_p:"Industrial telemetry sensoring, access control systems, and residential automation setup.",
-    method_title:"A method before a solution.",
-    method_sub:"PrimeOps approaches technology through understanding, evidence and controlled execution.",
-    method_quote:"Think before acting. Understand before changing. Document to evolve.",
-    sol_title:"Solutions", sol_sub:"Four areas of work, applied together against the same map.",
-    sol1_h:"Operational Visibility", sol1_p:"Monitoring, telemetry, hardware setup and network reorganization for SMBs and enterprise environments.",
-    sol2_h:"Managed IT & Windows Admin", sol2_p:"Windows Server administration, active directory, automated data backups and infrastructure maintenance.",
-    sol3_h:"AI Conversational Agents & Scheduling", sol3_p:"Autonomous customer service virtual agents, calendar booking orchestration, and CRM workflow triggers.",
-    sol4_h:"Smart Spaces & IoT", sol4_p:"Residential and industrial automation, access control systems and telemetry sensoring.",
-    p_title:"Products & Pricing", p_sub:"Enterprise-grade SLAs and competitive tier rates. Choose standalone SaaS or per-device IT support.",
-    p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup (up to 1TB / 20 users).",
-    p1_s:"No setup fee", p1_f1:"Encrypted Cloud Storage", p1_f2:"Daily Redundant Backups", p1_f3:"Self-managed Drive Portal",
-    p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM/WhatsApp workflow triggers.",
-    p2_f1:"Autonomous Conversational Agent", p2_f2:"Automated Calendar Integration", p2_f3:"Optional Voice & SMS Triggers",
-    p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.",
-    p3_s:"Min. 10 Workstations", p3_f1:"10, 20 or 40+ Workstations", p3_f2:"Windows Server Admin & AD", p3_f3:"E&O Covered IT Support",
-    p4_h:"On-Site & Smart IoT", p4_desc:"Hardware setup, network reorganization, or residential & industrial IoT automation projects.",
-    p4_amt:"Custom Scope", p4_s:"Includes Site Survey", p4_f1:"On-Site Network & Hardware", p4_f2:"Industrial & Home Automation", p4_f3:"Wise Invoice (USD / EUR / BRL)",
+    diag_infra:"Infrastructure", diag_telemetry:"Telemetry", diag_exposure:"Exposure", diag_intelligence:"INTELLIGENCE", diag_decision:"DECISION",
+    wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability stream across all active enterprise nodes.",
+    p_title:"Products & Pricing", p_sub:"Select an operational tier to configure requirements with our engineering team.",
+    p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup.", p1_s:"No setup fee",
+    p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM workflow triggers.",
+    p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.", p3_s:"Min. 10 Workstations",
+    p4_h:"On-Site & Smart IoT", p4_desc:"Hardware setup, network reorganization, or residential & industrial IoT automation projects.", p4_s:"Includes Site Survey",
     btn_stripe:"Request Drive Setup", btn_scope:"Configure Agent Scope", btn_quote:"Get Per-Device Quote", btn_wise:"Request Custom Invoice",
-    ev_title:"Built around measurable outcomes.",
-    ev1_k:"Visibility", ev1_p:"Know what is happening.",
-    ev2_k:"Context", ev2_p:"Understand why it matters.",
-    ev3_k:"Action", ev3_p:"Know what should change.",
-    ev4_k:"Standardization", ev4_p:"Make improvement repeatable.",
-    about_kicker:"ABOUT PRIMEOPS",
-    about_title:"Built to understand before changing.",
-    about_body:"PrimeOps was created around a simple principle: technology decisions become stronger when they are based on understanding, evidence and context.",
-    cta_title:"UNDERSTAND BEFORE YOU CHANGE.", cta_sub:"Let's turn complexity into intelligence.", cta_btn:"Talk to PrimeOps",
-    modal_h:"Request Proposal / Scope", modal_p:"Select the services and features you need for a tailored proposal.",
-    lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_services:"SELECT REQUIRED SERVICES / FEATURES:", 
-    cb_bot:"AI Virtual Agent", cb_cal:"Calendar Orchestration", cb_voice:"Voice Confirmation Calls", 
-    cb_msg:"WhatsApp / SMS Alerts", cb_it:"Managed IT / Helpdesk", cb_drive:"Cloud Drive & Backup", cb_iot:"Smart Spaces / IoT",
-    lbl_msg:"ADDITIONAL DETAILS (E.G. NUMBER OF WORKSTATIONS / SPECIAL REQUIREMENTS)", 
-    lbl_lgpd:"I consent to the processing of my personal data in accordance with LGPD & GDPR privacy guidelines for proposal requests.",
-    btn_send:"Submit Request",
-    ph_name:"John Doe / Acme Corp", ph_email:"john@company.com", ph_msg:"Specify workstation count, integration preferences or custom scope...",
-    succ_h:"Request Received", succ_p:"Thank you for reaching out. A PrimeOps solutions architect has received your parameters and will respond with a tailored scope within 2 business hours.",
-    float_txt:"Executive Support",
-    footer_rights:"© 2026 PrimeOps LLC. All rights reserved. Covered by Errors & Omissions (E&O) Insurance.",
-    lgpd_footer_text:"Data Processing Notice: PrimeOps complies with LGPD (Lei Geral de Proteção de Dados - Lei 13.709/2018) and EU GDPR standards. Data collected is exclusively used for contractual proposals and service communication."
+    modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
+    lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
+    lbl_lgpd:"I consent to LGPD & GDPR privacy guidelines for proposal requests.", btn_send:"Submit Request"
   },
   pt: {
     nav_solutions:"Soluções", nav_pricing:"Produtos & Preços", nav_method:"Método", nav_intel:"Inteligência", nav_about:"Sobre", nav_contact:"Contato",
-    hero_eyebrow:"INTELIGÊNCIA OPERACIONAL",
-    hero_title:"Entenda seu ambiente.<br>Melhore suas operações.<br>Reduza a exposição.",
+    hero_eyebrow:"INTELIGÊNCIA OPERACIONAL", hero_title:"Entenda seu ambiente.<br>Melhore suas operações.<br>Reduza a exposição.",
     hero_sub:"A PrimeOps combina inteligência operacional, observabilidade e gestão de exposição para ajudar organizações a entender o que está acontecendo antes de decidir o que mudar.",
     hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
-    m1:"Monitoramento com SLA de Uptime", m2:"Tempo de Resposta do Agente IA", m3:"Padrão de Criptografia Cloud", m4:"Seguro de Responsabilidade Civil E&O",
-    diag_infra:"Infraestrutura", diag_telemetry:"Telemetria", diag_exposure:"Exposição",
-    diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO",
-    problem_title:"Tecnologia cria visibilidade.<br>Inteligência cria entendimento.",
-    problem_body:"Ambientes modernos geram uma quantidade enorme de dados operacionais. O desafio não é apenas coletar esses dados — é entender o que importa, o que está exposto e o que exige ação.",
-    pc1_k:"VISIBILIDADE", pc1_q:"O que está acontecendo?",
-    pc2_k:"EXPOSIÇÃO", pc2_q:"O que está em risco?",
-    pc3_k:"DECISÃO", pc3_q:"O que deve mudar?",
-    wwd_title:"Do dado à inteligência operacional.",
-    wwd1_h:"Observabilidade", wwd1_p:"Entenda sistemas, desempenho e eventos.",
-    wwd2_h:"Gestão de Exposição", wwd2_p:"Identifique fragilidades, riscos e superfícies de ataque.",
-    wwd3_h:"Inteligência Operacional", wwd3_p:"Transforme telemetria em decisão acionável.",
-    wwd4_h:"Fluxos Autônomos", wwd4_p:"Transforme conhecimento em operações automáticas e repetíveis.",
-    agent_preview_h:"Agentes Conversacionais Autônomos em Ação",
-    agent_preview_sub:"Substituindo robôs antigos por agentes virtuais com inteligência de contexto que agendam reuniões, acionam chamadas por voz e atualizam o CRM.",
-    chat_u1:"Olá, gostaria de agendar uma reunião de demonstração para a próxima terça de manhã.",
-    chat_b1:"Verifiquei a agenda da equipe. Terça-feira às 10:00 está livre. Posso confirmar este horário e enviar o convite de calendário com lembrete por voz?",
-    chat_u2:"Sim, por favor. Pode enviar para joao@acme.com.br.",
-    chat_b2:"Confirmado! Convite enviado para joao@acme.com.br, registro no CRM atualizado e confirmação automática por voz agendada para 2 horas antes.",
-    ind_h:"Setores Atendidos & Ambiências", ind_sub:"Estruturas operacionais desenhadas para setores de alta exigência.",
-    ind1_h:"Saúde & Clínicas", ind1_p:"Agentes autônomos de agendamento, chamadas de confirmação e backup em nuvem conforme a LGPD.",
-    ind2_h:"Advocacia & Finanças", ind2_p:"Drive corporativo criptografado, gerenciamento de servidores Active Directory e triagem 24/7.",
-    ind3_h:"Logística & Serviços", ind3_p:"Monitoramento ativo de servidores NOC, alertas automáticos via WhatsApp/SMS e Helpdesk.",
-    ind4_h:"Espaços Inteligentes & IoT", ind4_p:"Sensoriamento de telemetria industrial, sistemas de controle de acesso e automação predial.",
-    method_title:"Um método antes de uma solução.",
-    method_sub:"A PrimeOps trata tecnologia com entendimento, evidência e execução controlada.",
-    method_quote:"Pensar antes de agir. Entender antes de mudar. Documentar para evoluir.",
-    sol_title:"Soluções", sol_sub:"Quatro frentes de trabalho, aplicadas juntas sobre o mesmo mapa.",
-    sol1_h:"Visibilidade Operacional", sol1_p:"Monitoramento, telemetria, instalação de equipamentos e reorganização de redes corporativas.",
-    sol2_h:"TI Gerenciada & Windows Admin", sol2_p:"Administração de Windows Server, Active Directory, backups de dados automatizados e suporte contínuo.",
-    sol3_h:"Agentes Conversacionais & Agendamento", sol3_p:"Agentes virtuais autônomos de atendimento, orquestração de agenda e integração com CRM.",
-    sol4_h:"Espaços Inteligentes & IoT", sol4_p:"Automação residencial e industrial, controle de acesso e sensoriamento de telemetria.",
-    p_title:"Produtos & Preços", p_sub:"SLAs de nível corporativo e preços regionalizados. Escolha serviços avulsos ou suporte por máquina.",
-    p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento corporativo seguro de alta velocidade e rotinas automáticas de backup (até 1TB / 20 usuários).",
-    p1_s:"Sem taxa de instalação", p1_f1:"Armazenamento Criptografado", p1_f2:"Backups Diários Redundantes", p1_f3:"Painel de Drive Gerenciável",
-    p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, orquestração de agenda e chamadas opcionais de confirmação por voz e WhatsApp.",
-    p2_s:"Taxa Única de Setup R$ 1.500", p2_f1:"Agente Conversacional Autônomo", p2_f2:"Integração Automática com Agenda", p2_f3:"Gatilhos de Voz e SMS Opcionais",
-    p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte de TI remoto completo, Windows Admin, manutenção de servidores e monitoramento ativo.",
-    p3_s:"Mínimo de 10 Computadores", p3_f1:"10, 20 ou 40+ Computadores", p3_f2:"Administração Windows Server & AD", p3_f3:"Suporte Coberto por Seguro E&O",
-    p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes locais, instalação de equipamentos ou automação residencial e industrial.",
-    p4_amt:"Projeto Sob Medida", p4_s:"Inclui Estudo de Viabilidade", p4_f1:"Cabeamento & Infraestrutura Local", p4_f2:"Automação Residencial e Industrial", p4_f3:"Fatura via Wise (USD / EUR / BRL)",
-    btn_stripe:"Solicitar Setup de Drive", btn_scope:"Configurar Escopo do Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
-    ev_title:"Construído em torno de resultados mensuráveis.",
-    ev1_k:"Visibilidade", ev1_p:"Saiba o que está acontecendo.",
-    ev2_k:"Contexto", ev2_p:"Entenda por que isso importa.",
-    ev3_k:"Ação", ev3_p:"Saiba o que deve mudar.",
-    ev4_k:"Padronização", ev4_p:"Torne a melhoria repetível.",
-    about_kicker:"SOBRE A PRIMEOPS",
-    about_title:"Construída para entender antes de mudar.",
-    about_body:"A PrimeOps foi criada em torno de um princípio simples: decisões de tecnologia ficam mais fortes quando baseadas em entendimento, evidência e contexto.",
-    cta_title:"ENTENDA ANTES DE MUDAR.", cta_sub:"Vamos transformar complexidade em inteligência.", cta_btn:"Falar com a PrimeOps",
-    modal_h:"Solicitar Orçamento / Escopo", modal_p:"Selecione os serviços e recursos necessários para uma proposta sob medida.",
-    lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_services:"SELECIONE OS SERVIÇOS REQUERIDOS:",
-    cb_bot:"Agente Virtual IA", cb_cal:"Orquestração de Agenda", cb_voice:"Chamadas de Confirmação por Voz", 
-    cb_msg:"Alertas por WhatsApp / SMS", cb_it:"TI Gerenciada / Helpdesk", cb_drive:"Drive em Nuvem & Backup", cb_iot:"Espaços Inteligentes / IoT",
-    lbl_msg:"DETALHES ADICIONAIS (EX: NÚMERO DE MÁQUINAS / REQUISITOS ESPECIAIS)",
-    lbl_lgpd:"Autorizo o tratamento dos meus dados pessoais de acordo com as diretrizes da LGPD (Lei 13.709/2018) e GDPR para recebimento de propostas.",
-    btn_send:"Enviar Solicitação",
-    ph_name:"João Silva / Empresa Exemplo", ph_email:"joao@empresa.com.br", ph_msg:"Especifique o número de computadores, preferências de integração ou escopo do projeto...",
-    succ_h:"Solicitação Recebida", succ_p:"Obrigado pelo contato. Um arquiteto de soluções da PrimeOps recebeu os parâmetros do seu projeto e enviará uma proposta detalhada em até 2 horas úteis.",
-    float_txt:"Atendimento Corporativo",
-    footer_rights:"© 2026 PrimeOps LLC. Todos os direitos reservados. Coberto por Seguro de Responsabilidade Profissional (E&O).",
-    lgpd_footer_text:"Aviso de Tratamento de Dados: A PrimeOps cumpre rigorosamente as diretrizes da LGPD (Lei 13.709/2018) e GDPR europeu. Os dados coletados destinam-se exclusivamente à elaboração de propostas e suporte contratual."
+    m1:"Monitoramento SLA Uptime", m2:"Resposta do Agente IA", m3:"Padrão Criptográfico Cloud", m4:"Seguro Responsabilidade Civil E&O",
+    diag_infra:"Infraestrutura", diag_telemetry:"Telemetria", diag_exposure:"Exposição", diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO",
+    wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Stream de observabilidade em tempo real em todos os nós ativos.",
+    p_title:"Produtos & Preços", p_sub:"Selecione um nível operacional para configurar requisitos com nossa equipe.",
+    p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup.", p1_s:"Sem taxa de setup",
+    p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, agendamento e gatilhos de CRM.",
+    p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo 10 Máquinas",
+    p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes corporativas e automação industrial/predial.", p4_s:"Inclui Estudo de Viabilidade",
+    btn_stripe:"Solicitar Setup Drive", btn_scope:"Configurar Escopo Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
+    modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
+    lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
+    lbl_lgpd:"Autorizo o tratamento de dados pessoais conforme a LGPD e GDPR.", btn_send:"Enviar Solicitação"
   }
 };
-
-const methodUnits = {
-  en: [["P","Purpose"],["R","Rules"],["I","Impact"],["M","Map"],["E","Execute"],["O","Observe"],["PS","Standardize"]],
-  pt: [["P","Propósito"],["R","Regras"],["I","Impacto"],["M","Mapa"],["E","Execução"],["O","Observação"],["PS","Padronizar"]]
-};
-
-function renderMethod(lang){
-  const row = document.getElementById('method-row');
-  if(!row) return;
-  row.innerHTML = '';
-  const units = methodUnits[lang] || methodUnits['en'];
-  units.forEach((unit, idx) => {
-    if(idx > 0){
-      const conn = document.createElement('div');
-      conn.className = 'method-connector';
-      row.appendChild(conn);
-    }
-    const u = document.createElement('div');
-    u.className = 'method-unit';
-    u.innerHTML = `<span class="mletter">${unit[0]}</span><span class="mword">${unit[1]}</span>`;
-    row.appendChild(u);
-  });
-}
-
-function updatePrices(lang) {
-  const p1Amt = document.getElementById('p1-amt');
-  const p2Amt = document.getElementById('p2-amt');
-  const p2Setup = document.getElementById('p2-setup');
-  const p3Amt = document.getElementById('p3-amt');
-
-  if (lang === 'pt') {
-    if(p1Amt) p1Amt.innerHTML = 'R$ 250 <span>/ mês</span>';
-    if(p2Amt) p2Amt.innerHTML = 'R$ 450 <span>/ mês</span>';
-    if(p2Setup) p2Setup.innerText = 'Taxa Única de Setup R$ 1.500';
-    if(p3Amt) p3Amt.innerHTML = 'R$ 80 <span>/ máquina / mês</span>';
-  } else {
-    if(p1Amt) p1Amt.innerHTML = '$69 <span>/ mo</span>';
-    if(p2Amt) p2Amt.innerHTML = '$99 <span>/ mo</span>';
-    if(p2Setup) p2Setup.innerText = '$499 One-time Setup Fee';
-    if(p3Amt) p3Amt.innerHTML = '$45 <span>/ workstation / mo</span>';
-  }
-}
-
-function selectCard(cardElement, serviceName) {
-  document.querySelectorAll('.price-card').forEach(c => c.classList.remove('selected'));
-  cardElement.classList.add('selected');
-  openModal(serviceName);
-}
-
-function sanitizeInput(str) {
-  const temp = document.createElement('div');
-  temp.textContent = str;
-  return temp.innerHTML;
-}
 
 function setLang(lang){
-  const rootElement = document.getElementById('html-root');
-  if(rootElement) rootElement.lang = lang;
-  
-  const btnEn = document.getElementById('btn-en');
-  const btnPt = document.getElementById('btn-pt');
-  if(btnEn) btnEn.classList.toggle('active', lang === 'en');
-  if(btnPt) btnPt.classList.toggle('active', lang === 'pt');
+  document.getElementById('html-root').lang = lang;
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  document.getElementById('btn-pt').classList.toggle('active', lang==='pt');
   
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if(translations[lang] && translations[lang][key] !== undefined){
-      el.innerHTML = translations[lang][key];
-    }
+    if(translations[lang] && translations[lang][key]) el.innerHTML = translations[lang][key];
   });
-
-  const inputName = document.getElementById('input-name');
-  const inputEmail = document.getElementById('input-email');
-  const inputMsg = document.getElementById('modal-msg');
-  if(inputName) inputName.placeholder = translations[lang].ph_name;
-  if(inputEmail) inputEmail.placeholder = translations[lang].ph_email;
-  if(inputMsg && !inputMsg.value.trim()) inputMsg.placeholder = translations[lang].ph_msg;
-
-  updatePrices(lang);
-  renderMethod(lang);
 }
 
 function openModal(serviceName = '') {
-  const modal = document.getElementById('contact-modal');
-  const msgField = document.getElementById('modal-msg');
-  const formContent = document.getElementById('modal-form-content');
-  const successContent = document.getElementById('modal-success');
-  const rootElement = document.getElementById('html-root');
-  const lang = rootElement ? rootElement.lang : 'en';
-  
-  // Reseta visual do modal
-  if(formContent) formContent.style.display = 'block';
-  if(successContent) successContent.style.display = 'none';
-  document.querySelectorAll('input[name="scope[]"]').forEach(cb => cb.checked = false);
-
-  if(serviceName) {
-    const safeServiceName = sanitizeInput(serviceName);
-    const prefix = lang === 'pt' ? 'Interesse em:' : 'Interest in:';
-    const notes = lang === 'pt' ? 'Notas adicionais:' : 'Additional notes:';
-    if(msgField) msgField.value = `${prefix} ${safeServiceName}.\n${notes} `;
-
-    // Marca caixas de seleção automáticas
-    if(serviceName.includes('Agent') || serviceName.includes('IA')) {
-      const cb = document.getElementById('cb-bot'); if(cb) cb.checked = true;
-    }
-    if(serviceName.includes('IT') || serviceName.includes('TI')) {
-      const cb = document.getElementById('cb-it'); if(cb) cb.checked = true;
-    }
-    if(serviceName.includes('Drive')) {
-      const cb = document.getElementById('cb-drive'); if(cb) cb.checked = true;
-    }
-    if(serviceName.includes('IoT') || serviceName.includes('Smart')) {
-      const cb = document.getElementById('cb-iot'); if(cb) cb.checked = true;
-    }
-  }
-
-  if(modal) modal.classList.add('active');
+  document.getElementById('modal-form-content').style.display = 'block';
+  document.getElementById('modal-success').style.display = 'none';
+  if(serviceName) document.getElementById('modal-msg').value = `Parameter Interest: ${serviceName}\nDetails: `;
+  document.getElementById('contact-modal').classList.add('active');
 }
 
 function closeModal() {
-  const modal = document.getElementById('contact-modal');
-  if(modal) modal.classList.remove('active');
+  document.getElementById('contact-modal').classList.remove('active');
 }
 
 function handleFormSubmit(event) {
   event.preventDefault();
-
   const form = event.target;
-  const lang = document.getElementById('html-root').lang || 'en';
-  const name = document.getElementById('input-name').value;
-  const email = document.getElementById('input-email').value;
-  const msg = document.getElementById('modal-msg').value;
-
-  const selectedServices = [];
-  document.querySelectorAll('input[name="scope[]"]:checked').forEach(cb => {
-    selectedServices.push(cb.value);
+  fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept':'application/json'} })
+  .then(() => {
+    document.getElementById('modal-form-content').style.display = 'none';
+    document.getElementById('modal-success').style.display = 'block';
   });
-
-  // 1. Envio de backup para o Formspree
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).catch(err => console.error('Formspree dispatch error:', err));
-
-  // 2. Envio opcional para o n8n
-  if (CONFIG.n8nWebhookUrl) {
-    fetch(CONFIG.n8nWebhookUrl, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        services: selectedServices,
-        message: msg,
-        language: lang,
-        submittedAt: new Date().toISOString()
-      })
-    }).catch(err => console.error('n8n dispatch error:', err));
-  }
-
-  // 3. Exibição elegante da confirmação na tela (Padrão Enterprise)
-  const formContent = document.getElementById('modal-form-content');
-  const successContent = document.getElementById('modal-success');
-  if(formContent) formContent.style.display = 'none';
-  if(successContent) successContent.style.display = 'block';
 }
 
-// SIMULAÇÃO DO DASHBOARD NOC EM TEMPO REAL
+// ANIMAÇÃO DE TELEMETRIA DO NOC (NÍVEL ENTERPRISE)
 setInterval(() => {
-  const cpu = Math.floor(Math.random() * 20) + 32;
-  const ram = Math.floor(Math.random() * 10) + 50;
-  const net = (Math.random() * 0.4 + 1.1).toFixed(1);
+  const throughput = (Math.random() * 0.5 + 1.2).toFixed(2);
+  const latency = (Math.random() * 4 + 10.1).toFixed(1);
+  
+  document.getElementById('val-throughput').innerText = `${throughput} GB/s`;
+  document.getElementById('val-latency').innerText = `${latency} ms`;
 
-  const cpuEl = document.getElementById('stat-cpu');
-  const fillCpu = document.getElementById('fill-cpu');
-  const ramEl = document.getElementById('stat-ram');
-  const fillRam = document.getElementById('fill-ram');
-  const netEl = document.getElementById('stat-net');
-  const fillNet = document.getElementById('fill-net');
-
-  if(cpuEl && fillCpu) { cpuEl.innerText = cpu + '%'; fillCpu.style.width = cpu + '%'; }
-  if(ramEl && fillRam) { ramEl.innerText = ram + '%'; fillRam.style.width = ram + '%'; }
-  if(netEl && fillNet) { netEl.innerText = net + ' Gbps'; fillNet.style.width = (net * 50) + '%'; }
-
-  const liveLine = document.getElementById('live-line');
-  const liveArea = document.getElementById('live-area');
-  if(liveLine && liveArea) {
-    const y1 = Math.floor(Math.random() * 30) + 35;
-    const y2 = Math.floor(Math.random() * 40) + 25;
-    const y3 = Math.floor(Math.random() * 30) + 45;
-    const path = `M0,60 L100,${y1} L200,${y2} L300,${y3} L400,${y1} L500,40`;
-    liveLine.setAttribute('d', path);
-    liveArea.setAttribute('d', path + ' L500,130 L0,130 Z');
-  }
-}, 3000);
+  const y1 = Math.floor(Math.random() * 40) + 20;
+  const y2 = Math.floor(Math.random() * 50) + 30;
+  const y3 = Math.floor(Math.random() * 30) + 15;
+  document.getElementById('svg-line-1').setAttribute('d', `M0,50 L100,${y1} L200,${y2} L300,${y3} L400,65 L500,35`);
+}, 2500);
 
 setLang('en');
 </script>
