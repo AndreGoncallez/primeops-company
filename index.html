@@ -93,7 +93,7 @@
     color:var(--navy);letter-spacing:0.01em;
   }
   .navlinks{display:flex;gap:38px;}
-  .navlinks a{font-size:14px;color:var(--slate);}
+  .navlinks a{font-size:14px;color:var(--slate);transition:color .15s;}
   .navlinks a:hover{color:var(--navy);}
   .nav-right{display:flex;align-items:center;gap:26px;}
   .lang-toggle{display:flex;gap:2px;font-family:var(--mono);font-size:11.5px;}
@@ -137,10 +137,10 @@
     background:var(--blue-accent);color:#fff;
     padding:14px 26px;font-size:14px;font-weight:600;
     border-radius:2px;
-    transition:background-color .15s ease;
+    transition:background-color .15s ease, transform .15s ease;
     display:inline-block;cursor:pointer;border:none;
   }
-  .btn-primary:hover{background:var(--blue-accent-hover);}
+  .btn-primary:hover{background:var(--blue-accent-hover);transform:translateY(-1px);}
   .btn-ghost{font-size:14px;color:var(--navy);border-bottom:1px solid var(--line-l);padding-bottom:2px;}
 
   /* DIAGRAM */
@@ -153,7 +153,16 @@
     display:flex;align-items:center;gap:8px;
     font-family:var(--serif);font-size:14px;letter-spacing:0.04em;color:var(--navy);
   }
-  .d-dot{width:6px;height:6px;border-radius:50%;background:var(--copper);}
+  .d-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--copper);
+    box-shadow: 0 0 8px rgba(196,122,58,0.8);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
   .d-trunk{width:1px;height:26px;background:var(--line-l);}
   .d-trunk.short{height:20px;}
   .d-branches{
@@ -201,7 +210,9 @@
   @media (max-width:820px){ .problem-cols{grid-template-columns:1fr;} }
   .problem-col{
     padding:34px 34px 34px 0;border-right:1px solid var(--line-l);
+    transition: background-color 0.2s ease;
   }
+  .problem-col:hover{ background:rgba(244,245,247,0.5); }
   .problem-col:last-child{border-right:none;}
   @media (max-width:820px){ .problem-col{border-right:none;border-bottom:1px solid var(--line-l);padding:28px 0;} }
   .problem-col .pk{font-size:12px;letter-spacing:0.1em;color:var(--copper);font-weight:600;margin-bottom:14px;}
@@ -225,6 +236,71 @@
   .wwd-cell .wnum{font-family:var(--mono);font-size:12px;color:var(--copper);margin-bottom:16px;}
   .wwd-cell h3{font-family:var(--serif);font-size:19px;font-weight:500;color:#F5F6F7;margin-bottom:10px;}
   .wwd-cell p{color:#9BA5B4;font-size:14px;line-height:1.7;max-width:38ch;}
+
+  /* PAINEL DE MONITORAMENTO ANIMADO (NOVA AUTOMAÇÃO VISUAL) */
+  .telemetry-dashboard {
+    margin-top: 40px;
+    background: #070E1B;
+    border: 1px solid var(--line-d);
+    border-radius: 4px;
+    padding: 24px;
+    font-family: var(--mono);
+  }
+  .dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line-d);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #8A96A8;
+  }
+  .dash-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width:760px){ .dash-grid{grid-template-columns:1fr;} }
+  
+  .graph-container {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--line-d);
+    border-radius: 2px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .chart-svg { width: 100%; height: 120px; }
+  .chart-line {
+    fill: none;
+    stroke: var(--copper);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: all 0.5s ease;
+  }
+  .chart-area {
+    fill: url(#chart-gradient);
+    opacity: 0.15;
+  }
+
+  .stat-bars { display: flex; flex-direction: column; gap: 14px; }
+  .bar-item { font-size: 11px; color: #A9B2C0; }
+  .bar-info { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .bar-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--blue-accent); width: 45%; transition: width 1s ease; }
+  
+  .live-logs {
+    margin-top: 16px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 2px;
+    padding: 10px 14px;
+    font-size: 11px;
+    color: #4CAF50;
+    height: 48px;
+    overflow: hidden;
+    line-height: 1.5;
+  }
 
   /* AGENT PREVIEW */
   .agent-preview-section{
@@ -259,7 +335,9 @@
   @media (max-width:500px){ .ind-grid{grid-template-columns:1fr;} }
   .ind-card{
     border:1px solid var(--line-l);padding:24px;background:var(--white);
+    transition: transform 0.2s ease, border-color 0.2s ease;
   }
+  .ind-card:hover { transform: translateY(-2px); border-color: var(--blue-accent); }
   .ind-card .icon{font-size:22px;margin-bottom:12px;color:var(--copper);}
   .ind-card h4{font-family:var(--serif);color:var(--navy);font-size:16px;margin-bottom:8px;}
   .ind-card p{font-size:12.5px;color:var(--slate);line-height:1.5;}
@@ -301,7 +379,8 @@
     margin-top:8px;
   }
   @media (max-width:760px){ .sol-grid{grid-template-columns:1fr;} }
-  .sol-cell{background:var(--paper);padding:36px 34px;}
+  .sol-cell{background:var(--paper);padding:36px 34px; transition: background 0.2s ease;}
+  .sol-cell:hover{ background: #EAECEF; }
   .sol-cell h3{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--navy);margin-bottom:12px;}
   .sol-cell p{color:var(--slate);font-size:14px;line-height:1.7;}
 
@@ -317,7 +396,9 @@
     border:1px solid var(--line-l);border-radius:2px;
     padding:30px 22px;background:var(--white);
     display:flex;flex-direction:column;justify-content:space-between;
+    transition: transform 0.2s ease;
   }
+  .price-card:hover { transform: translateY(-3px); }
   .price-card.featured{
     border-color:var(--blue-accent);
     box-shadow:0 10px 30px rgba(10,22,40,0.05);
@@ -335,8 +416,11 @@
   .btn-card{
     width:100%;text-align:center;padding:11px 0;font-size:12.5px;font-weight:600;
     border:1px solid var(--navy);color:var(--navy);border-radius:2px;display:block;cursor:pointer;
+    background: transparent; transition: all 0.2s ease;
   }
+  .btn-card:hover { background: var(--navy); color: #fff; }
   .btn-card.primary{background:var(--navy);color:#fff;}
+  .btn-card.primary:hover{background:var(--blue-accent);border-color:var(--blue-accent);}
   .btn-card.wise{background:var(--paper);border-color:var(--line-l);color:var(--navy);}
 
   /* EVIDENCE */
@@ -403,7 +487,9 @@
 
   .btn-submit{
     width:100%;padding:12px;background:var(--navy);color:#fff;font-weight:600;font-size:14px;border:none;cursor:pointer;
+    transition: background 0.2s ease;
   }
+  .btn-submit:hover{ background: var(--blue-accent); }
 
   /* BOTÕES FLUTUANTES DE CONTATO (WHATSAPP PT / SMS EN) */
   .contact-float {
@@ -464,7 +550,7 @@
         <button id="btn-en" class="active" onclick="setLang('en')" aria-label="Switch to English">EN ($)</button>
         <button id="btn-pt" onclick="setLang('pt')" aria-label="Mudar para Português">PT (R$)</button>
       </div>
-      <a class="btn-contact" onclick="openModal()" data-i18n="nav_contact">Contact</a>
+      <a class="btn-contact" onclick="openModal('General Contact')" data-i18n="nav_contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -575,6 +661,47 @@
         <p data-i18n="wwd4_p">Turn knowledge into repeatable automated operations.</p>
       </div>
     </div>
+
+    <!-- PAINEL DE TELEMETRIA E MONITORAMENTO ANIMADO -->
+    <div class="telemetry-dashboard">
+      <div class="dash-header">
+        <span>PRIMEOPS // NOC NOC REAL-TIME STREAM</span>
+        <span style="color:#4CAF50;">● SYSTEM ACTIVE</span>
+      </div>
+      <div class="dash-grid">
+        <div class="graph-container">
+          <svg class="chart-svg" viewBox="0 0 500 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C47A3A" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#C47A3A" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path id="live-area" class="chart-area" d="M0,120 L0,60 L100,40 L200,80 L300,30 L400,70 L500,40 L500,120 Z" />
+            <path id="live-line" class="chart-line" d="M0,60 L100,40 L200,80 L300,30 L400,70 L500,40" />
+          </svg>
+        </div>
+        <div class="stat-bars">
+          <div class="bar-item">
+            <div class="bar-info"><span>CPU LOAD</span><span id="stat-cpu">38%</span></div>
+            <div class="bar-bg"><div id="fill-cpu" class="bar-fill" style="width: 38%;"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-info"><span>RAM USAGE</span><span id="stat-ram">52%</span></div>
+            <div class="bar-bg"><div id="fill-ram" class="bar-fill" style="width: 52%; background: var(--copper);"></div></div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-info"><span>THROUGHPUT</span><span id="stat-net">1.2 Gbps</span></div>
+            <div class="bar-bg"><div id="fill-net" class="bar-fill" style="width: 74%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="live-logs" id="log-terminal">
+        [16:08:10] NOC: Active health check pinged 42 enterprise servers - Status 200 OK<br>
+        [16:08:14] AI AGENT: Executive meeting confirmed for client #1084
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -619,22 +746,22 @@
       <p data-i18n="ind_sub">Tailored operational setups designed for high-requirement sectors.</p>
     </div>
     <div class="ind-grid">
-      <div class="ind-card">
+      <div class="ind-card" onclick="openModal('Healthcare & Clinics')" style="cursor:pointer;">
         <div class="icon">🏥</div>
         <h4 data-i18n="ind1_h">Healthcare &amp; Clinics</h4>
         <p data-i18n="ind1_p">Autonomous booking agents, patient confirmation calls, and HIPAA/LGPD-aligned cloud backup.</p>
       </div>
-      <div class="ind-card">
+      <div class="ind-card" onclick="openModal('Legal & Financial')" style="cursor:pointer;">
         <div class="icon">⚖️</div>
         <h4 data-i18n="ind2_h">Legal &amp; Financial Offices</h4>
         <p data-i18n="ind2_p">Encrypted cloud drive, Active Directory server management, and 24/7 lead qualification agents.</p>
       </div>
-      <div class="ind-card">
+      <div class="ind-card" onclick="openModal('Logistics & Services')" style="cursor:pointer;">
         <div class="icon">🚛</div>
         <h4 data-i18n="ind3_h">Logistics &amp; Services</h4>
         <p data-i18n="ind3_p">Active NOC server monitoring, automated WhatsApp/SMS status triggers, and managed helpdesk.</p>
       </div>
-      <div class="ind-card">
+      <div class="ind-card" onclick="openModal('Smart Spaces & IoT')" style="cursor:pointer;">
         <div class="icon">🏭</div>
         <h4 data-i18n="ind4_h">Smart Spaces &amp; IoT</h4>
         <p data-i18n="ind4_p">Industrial telemetry sensoring, access control systems, and residential automation setup.</p>
@@ -650,19 +777,19 @@
       <p data-i18n="sol_sub">Four areas of work, applied together against the same operational map.</p>
     </div>
     <div class="sol-grid">
-      <div class="sol-cell">
+      <div class="sol-cell" onclick="openModal('Operational Visibility')" style="cursor:pointer;">
         <h3 data-i18n="sol1_h">Operational Visibility</h3>
         <p data-i18n="sol1_p">Monitoring, telemetry, hardware setup and network reorganization for SMBs and enterprise environments.</p>
       </div>
-      <div class="sol-cell">
+      <div class="sol-cell" onclick="openModal('Managed IT & Windows Admin')" style="cursor:pointer;">
         <h3 data-i18n="sol2_h">Managed IT &amp; Windows Admin</h3>
         <p data-i18n="sol2_p">Windows Server administration, active directory, automated data backups and infrastructure maintenance.</p>
       </div>
-      <div class="sol-cell">
+      <div class="sol-cell" onclick="openModal('AI Conversational Agents')" style="cursor:pointer;">
         <h3 data-i18n="sol3_h">AI Conversational Agents &amp; Scheduling</h3>
         <p data-i18n="sol3_p">Autonomous customer service virtual agents, calendar booking orchestration, and CRM workflow triggers.</p>
       </div>
-      <div class="sol-cell">
+      <div class="sol-cell" onclick="openModal('Smart Spaces & IoT')" style="cursor:pointer;">
         <h3 data-i18n="sol4_h">Smart Spaces &amp; IoT</h3>
         <p data-i18n="sol4_p">Residential and industrial automation, access control systems and telemetry sensoring.</p>
       </div>
@@ -693,7 +820,7 @@
             <li data-i18n="p1_f3">Self-managed Drive Portal</li>
           </ul>
         </div>
-        <a href="https://buy.stripe.com/SEU_LINK_DRIVE" target="_blank" rel="noopener noreferrer" class="btn-card" data-i18n="btn_stripe">Subscribe via Stripe</a>
+        <button onclick="openModal('Cloud Drive & Backup Subscription')" class="btn-card" data-i18n="btn_stripe">Request Drive Setup</button>
       </div>
 
       <!-- ITEM 2: AUTOMAÇÃO / AGENTES VIRTUAIS -->
@@ -803,7 +930,7 @@
   <div class="wrap">
     <h2 data-i18n="cta_title">UNDERSTAND BEFORE YOU CHANGE.</h2>
     <p data-i18n="cta_sub">Let's turn operational complexity into intelligence.</p>
-    <button onclick="openModal()" class="btn-primary" data-i18n="cta_btn">Talk to PrimeOps</button>
+    <button onclick="openModal('Direct Executive Inquiry')" class="btn-primary" data-i18n="cta_btn">Talk to PrimeOps</button>
     <div class="email-contacts">
       Direct Contact: <a href="mailto:contact@primeops.company" style="color:#A9B2C0;text-decoration:underline;">contact@primeops.company</a> | 
       Support: <a href="mailto:support@primeops.company" style="color:#A9B2C0;text-decoration:underline;">support@primeops.company</a>
@@ -831,13 +958,13 @@
       <div class="form-group">
         <label data-i18n="lbl_services">SELECT REQUIRED SERVICES / FEATURES:</label>
         <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="AI Virtual Agent"> <span data-i18n="cb_bot">AI Virtual Agent</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Calendar Orchestration"> <span data-i18n="cb_cal">Calendar Orchestration</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Voice Calls"> <span data-i18n="cb_voice">Voice Confirmation Calls</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="SMS/WhatsApp"> <span data-i18n="cb_msg">WhatsApp / SMS Alerts</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Managed IT"> <span data-i18n="cb_it">Managed IT / Helpdesk</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Cloud Drive"> <span data-i18n="cb_drive">Cloud Drive & Backup</span></label>
-          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Smart IoT"> <span data-i18n="cb_iot">Smart Spaces / IoT</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="AI Virtual Agent" id="cb-bot"> <span data-i18n="cb_bot">AI Virtual Agent</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Calendar Orchestration" id="cb-cal"> <span data-i18n="cb_cal">Calendar Orchestration</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Voice Calls" id="cb-voice"> <span data-i18n="cb_voice">Voice Confirmation Calls</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="SMS/WhatsApp" id="cb-msg"> <span data-i18n="cb_msg">WhatsApp / SMS Alerts</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Managed IT" id="cb-it"> <span data-i18n="cb_it">Managed IT / Helpdesk</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Cloud Drive" id="cb-drive"> <span data-i18n="cb_drive">Cloud Drive & Backup</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="scope[]" value="Smart IoT" id="cb-iot"> <span data-i18n="cb_iot">Smart Spaces / IoT</span></label>
         </div>
       </div>
 
@@ -889,7 +1016,7 @@
         <a href="#method" data-i18n="nav_method">Method</a>
         <a href="#whatwedo" data-i18n="nav_intel">Intelligence</a>
         <a href="#about" data-i18n="nav_about">About</a>
-        <a onclick="openModal()" style="cursor:pointer;" data-i18n="nav_contact">Contact</a>
+        <a onclick="openModal('Footer Contact')" style="cursor:pointer;" data-i18n="nav_contact">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -905,7 +1032,7 @@
 </footer>
 
 <script>
-// CONFIGURAÇÃO FUTURA DO N8N (DEIXE VAZIO POR ENQUANTO; QUANDO FOR USAR O N8N, BASTA PREENCHER A URL AQUI)
+// CONFIGURAÇÃO FUTURA DO N8N (DEIXE VAZIO POR ENQUANTO)
 const CONFIG = {
   n8nWebhookUrl: "" 
 };
@@ -955,4 +1082,325 @@ const translations = {
     p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM/WhatsApp workflow triggers.",
     p2_f1:"Autonomous Conversational Agent", p2_f2:"Automated Calendar Integration", p2_f3:"Optional Voice & SMS Triggers",
     p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.",
-    p3_s:"Min. 10 Workstations",
+    p3_s:"Min. 10 Workstations", p3_f1:"10, 20 or 40+ Workstations", p3_f2:"Windows Server Admin & AD", p3_f3:"E&O Covered IT Support",
+    p4_h:"On-Site & Smart IoT", p4_desc:"Hardware setup, network reorganization, or residential & industrial IoT automation projects.",
+    p4_amt:"Custom Scope", p4_s:"Includes Site Survey", p4_f1:"On-Site Network & Hardware", p4_f2:"Industrial & Home Automation", p4_f3:"Wise Invoice (USD / EUR / BRL)",
+    btn_stripe:"Request Drive Setup", btn_scope:"Configure Agent Scope", btn_quote:"Get Per-Device Quote", btn_wise:"Request Custom Invoice",
+    ev_title:"Built around measurable outcomes.",
+    ev1_k:"Visibility", ev1_p:"Know what is happening.",
+    ev2_k:"Context", ev2_p:"Understand why it matters.",
+    ev3_k:"Action", ev3_p:"Know what should change.",
+    ev4_k:"Standardization", ev4_p:"Make improvement repeatable.",
+    about_kicker:"ABOUT PRIMEOPS",
+    about_title:"Built to understand before changing.",
+    about_body:"PrimeOps was created around a simple principle: technology decisions become stronger when they are based on understanding, evidence and context.",
+    cta_title:"UNDERSTAND BEFORE YOU CHANGE.", cta_sub:"Let's turn complexity into intelligence.", cta_btn:"Talk to PrimeOps",
+    modal_h:"Request Proposal / Scope", modal_p:"Select the services and features you need for a tailored proposal.",
+    lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_services:"SELECT REQUIRED SERVICES / FEATURES:", 
+    cb_bot:"AI Virtual Agent", cb_cal:"Calendar Orchestration", cb_voice:"Voice Confirmation Calls", 
+    cb_msg:"WhatsApp / SMS Alerts", cb_it:"Managed IT / Helpdesk", cb_drive:"Cloud Drive & Backup", cb_iot:"Smart Spaces / IoT",
+    lbl_msg:"ADDITIONAL DETAILS (E.G. NUMBER OF WORKSTATIONS / SPECIAL REQUIREMENTS)", 
+    lbl_lgpd:"I consent to the processing of my personal data in accordance with LGPD & GDPR privacy guidelines for proposal requests.",
+    btn_send:"Submit Request",
+    ph_name:"John Doe / Acme Corp", ph_email:"john@company.com", ph_msg:"Specify workstation count, integration preferences or custom scope...",
+    footer_rights:"© 2026 PrimeOps LLC. All rights reserved. Covered by Errors & Omissions (E&O) Insurance.",
+    lgpd_footer_text:"Data Processing Notice: PrimeOps complies with LGPD (Lei Geral de Proteção de Dados - Lei 13.709/2018) and EU GDPR standards. Data collected is exclusively used for contractual proposals and service communication."
+  },
+  pt: {
+    nav_solutions:"Soluções", nav_pricing:"Produtos & Preços", nav_method:"Método", nav_intel:"Inteligência", nav_about:"Sobre", nav_contact:"Contato",
+    hero_eyebrow:"INTELIGÊNCIA OPERACIONAL",
+    hero_title:"Entenda seu ambiente.<br>Melhore suas operações.<br>Reduza a exposição.",
+    hero_sub:"A PrimeOps combina inteligência operacional, observabilidade e gestão de exposição para ajudar organizações a entender o que está acontecendo antes de decidir o que mudar.",
+    hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
+    m1:"Monitoramento com SLA de Uptime", m2:"Tempo de Resposta do Agente IA", m3:"Padrão de Criptografia Cloud", m4:"Seguro de Responsabilidade Civil E&O",
+    diag_infra:"Infraestrutura", diag_telemetry:"Telemetria", diag_exposure:"Exposição",
+    diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO",
+    problem_title:"Tecnologia cria visibilidade.<br>Inteligência cria entendimento.",
+    problem_body:"Ambientes modernos geram uma quantidade enorme de dados operacionais. O desafio não é apenas coletar esses dados — é entender o que importa, o que está exposto e o que exige ação.",
+    pc1_k:"VISIBILIDADE", pc1_q:"O que está acontecendo?",
+    pc2_k:"EXPOSIÇÃO", pc2_q:"O que está em risco?",
+    pc3_k:"DECISÃO", pc3_q:"O que deve mudar?",
+    wwd_title:"Do dado à inteligência operacional.",
+    wwd1_h:"Observabilidade", wwd1_p:"Entenda sistemas, desempenho e eventos.",
+    wwd2_h:"Gestão de Exposição", wwd2_p:"Identifique fragilidades, riscos e superfícies de ataque.",
+    wwd3_h:"Inteligência Operacional", wwd3_p:"Transforme telemetria em decisão acionável.",
+    wwd4_h:"Fluxos Autônomos", wwd4_p:"Transforme conhecimento em operações automáticas e repetíveis.",
+    agent_preview_h:"Agentes Conversacionais Autônomos em Ação",
+    agent_preview_sub:"Substituindo robôs antigos por agentes virtuais com inteligência de contexto que agendam reuniões, acionam chamadas por voz e atualizam o CRM.",
+    chat_u1:"Olá, gostaria de agendar uma reunião de demonstração para a próxima terça de manhã.",
+    chat_b1:"Verifiquei a agenda da equipe. Terça-feira às 10:00 está livre. Posso confirmar este horário e enviar o convite de calendário com lembrete por voz?",
+    chat_u2:"Sim, por favor. Pode enviar para joao@acme.com.br.",
+    chat_b2:"Confirmado! Convite enviado para joao@acme.com.br, registro no CRM atualizado e confirmação automática por voz agendada para 2 horas antes.",
+    ind_h:"Setores Atendidos & Ambiências", ind_sub:"Estruturas operacionais desenhadas para setores de alta exigência.",
+    ind1_h:"Saúde & Clínicas", ind1_p:"Agentes autônomos de agendamento, chamadas de confirmação e backup em nuvem conforme a LGPD.",
+    ind2_h:"Advocacia & Finanças", ind2_p:"Drive corporativo criptografado, gerenciamento de servidores Active Directory e triagem 24/7.",
+    ind3_h:"Logística & Serviços", ind3_p:"Monitoramento ativo de servidores NOC, alertas automáticos via WhatsApp/SMS e Helpdesk.",
+    ind4_h:"Espaços Inteligentes & IoT", ind4_p:"Sensoriamento de telemetria industrial, sistemas de controle de acesso e automação predial.",
+    method_title:"Um método antes de uma solução.",
+    method_sub:"A PrimeOps trata tecnologia com entendimento, evidência e execução controlada.",
+    method_quote:"Pensar antes de agir. Entender antes de mudar. Documentar para evoluir.",
+    sol_title:"Soluções", sol_sub:"Quatro frentes de trabalho, aplicadas juntas sobre o mesmo mapa.",
+    sol1_h:"Visibilidade Operacional", sol1_p:"Monitoramento, telemetria, instalação de equipamentos e reorganização de redes corporativas.",
+    sol2_h:"TI Gerenciada & Windows Admin", sol2_p:"Administração de Windows Server, Active Directory, backups de dados automatizados e suporte contínuo.",
+    sol3_h:"Agentes Conversacionais & Agendamento", sol3_p:"Agentes virtuais autônomos de atendimento, orquestração de agenda e integração com CRM.",
+    sol4_h:"Espaços Inteligentes & IoT", sol4_p:"Automação residencial e industrial, controle de acesso e sensoriamento de telemetria.",
+    p_title:"Produtos & Preços", p_sub:"SLAs de nível corporativo e preços regionalizados. Escolha serviços avulsos ou suporte por máquina.",
+    p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento corporativo seguro de alta velocidade e rotinas automáticas de backup (até 1TB / 20 usuários).",
+    p1_s:"Sem taxa de instalação", p1_f1:"Armazenamento Criptografado", p1_f2:"Backups Diários Redundantes", p1_f3:"Painel de Drive Gerenciável",
+    p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, orquestração de agenda e chamadas opcionais de confirmação por voz e WhatsApp.",
+    p2_s:"Taxa Única de Setup R$ 1.500", p2_f1:"Agente Conversacional Autônomo", p2_f2:"Integração Automática com Agenda", p2_f3:"Gatilhos de Voz e SMS Opcionais",
+    p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte de TI remoto completo, Windows Admin, manutenção de servidores e monitoramento ativo.",
+    p3_s:"Mínimo de 10 Computadores", p3_f1:"10, 20 ou 40+ Computadores", p3_f2:"Administração Windows Server & AD", p3_f3:"Suporte Coberto por Seguro E&O",
+    p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes locais, instalação de equipamentos ou automação residencial e industrial.",
+    p4_amt:"Projeto Sob Medida", p4_s:"Inclui Estudo de Viabilidade", p4_f1:"Cabeamento & Infraestrutura Local", p4_f2:"Automação Residencial e Industrial", p4_f3:"Fatura via Wise (USD / EUR / BRL)",
+    btn_stripe:"Solicitar Setup de Drive", btn_scope:"Configurar Escopo do Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
+    ev_title:"Construído em torno de resultados mensuráveis.",
+    ev1_k:"Visibilidade", ev1_p:"Saiba o que está acontecendo.",
+    ev2_k:"Contexto", ev2_p:"Entenda por que isso importa.",
+    ev3_k:"Ação", ev3_p:"Saiba o que deve mudar.",
+    ev4_k:"Padronização", ev4_p:"Torne a melhoria repetível.",
+    about_kicker:"SOBRE A PRIMEOPS",
+    about_title:"Construída para entender antes de mudar.",
+    about_body:"A PrimeOps foi criada em torno de um princípio simples: decisões de tecnologia ficam mais fortes quando baseadas em entendimento, evidência e contexto.",
+    cta_title:"ENTENDA ANTES DE MUDAR.", cta_sub:"Vamos transformar complexidade em inteligência.", cta_btn:"Falar com a PrimeOps",
+    modal_h:"Solicitar Orçamento / Escopo", modal_p:"Selecione os serviços e recursos necessários para uma proposta sob medida.",
+    lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_services:"SELECIONE OS SERVIÇOS REQUERIDOS:",
+    cb_bot:"Agente Virtual IA", cb_cal:"Orquestração de Agenda", cb_voice:"Chamadas de Confirmação por Voz", 
+    cb_msg:"Alertas por WhatsApp / SMS", cb_it:"TI Gerenciada / Helpdesk", cb_drive:"Drive em Nuvem & Backup", cb_iot:"Espaços Inteligentes / IoT",
+    lbl_msg:"DETALHES ADICIONAIS (EX: NÚMERO DE MÁQUINAS / REQUISITOS ESPECIAIS)",
+    lbl_lgpd:"Autorizo o tratamento dos meus dados pessoais de acordo com as diretrizes da LGPD (Lei 13.709/2018) e GDPR para recebimento de propostas.",
+    btn_send:"Enviar Solicitação",
+    ph_name:"João Silva / Empresa Exemplo", ph_email:"joao@empresa.com.br", ph_msg:"Especifique o número de computadores, preferências de integração ou escopo do projeto...",
+    footer_rights:"© 2026 PrimeOps LLC. Todos os direitos reservados. Coberto por Seguro de Responsabilidade Profissional (E&O).",
+    lgpd_footer_text:"Aviso de Tratamento de Dados: A PrimeOps cumpre rigorosamente as diretrizes da LGPD (Lei 13.709/2018) e GDPR europeu. Os dados coletados destinam-se exclusivamente à elaboração de propostas e suporte contratual."
+  }
+};
+
+const methodUnits = {
+  en: [["P","Purpose"],["R","Rules"],["I","Impact"],["M","Map"],["E","Execute"],["O","Observe"],["PS","Standardize"]],
+  pt: [["P","Propósito"],["R","Regras"],["I","Impacto"],["M","Mapa"],["E","Execução"],["O","Observação"],["PS","Padronizar"]]
+};
+
+function renderMethod(lang){
+  const row = document.getElementById('method-row');
+  if(!row) return;
+  row.innerHTML = '';
+  const units = methodUnits[lang] || methodUnits['en'];
+  units.forEach((unit, idx) => {
+    if(idx > 0){
+      const conn = document.createElement('div');
+      conn.className = 'method-connector';
+      row.appendChild(conn);
+    }
+    const u = document.createElement('div');
+    u.className = 'method-unit';
+    u.innerHTML = `<span class="mletter">${unit[0]}</span><span class="mword">${unit[1]}</span>`;
+    row.appendChild(u);
+  });
+}
+
+function updatePrices(lang) {
+  const p1Amt = document.getElementById('p1-amt');
+  const p2Amt = document.getElementById('p2-amt');
+  const p2Setup = document.getElementById('p2-setup');
+  const p3Amt = document.getElementById('p3-amt');
+
+  if (lang === 'pt') {
+    if(p1Amt) p1Amt.innerHTML = 'R$ 250 <span>/ mês</span>';
+    if(p2Amt) p2Amt.innerHTML = 'R$ 450 <span>/ mês</span>';
+    if(p2Setup) p2Setup.innerText = 'Taxa Única de Setup R$ 1.500';
+    if(p3Amt) p3Amt.innerHTML = 'R$ 80 <span>/ máquina / mês</span>';
+  } else {
+    if(p1Amt) p1Amt.innerHTML = '$69 <span>/ mo</span>';
+    if(p2Amt) p2Amt.innerHTML = '$99 <span>/ mo</span>';
+    if(p2Setup) p2Setup.innerText = '$499 One-time Setup Fee';
+    if(p3Amt) p3Amt.innerHTML = '$45 <span>/ workstation / mo</span>';
+  }
+}
+
+function updateContactButtons(lang) {
+  const waBtn = document.getElementById('wa-btn');
+  const smsBtn = document.getElementById('sms-btn');
+  if(waBtn && smsBtn) {
+    if(lang === 'pt') {
+      waBtn.style.display = 'flex';
+      smsBtn.style.display = 'none';
+    } else {
+      waBtn.style.display = 'none';
+      smsBtn.style.display = 'flex';
+    }
+  }
+}
+
+function sanitizeInput(str) {
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
+}
+
+function setLang(lang){
+  const rootElement = document.getElementById('html-root');
+  if(rootElement) rootElement.lang = lang;
+  
+  const btnEn = document.getElementById('btn-en');
+  const btnPt = document.getElementById('btn-pt');
+  if(btnEn) btnEn.classList.toggle('active', lang === 'en');
+  if(btnPt) btnPt.classList.toggle('active', lang === 'pt');
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if(translations[lang] && translations[lang][key] !== undefined){
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  const inputName = document.getElementById('input-name');
+  const inputEmail = document.getElementById('input-email');
+  const inputMsg = document.getElementById('modal-msg');
+  if(inputName) inputName.placeholder = translations[lang].ph_name;
+  if(inputEmail) inputEmail.placeholder = translations[lang].ph_email;
+  if(inputMsg && !inputMsg.value.trim()) inputMsg.placeholder = translations[lang].ph_msg;
+
+  updatePrices(lang);
+  updateContactButtons(lang);
+  renderMethod(lang);
+}
+
+function openModal(serviceName = '') {
+  const modal = document.getElementById('contact-modal');
+  const msgField = document.getElementById('modal-msg');
+  const rootElement = document.getElementById('html-root');
+  const lang = rootElement ? rootElement.lang : 'en';
+  
+  // Limpa checkboxes
+  document.querySelectorAll('input[name="scope[]"]').forEach(cb => cb.checked = false);
+
+  if(serviceName) {
+    const safeServiceName = sanitizeInput(serviceName);
+    const prefix = lang === 'pt' ? 'Interesse em:' : 'Interest in:';
+    const notes = lang === 'pt' ? 'Notas adicionais:' : 'Additional notes:';
+    if(msgField) msgField.value = `${prefix} ${safeServiceName}.\n${notes} `;
+
+    // Marca caixas de seleção automáticas de acordo com a escolha
+    if(serviceName.includes('Agent') || serviceName.includes('IA')) {
+      const cb = document.getElementById('cb-bot'); if(cb) cb.checked = true;
+    }
+    if(serviceName.includes('IT') || serviceName.includes('TI')) {
+      const cb = document.getElementById('cb-it'); if(cb) cb.checked = true;
+    }
+    if(serviceName.includes('Drive')) {
+      const cb = document.getElementById('cb-drive'); if(cb) cb.checked = true;
+    }
+    if(serviceName.includes('IoT') || serviceName.includes('Smart')) {
+      const cb = document.getElementById('cb-iot'); if(cb) cb.checked = true;
+    }
+  }
+
+  if(modal) modal.classList.add('active');
+}
+
+function closeModal() {
+  const modal = document.getElementById('contact-modal');
+  if(modal) modal.classList.remove('active');
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const lang = document.getElementById('html-root').lang || 'en';
+  const name = document.getElementById('input-name').value;
+  const email = document.getElementById('input-email').value;
+  const msg = document.getElementById('modal-msg').value;
+
+  const selectedServices = [];
+  document.querySelectorAll('input[name="scope[]"]:checked').forEach(cb => {
+    selectedServices.push(cb.value);
+  });
+  const servicesList = selectedServices.length > 0 ? selectedServices.join(', ') : (lang === 'pt' ? 'Nenhum específico' : 'None specified');
+
+  // 1. Envio para o Formspree
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).catch(err => console.error('Formspree dispatch error:', err));
+
+  // 2. Envio opcional para o n8n
+  if (CONFIG.n8nWebhookUrl) {
+    fetch(CONFIG.n8nWebhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        services: selectedServices,
+        message: msg,
+        language: lang,
+        submittedAt: new Date().toISOString()
+      })
+    }).catch(err => console.error('n8n dispatch error:', err));
+  }
+
+  // 3. Direcionamento direto para WhatsApp ou SMS
+  const phoneNumber = "5585981326868";
+  let fullMessage = "";
+
+  if (lang === 'pt') {
+    fullMessage = `*Nova Solicitação - PrimeOps Site*\n\n` +
+                  `👤 *Nome/Empresa:* ${name}\n` +
+                  `📧 *E-mail:* ${email}\n` +
+                  `🛠️ *Serviços Selecionados:* ${servicesList}\n` +
+                  `📝 *Detalhes:* ${msg}`;
+
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
+    window.open(waUrl, '_blank');
+  } else {
+    fullMessage = `New PrimeOps Inquiry:\n` +
+                  `Name: ${name}\n` +
+                  `Email: ${email}\n` +
+                  `Services: ${servicesList}\n` +
+                  `Details: ${msg}`;
+
+    const smsUrl = `sms:+${phoneNumber}&body=${encodeURIComponent(fullMessage)}`;
+    window.location.href = smsUrl;
+  }
+
+  closeModal();
+}
+
+// SCRIPT DA AUTOMAÇÃO VISUAL DE MONITORAMENTO NOC
+setInterval(() => {
+  const cpu = Math.floor(Math.random() * 25) + 30;
+  const ram = Math.floor(Math.random() * 15) + 50;
+  const net = (Math.random() * 0.6 + 1.0).toFixed(1);
+
+  const cpuEl = document.getElementById('stat-cpu');
+  const fillCpu = document.getElementById('fill-cpu');
+  const ramEl = document.getElementById('stat-ram');
+  const fillRam = document.getElementById('fill-ram');
+  const netEl = document.getElementById('stat-net');
+  const fillNet = document.getElementById('fill-net');
+
+  if(cpuEl && fillCpu) { cpuEl.innerText = cpu + '%'; fillCpu.style.width = cpu + '%'; }
+  if(ramEl && fillRam) { ramEl.innerText = ram + '%'; fillRam.style.width = ram + '%'; }
+  if(netEl && fillNet) { netEl.innerText = net + ' Gbps'; fillNet.style.width = (net * 50) + '%'; }
+
+  // Atualização aleatória do caminho SVG
+  const liveLine = document.getElementById('live-line');
+  const liveArea = document.getElementById('live-area');
+  if(liveLine && liveArea) {
+    const y1 = Math.floor(Math.random() * 40) + 30;
+    const y2 = Math.floor(Math.random() * 50) + 20;
+    const y3 = Math.floor(Math.random() * 40) + 40;
+    const path = `M0,60 L100,${y1} L200,${y2} L300,${y3} L400,${y1} L500,40`;
+    liveLine.setAttribute('d', path);
+    liveArea.setAttribute('d', path + ' L500,120 L0,120 Z');
+  }
+}, 3000);
+
+setLang('en');
+</script>
+
+</body>
+</html>
