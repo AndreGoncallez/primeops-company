@@ -183,7 +183,7 @@
   }
   .head p{color:var(--slate);font-size:15px;margin-top:16px;max-width:58ch;line-height:1.75;}
 
-  /* WHAT WE DO & DASHBOARD NOC ENTERPRISE COMPLETO */
+  /* WHAT WE DO & DASHBOARD NOC ENTERPRISE COM EIXOS */
   .whatwedo{background:var(--navy-dark);color:#EDEEF0;padding:90px 0;}
   .whatwedo .head h2{color:#F5F6F7;}
   .whatwedo .head p{color:#A9B2C0;}
@@ -237,26 +237,45 @@
   .metric-card-num { font-size: 20px; font-weight: 600; color: #fff; font-family: var(--sans); }
   .metric-card-lbl { font-size: 10.5px; color: #788596; margin-top: 2px; }
 
-  /* MAIN GRAPH SECTION */
+  /* MAIN GRAPH SECTION COM EIXOS X E Y */
   .noc-main-chart {
     background: rgba(0,0,0,0.3);
     border: 1px solid rgba(255,255,255,0.06);
-    padding: 20px;
+    padding: 20px 20px 10px 45px;
     border-radius: 3px;
     position: relative;
     margin-bottom: 20px;
   }
   .chart-grid-pattern {
-    position: absolute; top:0; left:0; right:0; bottom:0;
-    background-size: 30px 30px;
+    position: absolute; top:20px; left:45px; right:20px; bottom:30px;
+    background-size: 40px 30px;
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     pointer-events: none;
   }
-  .noc-svg-chart { width: 100%; height: 150px; overflow: visible; }
-  .line-main { fill: none; stroke: var(--copper); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(196,122,58,0.3)); }
-  .line-sub { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.8; }
+
+  /* EIXOS X / Y DA GRÁFICO */
+  .axis-y {
+    position: absolute; left: 10px; top: 20px; bottom: 30px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    font-size: 9.5px; color: #526071; font-family: var(--mono);
+  }
+  .axis-x {
+    display: flex; justify-content: space-between;
+    padding-top: 8px; font-size: 9.5px; color: #526071; font-family: var(--mono);
+  }
+
+  .noc-chart-legend {
+    display: flex; gap: 18px; margin-bottom: 12px; font-size: 11px; color: #8A96A8;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-line-main { width: 14px; height: 3px; background: var(--copper); border-radius: 1px; }
+  .legend-line-sub { width: 14px; height: 2px; background: var(--blue-accent); border-style: dashed; }
+
+  .noc-svg-chart { width: 100%; height: 140px; overflow: visible; }
+  .line-main { fill: none; stroke: var(--copper); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(196,122,58,0.3)); transition: d 0.8s ease-in-out; }
+  .line-sub { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 4 4; opacity: 0.8; transition: d 0.8s ease-in-out; }
 
   /* CLUSTER NODES STATUS */
   .noc-nodes-row {
@@ -446,6 +465,17 @@
   </div>
 </div>
 
+<!-- SEÇÃO SOLUÇÕES -->
+<section class="block" id="solutions">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="sol_title">Solutions</h2>
+      <p data-i18n="sol_sub">Four areas of work, applied together against the same operational map.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DE INTELIGÊNCIA / DASHBOARD NOC -->
 <section class="whatwedo" id="whatwedo">
   <div class="wrap">
     <div class="head">
@@ -453,7 +483,7 @@
       <p data-i18n="wwd_sub">Real-time observability suite across enterprise nodes.</p>
     </div>
 
-    <!-- PAINEL NOC ENTERPRISE COMPLETO -->
+    <!-- PAINEL NOC ENTERPRISE COM EIXOS E LEGENDAS -->
     <div class="noc-suite">
       <div class="noc-top-bar">
         <div class="noc-title-tag"><span>PRIMEOPS // OBSERVABILITY NOC SUITE</span></div>
@@ -499,13 +529,31 @@
         </div>
       </div>
 
-      <!-- MAIN CHART -->
+      <!-- MAIN CHART COM EIXOS E LEGENDA EXPLICATIVA -->
       <div class="noc-main-chart">
+        <div class="noc-chart-legend">
+          <div class="legend-item"><span class="legend-line-main"></span> <span>Network Throughput (GB/s)</span></div>
+          <div class="legend-item"><span class="legend-line-sub"></span> <span>Edge Latency Target (ms)</span></div>
+        </div>
+
+        <div class="axis-y">
+          <span>2.5 GB/s</span>
+          <span>1.5 GB/s</span>
+          <span>0.5 GB/s</span>
+        </div>
+
         <div class="chart-grid-pattern"></div>
-        <svg class="noc-svg-chart" viewBox="0 0 500 150" preserveAspectRatio="none">
+        <svg class="noc-svg-chart" viewBox="0 0 500 140" preserveAspectRatio="none">
           <path id="svg-line-2" class="line-sub" d="M0,90 L100,110 L200,70 L300,95 L400,60 L500,80" />
           <path id="svg-line-1" class="line-main" d="M0,50 L100,30 L200,85 L300,20 L400,65 L500,35" />
         </svg>
+
+        <div class="axis-x">
+          <span>-15m</span>
+          <span>-10m</span>
+          <span>-5m</span>
+          <span>NOW</span>
+        </div>
       </div>
 
       <!-- NODES STATUS -->
@@ -591,7 +639,7 @@
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="about_title">Built to understand before changing.</h2>
-      <p data-i18n="about_body">PrimeOps was created around a simple principle: technology decisions become stronger when they are based on understanding, evidence and operational context.</p>
+      <p data-i18n="about_body">PrimeOps was created around a simple principle: technology decisions become stronger when based on evidence.</p>
     </div>
   </div>
 </section>
@@ -646,6 +694,8 @@
         <a href="#solutions">Solutions</a>
         <a href="#pricing">Pricing</a>
         <a href="#method">Method</a>
+        <a href="#whatwedo">Intelligence</a>
+        <a href="#about">About</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -663,6 +713,7 @@ const translations = {
     hero_cta1:"View Products & Pricing →", hero_cta2:"Our Method →",
     m1:"Uptime SLA Monitoring", m2:"AI Agent Response Time", m3:"Cloud Encryption Standard", m4:"Professional Liability Insured",
     diag_infra:"Infrastructure", diag_telemetry:"Telemetry", diag_exposure:"Exposure", diag_intelligence:"INTELLIGENCE", diag_decision:"DECISION",
+    sol_title:"Solutions", sol_sub:"Four areas of work, applied together against the same operational map.",
     wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability suite across enterprise nodes.",
     p_title:"Products & Pricing", p_sub:"Select an operational tier to configure requirements with our engineering team.",
     p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup.", p1_s:"No setup fee",
@@ -683,6 +734,7 @@ const translations = {
     hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
     m1:"Monitoramento SLA Uptime", m2:"Resposta do Agente IA", m3:"Padrão Criptográfico Cloud", m4:"Seguro Responsabilidade Civil E&O",
     diag_infra:"Infraestrutura", diag_telemetry:"Telemetria", diag_exposure:"Exposição", diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO",
+    sol_title:"Soluções", sol_sub:"Quatro áreas de atuação integradas sobre o mesmo mapa de operação.",
     wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Suíte de observabilidade em tempo real em nós corporativos.",
     p_title:"Produtos & Preços", p_sub:"Selecione um nível operacional para configurar requisitos com nossa equipe.",
     p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup.", p1_s:"Sem taxa de setup",
@@ -730,19 +782,17 @@ function handleFormSubmit(event) {
   });
 }
 
-// ANIMAÇÃO DE TELEMETRIA DO NOC (GAUGES, GRÁFICOS E CRONÔMETRO)
-let secondsCounter = 0;
+// ANIMAÇÃO DE TELEMETRIA DO NOC (STREAMING CONTINUO DE DADOS)
 setInterval(() => {
-  secondsCounter++;
-  const ramVal = (Math.random() * 5 + 45).toFixed(1);
-  const rpsVal = Math.floor(Math.random() * 200 + 4700);
+  const ramVal = (Math.random() * 4 + 46).toFixed(1);
+  const rpsVal = Math.floor(Math.random() * 250 + 4750);
 
   document.getElementById('val-ram').innerText = `${ramVal}%`;
-  document.getElementById('val-rps').innerText = rpsVal.toLocaleString();
+  document.getElementById('val-rps').innerText = rpsVal.toLocaleString('en-US');
 
-  const y1 = Math.floor(Math.random() * 40) + 20;
-  const y2 = Math.floor(Math.random() * 50) + 30;
-  const y3 = Math.floor(Math.random() * 30) + 15;
+  const y1 = Math.floor(Math.random() * 35) + 25;
+  const y2 = Math.floor(Math.random() * 45) + 35;
+  const y3 = Math.floor(Math.random() * 25) + 20;
   document.getElementById('svg-line-1').setAttribute('d', `M0,50 L100,${y1} L200,${y2} L300,${y3} L400,65 L500,35`);
 }, 2500);
 
