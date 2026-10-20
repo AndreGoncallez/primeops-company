@@ -47,11 +47,11 @@ const translations = {
     meth_quote:"Think before acting. Understand before changing. Document to evolve.",
 
     p_title:"Products & Pricing", p_sub:"Service scope and support terms defined per plan. Choose standalone SaaS or per-device IT support.",
-    p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup (up to 1TB / 20 users).", p1_s:"No setup fee",
+    p1_h:"Cloud Drive & Backup", p1_amt:"$69 <span>/ mo</span>", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup (up to 1TB / 20 users).", p1_s:"No setup fee",
     p1_f1:"Encrypted Cloud Storage", p1_f2:"Daily Redundant Backups", p1_f3:"Self-managed Drive Portal", btn_stripe:"Request Cloud Drive setup",
     
-    p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and optional voice confirmation calls & WhatsApp alerts.",
-    p2_s:"$499 One-time Setup Fee", p2_f1:"Autonomous Conversational Agent", p2_f2:"Automated Calendar Integration", p2_f3:"Optional Voice & SMS Triggers", btn_scope:"Configure Agent Scope",
+    p2_h:"AI Virtual Agents", p2_amt:"$99 <span>/ mo</span>", p2_desc:"Autonomous conversational agents, appointment scheduling, and optional voice confirmation calls & WhatsApp alerts.",
+    p2_s:"$499 One-time Setup Fee", pricing_note:"*Values in BRL are estimates and may vary according to exchange rate, taxes, IOF, bank fees and payment method. Final scope and pricing will be confirmed before contracting.", p2_f1:"Autonomous Conversational Agent", p2_f2:"Automated Calendar Integration", p2_f3:"Optional Voice & SMS Triggers", btn_scope:"Configure Agent Scope",
     
     p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.", p3_s:"Min. 10 Workstations",
     p3_amt:"$45 <span>/ workstation / mo</span>", p3_f1:"10, 20 or 40+ Workstations", p3_f2:"Windows Server Admin & AD", p3_f3:"IT support subject to applicable coverage and contract terms", btn_quote:"Get Per-Device Quote",
@@ -64,7 +64,7 @@ const translations = {
     ab_l1:"Professional liability coverage subject to applicable terms", ab_l2:"Encryption controls defined by service scope", ab_l3:"Controls designed to support LGPD & GDPR privacy requirements",
     ab_card_h:"PrimeOps Operations", ab_card_p:"Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.",
     
-    f_privacy:"Privacy Policy & LGPD", f_dpo:"DPO Contact", cookie_text:"We use local storage only to remember your preferences. Non-essential technologies are activated only after your choice.", cookie_accept:"Accept", cookie_reject:"Reject", cookie_configure:"Configure", privacy_notice_link:"Privacy notice", form_help:"Please do not include passwords, credentials, health information or other sensitive data.", placeholder_name:"John Doe / Acme Corp", placeholder_email:"john@company.com", placeholder_message:"Describe requirements…", form_success:"Request submitted", form_success_p:"Our team will review your request and reach out shortly.",
+    f_privacy:"Privacy Policy & LGPD", f_cookies:"Cookies", f_terms:"Terms", f_dpo:"DPO Contact", cookie_text:"We use local storage only to remember your preferences. Non-essential technologies are activated only after your choice.", cookie_accept:"Accept", cookie_reject:"Reject", cookie_configure:"Configure", privacy_notice_link:"Privacy notice", cookie_preferences_link:"Learn more about cookies and preferences", footer_legal:"© 2026 PrimeOps LLC. All rights reserved. Professional liability coverage subject to applicable terms.", form_help:"Please do not include passwords, credentials, health information or other sensitive data.", placeholder_name:"John Doe / Acme Corp", placeholder_email:"john@company.com", placeholder_message:"Describe requirements…", form_success:"Request submitted", form_success_p:"Our team will review your request and reach out shortly.",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
     lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
     lbl_lgpd:"I have read the privacy notice and agree that PrimeOps may use these details to respond to my request.", form_sending:"Sending request…", form_error:"We could not send your request. Please try again.", btn_send:"Submit Request"
@@ -117,14 +117,14 @@ const translations = {
     meth_quote:"Pense antes de agir. Entenda antes de mudar. Documente para evoluir.",
 
     p_title:"Produtos & Preços", p_sub:"Escopo de serviço e termos de suporte definidos por plano. Escolha entre SaaS independente ou suporte por dispositivo.",
-    p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup (até 1TB / 20 usuários).", p1_s:"Sem taxa de setup",
+    p1_h:"Drive em Nuvem & Backup", p1_amt:"R$ 346 <span>/ mês*</span>", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup (até 1TB / 20 usuários).", p1_s:"Sem taxa de setup",
     p1_f1:"Armazenamento Nuvem Criptografado", p1_f2:"Backups Diários Redundantes", p1_f3:"Portal de Gerenciamento", btn_stripe:"Solicitar configuração do Cloud Drive",
     
-    p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, agendamento de consultas e chamadas opcionais de confirmação por voz e WhatsApp.",
-    p2_s:"Taxa Única de Setup de $499", p2_f1:"Agente Conversacional Autônomo", p2_f2:"Integração de Agenda Automatizada", p2_f3:"Gatilhos de Voz e SMS Opcionais", btn_scope:"Configurar Escopo do Agente",
+    p2_h:"Agentes Virtuais de IA", p2_amt:"R$ 497 <span>/ mês*</span>", p2_desc:"Agentes conversacionais autônomos, agendamento de consultas e chamadas opcionais de confirmação por voz e WhatsApp.",
+    p2_s:"Setup único: R$ 2.505* (referência: US$ 499)", p2_f1:"Agente Conversacional Autônomo", p2_f2:"Integração de Agenda Automatizada", p2_f3:"Gatilhos de Voz e SMS Opcionais", btn_scope:"Configurar Escopo do Agente",
     
-    p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo 10 Máquinas",
-    p3_amt:"$45 <span>/ estação / mês</span>", p3_f1:"10, 20 ou 40+ Estações", p3_f2:"Windows Server Admin & AD", p3_f3:"Suporte sujeito à cobertura e aos termos contratuais aplicáveis", btn_quote:"Cotar por Dispositivo",
+    p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo de 10 estações (≈ R$ 2.260/mês*)",
+    p3_amt:"R$ 226 <span>/ estação / mês*</span>", p3_f1:"10, 20 ou 40+ Estações", p3_f2:"Windows Server Admin & AD", p3_f3:"Suporte sujeito à cobertura e aos termos contratuais aplicáveis", btn_quote:"Cotar por Dispositivo",
     
     p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes corporativas e automação industrial/predial.", p4_amt:"Escopo Sob Medida", p4_s:"Inclui Estudo de Viabilidade",
     p4_f1:"Redes e Hardware On-Site", p4_f2:"Automação Predial e Industrial", p4_f3:"Fatura Wise (USD / EUR / BRL)", btn_wise:"Solicitar Fatura Wise",
@@ -134,7 +134,7 @@ const translations = {
     ab_l1:"Cobertura de responsabilidade sujeita aos termos aplicáveis", ab_l2:"Controles de criptografia definidos pelo escopo do serviço", ab_l3:"Controles projetados para apoiar requisitos LGPD e GDPR",
     ab_card_h:"Operações PrimeOps", ab_card_p:"Oferecendo estabilidade em nós de nuvem, suporte helpdesk e agentes autônomos de IA para clientes em todo o mundo.",
     
-    f_privacy:"Política de Privacidade & LGPD", f_dpo:"Contato DPO", cookie_text:"Usamos armazenamento local apenas para lembrar suas preferências. Tecnologias não essenciais só serão ativadas após sua escolha.", cookie_accept:"Aceitar", cookie_reject:"Recusar", cookie_configure:"Configurar", privacy_notice_link:"Aviso de privacidade", form_help:"Não inclua senhas, credenciais, dados de saúde ou outras informações sensíveis.", placeholder_name:"Nome / Empresa", placeholder_email:"nome@empresa.com", placeholder_message:"Descreva os requisitos…", form_success:"Solicitação enviada", form_success_p:"Nossa equipe analisará sua solicitação e entrará em contato.",
+    f_privacy:"Política de Privacidade & LGPD", f_cookies:"Cookies", f_terms:"Termos", f_dpo:"Contato DPO", cookie_text:"Usamos armazenamento local apenas para lembrar suas preferências. Tecnologias não essenciais só serão ativadas após sua escolha.", cookie_accept:"Aceitar", cookie_reject:"Recusar", cookie_configure:"Configurar", privacy_notice_link:"Aviso de privacidade", cookie_preferences_link:"Saiba mais sobre cookies e preferências", footer_legal:"© 2026 PrimeOps LLC. Todos os direitos reservados. Cobertura de responsabilidade sujeita aos termos aplicáveis.", form_help:"Não inclua senhas, credenciais, dados de saúde ou outras informações sensíveis.", placeholder_name:"Nome / Empresa", placeholder_email:"nome@empresa.com", placeholder_message:"Descreva os requisitos…", form_success:"Solicitação enviada", form_success_p:"Nossa equipe analisará sua solicitação e entrará em contato.", pricing_note:"*Valores em reais são estimativas e podem variar conforme câmbio, impostos, IOF quando aplicável, spread cambial, tarifas bancárias e meio de pagamento. O escopo e o preço final serão confirmados antes da contratação.",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
     lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
     lbl_lgpd:"Li o aviso de privacidade e autorizo o uso destes dados para que a PrimeOps responda à minha solicitação.", form_sending:"Enviando solicitação…", form_error:"Não foi possível enviar sua solicitação. Tente novamente.", btn_send:"Enviar Solicitação"
