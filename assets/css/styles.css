@@ -646,6 +646,7 @@ button{cursor:pointer}
 .legal-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap;justify-content:flex-end}
 .legal-nav a{font-size:13px;color:var(--slate);border-bottom:1px solid transparent;padding-bottom:2px}
 .legal-nav a:hover,.legal-nav a[aria-current="page"]{color:var(--navy);border-color:var(--copper)}
+.legal-language{display:inline-flex;gap:7px;align-items:center;margin-left:2px;font:600 11px/1 var(--mono);letter-spacing:.04em}.legal-language a,.legal-language strong{padding:4px 5px;border:1px solid var(--line-l);font-size:10px}.legal-language strong{background:var(--navy);color:var(--white);border-color:var(--navy)}
 .legal-page{flex:1;padding:64px 0 84px}
 .legal-wrap{max-width:900px}
 .legal-wrap>.eyebrow{margin-bottom:16px}

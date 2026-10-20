@@ -168,6 +168,11 @@ function setLang(lang){
     const key = el.getAttribute('data-i18n-placeholder');
     if (translations[selected] && translations[selected][key]) el.placeholder = translations[selected][key];
   });
+  document.querySelectorAll('[data-legal-key]').forEach(link => {
+    const key = link.getAttribute('data-legal-key');
+    const routes = { privacy: { en: 'privacy-en.html', pt: 'privacy.html' }, cookies: { en: 'cookies-en.html', pt: 'cookies.html' }, terms: { en: 'terms-en.html', pt: 'terms.html' } };
+    if (routes[key]) link.href = routes[key][selected];
+  });
   localStorage.setItem('primeops-language', selected);
 }
 
