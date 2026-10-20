@@ -51,7 +51,7 @@
   /* HEADER & NAVIGATION */
   header{
     position:sticky;top:0;z-index:80;
-    background:rgba(255,255,255,0.96);
+    background:rgba(255,255,255,0.98);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line-l);
   }
@@ -65,10 +65,11 @@
     align-items: center;
   }
   .brand-logo-img {
-    height: 44px;
+    height: 48px;
     width: auto;
     display: block;
     object-fit: contain;
+    border-radius: 2px;
   }
 
   .navlinks{display:flex;gap:32px;}
@@ -171,7 +172,7 @@
   }
   .head p{color:var(--slate);font-size:15px;margin-top:10px;max-width:58ch;line-height:1.7;}
 
-  /* SEÇÃO VISIBILIDADE / EXPOSIÇÃO / DECISÃO */
+  /* VISIBILIDADE / EXPOSIÇÃO / DECISÃO */
   .vis-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -206,7 +207,7 @@
   .wf-item h4 { font-family: var(--sans); font-size: 15px; color: var(--navy); margin-bottom: 6px; font-weight: 600; }
   .wf-item p { font-size: 13px; color: var(--slate); line-height: 1.5; }
 
-  /* SEÇÃO CHAT / AGENTES AUTÔNOMOS EM AÇÃO */
+  /* SEÇÃO CHAT DEMO COM TRADUÇÃO COMPLETA */
   .agent-demo-section {
     background: var(--navy-dark);
     color: #EDEEF0;
@@ -513,6 +514,26 @@
   }
   .btn-card:hover{ background:var(--navy); color:#fff; }
 
+  /* SEÇÃO ABOUT CORRIGIDA E ALINHADA LADO A LADO */
+  .about-section {
+    background: var(--paper);
+    border-top: 1px solid var(--line-l);
+    border-bottom: 1px solid var(--line-l);
+    padding: 70px 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  @media(max-width:860px){ .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .about-content h2 { font-family: var(--serif); font-size: 28px; color: var(--navy); margin-bottom: 16px; }
+  .about-content p { font-size: 14.5px; color: var(--slate); line-height: 1.65; margin-bottom: 16px; }
+  .about-pillars { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .about-pillars li { font-size: 13.5px; color: var(--graphite); display: flex; align-items: center; gap: 10px; font-weight: 500; }
+  .about-pillars li::before { content: "■"; color: var(--copper); font-size: 10px; }
+
   /* BANNER COOKIES LGPD */
   .cookie-banner {
     position: fixed;
@@ -577,10 +598,10 @@
     width:100%;padding:10px;background:var(--navy);color:#fff;font-weight:600;font-size:13px;border:none;cursor:pointer;
   }
 
-  /* FOOTER SIMPLIFICADO SEM DUPLICAÇÃO DE MENU */
+  /* FOOTER SIMPLIFICADO */
   footer{padding:36px 0 24px;border-top:1px solid var(--line-l);}
   .footer-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;margin-bottom:20px;}
-  .footer-brand .fb1{font-family:var(--serif);font-size:16px;color:var(--navy);}
+  .footer-brand .fb1{font-family:var(--serif);font-size:16px;color:var(--navy);font-weight:600;}
   .footer-brand .fb2{font-size:11.5px;color:var(--slate);margin-top:2px;}
   .footer-legal-links{display:flex;gap:18px;font-size:12px;color:var(--slate);}
   .footer-bottom{border-top:1px solid var(--line-l);padding-top:14px;display:flex;justify-content:space-between;font-size:11px;color:var(--slate);}
@@ -696,7 +717,7 @@
   </div>
 </section>
 
-<!-- SEÇÃO CHAT / AGENTES AUTÔNOMOS EM AÇÃO -->
+<!-- SEÇÃO CHAT / AGENTES AUTÔNOMOS EM AÇÃO TRADUZIDO -->
 <section class="agent-demo-section">
   <div class="wrap">
     <div class="head">
@@ -706,24 +727,24 @@
 
     <div class="chat-box-container">
       <div class="chat-header">
-        <span>PrimeOps Virtual Agent (Calendar &amp; Booking)</span>
-        <div class="chat-status"><span class="chat-dot"></span> Active Session</div>
+        <span data-i18n="chat_header">PrimeOps Virtual Agent (Calendar &amp; Booking)</span>
+        <div class="chat-status"><span class="chat-dot"></span> <span data-i18n="chat_status">Active Session</span></div>
       </div>
       <div class="chat-messages">
         <div class="msg-bubble msg-user">
-          Hello, I'd like to schedule an executive discovery session for next Tuesday morning.
+          <span data-i18n="chat_m1">Hello, I'd like to schedule an executive discovery session for next Tuesday morning.</span>
           <div class="msg-time">10:14 AM</div>
         </div>
         <div class="msg-bubble msg-agent">
-          I checked the team schedule. Tuesday at 10:00 AM EST is open. Shall I confirm this slot and issue a calendar invite with a voice reminder?
+          <span data-i18n="chat_m2">I checked the team schedule. Tuesday at 10:00 AM EST is open. Shall I confirm this slot and issue a calendar invite with a voice reminder?</span>
           <div class="msg-time">10:14 AM</div>
         </div>
         <div class="msg-bubble msg-user">
-          Yes, please. Send it to john@acme.com.
+          <span data-i18n="chat_m3">Yes, please. Send it to john@acme.com.</span>
           <div class="msg-time">10:15 AM</div>
         </div>
         <div class="msg-bubble msg-agent">
-          Confirmed! Invite sent to john@acme.com, CRM record updated, and automated voice confirmation scheduled 2 hours prior.
+          <span data-i18n="chat_m4">Confirmed! Invite sent to john@acme.com, CRM record updated, and automated voice confirmation scheduled 2 hours prior.</span>
           <div class="msg-time">10:15 AM</div>
         </div>
       </div>
@@ -933,31 +954,31 @@
 
     <div class="method-steps">
       <div class="method-step-card">
-        <div class="method-step-num">PHASE 01 // DIAGNOSIS</div>
+        <div class="method-step-num" data-i18n="m1_tag">PHASE 01 // DIAGNOSIS</div>
         <h3 data-i18n="m1_h">Map &amp; Observe</h3>
         <p data-i18n="m1_p">In-depth mapping of operational workflows, systems, data pipelines, and infrastructure to establish baseline operational metrics.</p>
       </div>
 
       <div class="method-step-card">
-        <div class="method-step-num">PHASE 02 // CONTEXT</div>
+        <div class="method-step-num" data-i18n="m2_tag">PHASE 02 // CONTEXT</div>
         <h3 data-i18n="m2_h">Analyze &amp; Correlate</h3>
         <p data-i18n="m2_p">Cross-referencing operational data to identify process bottlenecks, efficiency gaps, and security vulnerabilities without disruption.</p>
       </div>
 
       <div class="method-step-card">
-        <div class="method-step-num">PHASE 03 // ARCHITECTURE</div>
+        <div class="method-step-num" data-i18n="m3_tag">PHASE 03 // ARCHITECTURE</div>
         <h3 data-i18n="m3_h">Decide &amp; Design</h3>
         <p data-i18n="m3_p">Engineering tailored architectural interventions, process redesigns, and AI automation rules aligned with organizational goals.</p>
       </div>
 
       <div class="method-step-card">
-        <div class="method-step-num">PHASE 04 // EXECUTION</div>
+        <div class="method-step-num" data-i18n="m4_tag">PHASE 04 // EXECUTION</div>
         <h3 data-i18n="m4_h">Automate &amp; Protect</h3>
         <p data-i18n="m4_p">Controlled deployment of automated workflows, active governance, and continuous exposure defense covered by liability insurance.</p>
       </div>
     </div>
 
-    <div class="method-quote">
+    <div class="method-quote" data-i18n="meth_quote">
       Think before acting. Understand before changing. Document to evolve.
     </div>
   </div>
@@ -1039,7 +1060,7 @@
   </div>
 </section>
 
-<!-- SEÇÃO ABOUT -->
+<!-- SEÇÃO ABOUT CORRIGIDA E DISTRIBUÍDA ALINHADA -->
 <section class="about-section" id="about">
   <div class="wrap about-grid">
     <div class="about-content">
@@ -1112,7 +1133,7 @@
       <div class="footer-legal-links">
         <a href="#about" data-i18n="f_privacy">Privacy Policy &amp; LGPD</a>
         <span>•</span>
-        <a href="mailto:dpo@primeops.company">DPO Contact</a>
+        <a href="mailto:dpo@primeops.company" data-i18n="f_dpo">DPO Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1143,6 +1164,11 @@ const translations = {
 
     ag_title:"Autonomous Conversational Agents in Action",
     ag_sub:"Replacing legacy bots with context-aware virtual agents that schedule meetings, trigger confirmation calls, and update CRMs seamlessly.",
+    chat_header:"PrimeOps Virtual Agent (Calendar & Booking)", chat_status:"Active Session",
+    chat_m1:"Hello, I'd like to schedule an executive discovery session for next Tuesday morning.",
+    chat_m2:"I checked the team schedule. Tuesday at 10:00 AM EST is open. Shall I confirm this slot and issue a calendar invite with a voice reminder?",
+    chat_m3:"Yes, please. Send it to john@acme.com.",
+    chat_m4:"Confirmed! Invite sent to john@acme.com, CRM record updated, and automated voice confirmation scheduled 2 hours prior.",
 
     ind_title:"Target Environments & Industries", ind_sub:"Tailored operational setups designed for high-requirement sectors.",
     ind1_h:"Healthcare & Clinics", ind1_p:"Autonomous booking agents, patient confirmation calls, and HIPAA/LGPD-aligned cloud backup.",
@@ -1159,10 +1185,11 @@ const translations = {
     wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability suite across enterprise nodes.",
     
     meth_title:"A method before a solution.", meth_sub:"PrimeOps approaches technology through understanding, evidence and controlled execution.",
-    m1_h:"Map & Observe", m1_p:"In-depth mapping of operational workflows, systems, data pipelines, and infrastructure to establish baseline operational metrics.",
-    m2_h:"Analyze & Correlate", m2_p:"Cross-referencing operational data to identify process bottlenecks, efficiency gaps, and security vulnerabilities without disruption.",
-    m3_h:"Decide & Design", m3_p:"Engineering tailored architectural interventions, process redesigns, and AI automation rules aligned with organizational goals.",
-    m4_h:"Automate & Protect", m4_p:"Controlled deployment of automated workflows, active governance, and continuous exposure defense covered by liability insurance.",
+    m1_tag:"PHASE 01 // DIAGNOSIS", m1_h:"Map & Observe", m1_p:"In-depth mapping of operational workflows, systems, data pipelines, and infrastructure to establish baseline operational metrics.",
+    m2_tag:"PHASE 02 // CONTEXT", m2_h:"Analyze & Correlate", m2_p:"Cross-referencing operational data to identify process bottlenecks, efficiency gaps, and security vulnerabilities without disruption.",
+    m3_tag:"PHASE 03 // ARCHITECTURE", m3_h:"Decide & Design", m3_p:"Engineering tailored architectural interventions, process redesigns, and AI automation rules aligned with organizational goals.",
+    m4_tag:"PHASE 04 // EXECUTION", m4_h:"Automate & Protect", m4_p:"Controlled deployment of automated workflows, active governance, and continuous exposure defense covered by liability insurance.",
+    meth_quote:"Think before acting. Understand before changing. Document to evolve.",
 
     p_title:"Products & Pricing", p_sub:"Enterprise-grade SLAs and competitive tier rates. Choose standalone SaaS or per-device IT support.",
     p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup (up to 1TB / 20 users).", p1_s:"No setup fee",
@@ -1182,7 +1209,7 @@ const translations = {
     ab_l1:"Enterprise E&O Professional Liability Insured", ab_l2:"AES-256 Cloud Encryption Standards", ab_l3:"Strict Compliance with LGPD & GDPR Privacy Guidelines",
     ab_card_h:"PrimeOps Operations", ab_card_p:"Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.",
     
-    f_privacy:"Privacy Policy & LGPD",
+    f_privacy:"Privacy Policy & LGPD", f_dpo:"DPO Contact",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
     lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
     lbl_lgpd:"I consent to LGPD & GDPR privacy guidelines for proposal requests.", btn_send:"Submit Request"
@@ -1207,6 +1234,11 @@ const translations = {
 
     ag_title:"Agentes Conversacionais Autônomos em Ação",
     ag_sub:"Substituindo bots antigos por agentes virtuais contextuais que agendam reuniões, acionam chamadas de confirmação e atualizam CRMs sem fricção.",
+    chat_header:"Agente Virtual PrimeOps (Agenda e Reservas)", chat_status:"Sessão Ativa",
+    chat_m1:"Olá, gostaria de agendar uma sessão de demonstração para a próxima terça de manhã.",
+    chat_m2:"Verifiquei a agenda da equipe. Terça-feira às 10:00 EST está livre. Confirmo este horário e envio um convite com lembrete de voz?",
+    chat_m3:"Sim, por favor. Envie para john@acme.com.",
+    chat_m4:"Confirmado! Convite enviado para john@acme.com, registro no CRM atualizado e confirmação de voz agendada para 2 horas antes.",
 
     ind_title:"Setores e Ambientes Atendidos", ind_sub:"Configurações operacionais sob medida para setores de alta exigência.",
     ind1_h:"Saúde & Clínicas", ind1_p:"Agentes autônomos de agendamento, confirmação de pacientes e backup alinhado à LGPD/HIPAA.",
@@ -1223,10 +1255,11 @@ const translations = {
     wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Suíte de observabilidade em tempo real em nós corporativos.",
     
     meth_title:"Um método antes de uma solução.", meth_sub:"A PrimeOps aborda a tecnologia por meio do entendimento, evidência e execução controlada.",
-    m1_h:"Mapear & Observar", m1_p:"Mapeamento profundo de fluxos operacionais, sistemas, pipelines de dados e infraestrutura para estabelecer métricas de desempenho.",
-    m2_h:"Analisar & Correlacionar", m2_p:"Cruzamento de dados operacionais para identificar gargalos de processos, lacunas de eficiência e vulnerabilidades sem interrupção.",
-    m3_h:"Decidir & Projetar", m3_p:"Engenharia de intervenções arquitetônicas, redesenho de processos e regras de automação de IA alinhadas aos objetivos estratégicos.",
-    m4_h:"Automatizar & Proteger", m4_p:"Execução controlada de fluxos automatizados, governança ativa e defesa contínua de exposição com cobertura de seguro de responsabilidade civil.",
+    m1_tag:"FASE 01 // DIAGNÓSTICO", m1_h:"Mapear & Observar", m1_p:"Mapeamento profundo de fluxos operacionais, sistemas, pipelines de dados e infraestrutura para estabelecer métricas de desempenho.",
+    m2_tag:"FASE 02 // CONTEXTO", m2_h:"Analisar & Correlacionar", m2_p:"Cruzamento de dados operacionais para identificar gargalos de processos, lacunas de eficiência e vulnerabilidades sem interrupção.",
+    m3_tag:"FASE 03 // ARQUITETURA", m3_h:"Decidir & Projetar", m3_p:"Engenharia de intervenções arquitetônicas, redesenho de processos e regras de automação de IA alinhadas aos objetivos estratégicos.",
+    m4_tag:"FASE 04 // EXECUÇÃO", m4_h:"Automatizar & Proteger", m4_p:"Execução controlada de fluxos automatizados, governança ativa e defesa contínua de exposição com cobertura de seguro de responsabilidade civil.",
+    meth_quote:"Pense antes de agir. Entenda antes de mudar. Documente para evoluir.",
 
     p_title:"Produtos & Preços", p_sub:"SLAs corporativos e preços competitivos. Escolha entre SaaS independente ou suporte por dispositivo.",
     p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup (até 1TB / 20 usuários).", p1_s:"Sem taxa de setup",
@@ -1246,7 +1279,7 @@ const translations = {
     ab_l1:"Seguro de Responsabilidade Civil Profissional E&O", ab_l2:"Criptografia AES-256 Padrão Corporativo", ab_l3:"Conformidade Estrita com Diretrizes LGPD e GDPR",
     ab_card_h:"Operações PrimeOps", ab_card_p:"Oferecendo estabilidade em nós de nuvem, suporte helpdesk e agentes autônomos de IA para clientes em todo o mundo.",
     
-    f_privacy:"Política de Privacidade & LGPD",
+    f_privacy:"Política de Privacidade & LGPD", f_dpo:"Contato DPO",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
     lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
     lbl_lgpd:"Autorizo o tratamento de dados pessoais conforme a LGPD e GDPR.", btn_send:"Enviar Solicitação"
