@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO & Primary Meta Tags -->
-<title>PrimeOps — Enterprise Operational Intelligence &amp; Infrastructure Security</title>
-<meta name="title" content="PrimeOps — Enterprise Operational Intelligence & Infrastructure Security">
-<meta name="description" content="Understand your operational environment, automate workflows with AI Virtual Agents, and protect infrastructure with Managed IT & Observability.">
-<meta name="keywords" content="Operational Intelligence, Managed IT, AI Virtual Agents, Cloud Drive, Observability, Exposure Management, PrimeOps">
+<title>PrimeOps — Enterprise Operational Intelligence &amp; Architecture</title>
+<meta name="title" content="PrimeOps — Enterprise Operational Intelligence & Architecture">
+<meta name="description" content="Analisamos e otimizamos processos operacionais, fluxos de trabalho e infraestrutura antes de propor qualquer mudança.">
+<meta name="keywords" content="Inteligência Operacional, Análise de Processos, Governança, Automação, TI Gerenciada, PrimeOps">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,13 @@
     --navy-2:#10203A;
     --navy-dark:#060C17;
     --white:#FFFFFF;
-    --paper:#F4F5F7; /* Tom pastel limpo */
+    --paper:#F4F5F7;
     --graphite:#232A33;
-    --slate:#475467; /* Contraste elevado para leitura rápida */
+    --slate:#475467;
     --blue-accent:#2E5578;
     --blue-accent-hover:#3A6790;
     --copper:#C47A3A;
     --green-ok:#10B981;
-    --red-alert:#EF4444;
     --line-l:rgba(35,42,51,0.13);
     --line-d:rgba(255,255,255,0.12);
     --serif:'Fraunces', serif;
@@ -61,7 +60,7 @@
     display:flex;align-items:center;justify-content:space-between;
   }
   
-  /* BRAND LOGO - TEXTO EM AZUL ESCURO SOBRE FUNDO LIMPO */
+  /* BRAND LOGO VETORIAL PRECISA EM AZUL ESCURO */
   .brand-logo-wrap {
     display: flex;
     align-items: center;
@@ -192,7 +191,7 @@
   }
   .head p{color:var(--slate);font-size:15px;margin-top:10px;max-width:58ch;line-height:1.7;}
 
-  /* SEÇÃO SOLUTIONS (SOLUÇÕES) */
+  /* SEÇÃO SOLUTIONS */
   .solutions-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -358,7 +357,7 @@
   .node-item { display: flex; align-items: center; gap: 5px; }
   .node-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-ok); }
 
-  /* SEÇÃO METHOD (MÉTODO OPERACIONAL) */
+  /* SEÇÃO METHOD - ABORDAGEM GENÉRICA DE PROCESSOS */
   .method-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -426,7 +425,7 @@
   }
   .btn-card:hover{ background:var(--navy); color:#fff; }
 
-  /* SEÇÃO ABOUT (SOBRE A PRIMEOPS) */
+  /* SEÇÃO ABOUT */
   .about-section {
     background: var(--paper);
     border-top: 1px solid var(--line-l);
@@ -445,43 +444,6 @@
   .about-pillars { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
   .about-pillars li { font-size: 13.5px; color: var(--graphite); display: flex; align-items: center; gap: 10px; font-weight: 500; }
   .about-pillars li::before { content: "■"; color: var(--copper); font-size: 10px; }
-
-  /* WIDGET STATUS BAR FIXO */
-  .status-widget-bar {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--navy-dark);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 4px;
-    padding: 10px 16px;
-    color: #fff;
-    font-family: var(--mono);
-    font-size: 11px;
-    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
-    z-index: 99;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .widget-status-info { display: flex; align-items: center; gap: 8px; }
-  .widget-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-ok); box-shadow:0 0 8px var(--green-ok); }
-  .widget-links { display: flex; align-items: center; gap: 10px; }
-  .widget-noc-link { color: #A9B2C0; text-decoration: underline; font-size: 10.5px; cursor: pointer; }
-  .widget-noc-link:hover { color: #fff; }
-  .widget-action {
-    background: var(--blue-accent);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 2px;
-    font-size: 11px;
-    cursor: pointer;
-    border: none;
-    font-family: var(--sans);
-    font-weight: 600;
-    transition: background 0.15s ease;
-  }
-  .widget-action:hover { background: var(--blue-accent-hover); }
 
   /* MODAL POPUP */
   .modal-overlay{
@@ -530,13 +492,14 @@
 
 <header>
   <nav aria-label="Main Navigation">
-    <!-- BRAND LOGO ADAPTADO COM TEXTO AZUL ESCURO -->
+    <!-- LOGO OFICIAL LIMPA COM TEXTO AZUL ESCURO -->
     <div class="brand-logo-wrap">
       <svg class="brand-icon" viewBox="0 0 100 100" fill="none">
-        <circle cx="40" cy="50" r="32" stroke="#007AFF" stroke-width="6" stroke-dasharray="160 40" />
-        <circle cx="40" cy="50" r="22" stroke="#7C3AED" stroke-width="5" stroke-dasharray="100 30" />
-        <path d="M35 25 L65 70 M45 20 L75 65 M55 15 L85 60" stroke="#10B981" stroke-width="5" stroke-linecap="round" />
-        <path d="M55 15 L85 60" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" />
+        <circle cx="35" cy="50" r="28" stroke="#007AFF" stroke-width="5" stroke-dasharray="130 30" />
+        <circle cx="35" cy="50" r="18" stroke="#7C3AED" stroke-width="4.5" stroke-dasharray="80 25" />
+        <path d="M30 25 L65 70" stroke="#10B981" stroke-width="4" stroke-linecap="round" />
+        <path d="M40 20 L75 65" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" />
+        <path d="M50 15 L85 60" stroke="#007AFF" stroke-width="4" stroke-linecap="round" />
       </svg>
       <div class="brand-text-container">
         <span class="brand-title">PRIMEOPS</span>
@@ -602,7 +565,7 @@
   </div>
 </div>
 
-<!-- SEÇÃO SOLUTIONS (COMPLETA) -->
+<!-- SEÇÃO SOLUTIONS -->
 <section class="block" id="solutions">
   <div class="wrap">
     <div class="head">
@@ -690,7 +653,7 @@
         </div>
       </div>
 
-      <!-- SEÇÃO MULTI-GRÁFICOS REVISED (-15m ESCALA REALISTA) -->
+      <!-- MULTI-GRÁFICOS REAIS -->
       <div class="noc-charts-row">
         <div class="noc-main-chart">
           <div class="noc-chart-legend">
@@ -710,7 +673,6 @@
             <path id="svg-line-1" class="line-main" d="M0,18 L83,38 L166,10 L250,55 L333,14 L416,42 L500,12" />
           </svg>
 
-          <!-- ESCALA TEMPORAL REFINADA DE -15 MINUTES -->
           <div class="axis-x">
             <span>-15m</span>
             <span>-10m</span>
@@ -763,37 +725,37 @@
   </div>
 </section>
 
-<!-- SEÇÃO METHOD (COMPLETA) -->
+<!-- SEÇÃO METHOD - ABORDAGEM GENÉRICA DE PROCESSOS OPERACIONAIS -->
 <section class="block" id="method">
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="meth_title">Our Operational Method</h2>
-      <p data-i18n="meth_sub">Built to understand your architecture before recommending or changing a single parameter.</p>
+      <p data-i18n="meth_sub">Built to thoroughly understand client architecture and business workflows before proposing interventions.</p>
     </div>
 
     <div class="method-steps">
       <div class="method-step-card">
-        <div class="method-step-num">PHASE 01 // TELEMETRY</div>
-        <h3 data-i18n="m1_h">Observe &amp; Map</h3>
-        <p data-i18n="m1_p">Deployment of non-intrusive monitoring sensors to establish baseline metrics across infrastructure, endpoints, and traffic flows.</p>
+        <div class="method-step-num">PHASE 01 // DIAGNOSIS</div>
+        <h3 data-i18n="m1_h">Map &amp; Observe</h3>
+        <p data-i18n="m1_p">In-depth mapping of operational workflows, systems, data pipelines, and infrastructure to establish baseline operational metrics.</p>
       </div>
 
       <div class="method-step-card">
         <div class="method-step-num">PHASE 02 // CONTEXT</div>
         <h3 data-i18n="m2_h">Analyze &amp; Correlate</h3>
-        <p data-i18n="m2_p">Telemetry data is structured to identify exposure gaps, bottlenecks, and security vulnerabilities without operational disruption.</p>
+        <p data-i18n="m2_p">Cross-referencing operational data to identify process bottlenecks, efficiency gaps, and security vulnerabilities without disruption.</p>
       </div>
 
       <div class="method-step-card">
         <div class="method-step-num">PHASE 03 // ARCHITECTURE</div>
         <h3 data-i18n="m3_h">Decide &amp; Design</h3>
-        <p data-i18n="m3_p">Our engineering team designs precise architectural interventions and custom AI agent workflows tailored to business SLAs.</p>
+        <p data-i18n="m3_p">Engineering tailored architectural interventions, process redesigns, and AI automation rules aligned with organizational goals.</p>
       </div>
 
       <div class="method-step-card">
         <div class="method-step-num">PHASE 04 // EXECUTION</div>
         <h3 data-i18n="m4_h">Automate &amp; Protect</h3>
-        <p data-i18n="m4_p">Controlled deployment of automation, active NOC monitoring, and continuous exposure defense under liability insurance coverage.</p>
+        <p data-i18n="m4_p">Controlled deployment of automated workflows, active governance, and continuous exposure defense covered by liability insurance.</p>
       </div>
     </div>
   </div>
@@ -855,7 +817,7 @@
   </div>
 </section>
 
-<!-- SEÇÃO ABOUT (COMPLETA) -->
+<!-- SEÇÃO ABOUT TOTALMENTE TRADUZIDA -->
 <section class="about-section" id="about">
   <div class="wrap about-grid">
     <div class="about-content">
@@ -869,23 +831,11 @@
       </ul>
     </div>
     <div class="diagram-panel" style="background:#fff;">
-      <div style="font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:12px;font-weight:600;">PrimeOps Operations</div>
-      <p style="font-size:13.5px;color:var(--slate);line-height:1.6;">Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.</p>
+      <div style="font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:12px;font-weight:600;" data-i18n="ab_card_h">PrimeOps Operations</div>
+      <p style="font-size:13.5px;color:var(--slate);line-height:1.6;" data-i18n="ab_card_p">Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.</p>
     </div>
   </div>
 </section>
-
-<!-- WIDGET STATUS BAR FIXO -->
-<div class="status-widget-bar">
-  <div class="widget-status-info">
-    <span class="widget-dot"></span>
-    <span>System Status: Operational</span>
-  </div>
-  <div class="widget-links">
-    <a href="#whatwedo" class="widget-noc-link">View NOC Panel</a>
-    <button class="widget-action" onclick="openModal('Architecture Meeting Request')">Schedule Call</button>
-  </div>
-</div>
 
 <!-- MODAL FORM -->
 <div id="contact-modal" class="modal-overlay">
@@ -955,11 +905,11 @@ const translations = {
     s3_h:"Autonomous AI Virtual Agents", s3_p:"Custom conversational agents integrated into n8n and CRM workflows to handle scheduling, triage, and automated incident resolution in under 2 minutes.",
     s4_h:"Exposure Management & IoT Security", s4_p:"Continuous attack surface auditing, hardware setup, site surveys, and secure IoT integration for residential and industrial facility automation.",
     wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability suite across enterprise nodes.",
-    meth_title:"Our Operational Method", meth_sub:"Built to understand your architecture before recommending or changing a single parameter.",
-    m1_h:"Observe & Map", m1_p:"Deployment of non-intrusive monitoring sensors to establish baseline metrics across infrastructure, endpoints, and traffic flows.",
-    m2_h:"Analyze & Correlate", m2_p:"Telemetry data is structured to identify exposure gaps, bottlenecks, and security vulnerabilities without operational disruption.",
-    m3_h:"Decide & Design", m3_p:"Our engineering team designs precise architectural interventions and custom AI agent workflows tailored to business SLAs.",
-    m4_h:"Automate & Protect", m4_p:"Controlled deployment of automation, active NOC monitoring, and continuous exposure defense under liability insurance coverage.",
+    meth_title:"Our Operational Method", meth_sub:"Built to thoroughly understand client architecture and business workflows before proposing interventions.",
+    m1_h:"Map & Observe", m1_p:"In-depth mapping of operational workflows, systems, data pipelines, and infrastructure to establish baseline operational metrics.",
+    m2_h:"Analyze & Correlate", m2_p:"Cross-referencing operational data to identify process bottlenecks, efficiency gaps, and security vulnerabilities without disruption.",
+    m3_h:"Decide & Design", m3_p:"Engineering tailored architectural interventions, process redesigns, and AI automation rules aligned with organizational goals.",
+    m4_h:"Automate & Protect", m4_p:"Controlled deployment of automated workflows, active governance, and continuous exposure defense covered by liability insurance.",
     p_title:"Products & Pricing", p_sub:"Select an operational tier to configure requirements with our engineering team.",
     p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup.", p1_s:"No setup fee",
     p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM workflow triggers.",
@@ -968,6 +918,7 @@ const translations = {
     ab_title:"Architecting Secure & Scalable Infrastructure", ab_p1:"PrimeOps is an enterprise-grade technology and security company specializing in robust infrastructure, automated monitoring, advanced AI virtual agents, and global digital operations.",
     ab_p2:"Our mission is to eliminate operational blind spots through continuous observability, allowing organizations to scale with institutional trust and complete system clarity.",
     ab_l1:"Enterprise E&O Professional Liability Insured", ab_l2:"AES-256 Cloud Encryption Standards", ab_l3:"Strict Compliance with LGPD & GDPR Privacy Guidelines",
+    ab_card_h:"PrimeOps Operations", ab_card_p:"Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.",
     btn_stripe:"Request Drive Setup", btn_scope:"Configure Agent Scope", btn_quote:"Get Per-Device Quote", btn_wise:"Request Custom Invoice",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
     lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
@@ -980,25 +931,26 @@ const translations = {
     hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
     m1:"Monitoramento SLA Uptime", m2:"Resposta do Agente IA", m3:"Padrão Criptográfico Cloud", m4:"Seguro Responsabilidade Civil E&O",
     diag_infra:"Infraestrutura", diag_telemetry:"Observabilidade", diag_exposure:"Exposição", diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO & AUTOMAÇÃO",
-    sol_title:"Soluções Corporativas & Infraestrutura", sol_sub:"Desenvolvidas para operações de missão crítica que exigem estabilidade, automação e visibilidade total.",
+    sol_title:"Soluções Corporativas & Capacidades de Infraestrutura", sol_sub:"Desenvolvidas para operações de missão crítica que exigem estabilidade, automação e visibilidade total.",
     s1_h:"Engenharia de Cloud & Infraestrutura", s1_p:"Drives dedicados de alta velocidade, administração de servidores, reorganização de redes e backups automatizados para cargas corporativas.",
     s2_h:"Observabilidade 24/7 & NOC Gerenciado", s2_p:"Acompanhamento multi-cluster em tempo real, monitoramento de latência, gestão de incidentes e suporte técnico Helpdesk em estações corporativas.",
     s3_h:"Agentes Virtuais Autônomos de IA", s3_p:"Agentes conversacionais integrados ao n8n e CRM para agendamento, triagem e resolução automatizada de chamados em menos de 2 minutos.",
     s4_h:"Gestão de Exposição & Segurança IoT", s4_p:"Auditoria contínua de superfície de ataque, configuração de hardware, vistorias técnicas e automação IoT segura para instalações corporativas.",
     wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Suíte de observabilidade em tempo real em nós corporativos.",
-    meth_title:"Nosso Método Operacional", meth_sub:"Criado para entender a arquitetura do cliente antes de recomendar ou alterar qualquer parâmetro.",
-    m1_h:"Observar & Mapear", m1_p:"Implantação de sensores não-intrusivos de monitoramento para estabelecer métricas de infraestrutura, tráfego e endpoints.",
-    m2_h:"Analisar & Correlacionar", m2_p:"Estruturação de dados de telemetria para identificar gargalos, brechas de exposição e vulnerabilidades sem interrupção operacional.",
-    m3_h:"Decidir & Projetar", m3_p:"Engenharia de intervenções arquitetônicas e fluxos de IA sob medida alinhados aos SLAs do negócio.",
-    m4_h:"Automatizar & Proteger", m4_p:"Execução controlada de automações, monitoramento ativo via NOC e defesa contínua de exposição sob cobertura de seguro E&O.",
+    meth_title:"Nosso Método Operacional", meth_sub:"Criado para entender minuciosamente a arquitetura e fluxos do cliente antes de propor intervenções.",
+    m1_h:"Mapear & Observar", m1_p:"Mapeamento profundo de fluxos operacionais, sistemas, pipelines de dados e infraestrutura para estabelecer métricas de desempenho.",
+    m2_h:"Analisar & Correlacionar", m2_p:"Cruzamento de dados operacionais para identificar gargalos de processos, lacunas de eficiência e vulnerabilidades sem interrupção.",
+    m3_h:"Decidir & Projetar", m3_p:"Engenharia de intervenções arquitetônicas, redesenho de processos e regras de automação de IA alinhadas aos objetivos estratégicos.",
+    m4_h:"Automatizar & Proteger", m4_p:"Execução controlada de fluxos automatizados, governança ativa e defesa contínua de exposição com cobertura de seguro de responsabilidade civil.",
     p_title:"Produtos & Preços", p_sub:"Selecione um nível operacional para configurar requisitos com nossa equipe.",
     p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup.", p1_s:"Sem taxa de setup",
     p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, agendamento e gatilhos de CRM.",
     p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo 10 Máquinas",
     p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes corporativas e automação industrial/predial.", p4_s:"Inclui Estudo de Viabilidade",
-    ab_title:"Arquitetando Infraestruturas Seguras e Escaláveis", ab_p1:"A PrimeOps é uma empresa de tecnologia e segurança corporativa especializada em infraestrutura robusta, monitoramento automatizado, agentes de IA e operações digitais.",
-    ab_p2:"Nossa missão é eliminar pontos cegos operacionais por meio de observabilidade contínua, permitindo que organizações se expandam com confiança institucional.",
+    ab_title:"Arquitetando Infraestruturas Seguras e Escaláveis", ab_p1:"A PrimeOps é uma empresa de tecnologia e segurança corporativa especializada em infraestrutura robusta, monitoramento automatizado, agentes virtuais de IA e operações digitais globais.",
+    ab_p2:"Nossa missão é eliminar pontos cegos operacionais por meio de observabilidade contínua, permitindo que organizações se expandam com confiança institucional e clareza de sistema.",
     ab_l1:"Seguro de Responsabilidade Civil Profissional E&O", ab_l2:"Criptografia AES-256 Padrão Corporativo", ab_l3:"Conformidade Estrita com Diretrizes LGPD e GDPR",
+    ab_card_h:"Operações PrimeOps", ab_card_p:"Oferecendo estabilidade em nós de nuvem, suporte helpdesk e agentes autônomos de IA para clientes em todo o mundo.",
     btn_stripe:"Solicitar Setup Drive", btn_scope:"Configurar Escopo Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
     lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
@@ -1038,7 +990,7 @@ function handleFormSubmit(event) {
   });
 }
 
-// ANIMAÇÃO DE TELEMETRIA DO GRÁFICO (REALS-LIKE OSCILLATION)
+// ANIMAÇÃO DE TELEMETRIA
 setInterval(() => {
   const ramVal = (Math.random() * 4 + 44).toFixed(1);
   const rpsVal = Math.floor(Math.random() * 250 + 4750);
@@ -1048,7 +1000,6 @@ setInterval(() => {
   if(ramEl) ramEl.innerText = `${ramVal}%`;
   if(rpsEl) rpsEl.innerText = rpsVal.toLocaleString('en-US');
 
-  // Gerando pontos de oscilação mais diversificados e realistas para a linha do gráfico
   const h1 = Math.floor(Math.random() * 30) + 12;
   const h2 = Math.floor(Math.random() * 38) + 8;
   const h3 = Math.floor(Math.random() * 32) + 14;
