@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO & Primary Meta Tags -->
-<title>PrimeOps — Operational Intelligence &amp; Exposure Management</title>
-<meta name="title" content="PrimeOps — Operational Intelligence & Exposure Management">
-<meta name="description" content="Understand your operational environment, automate workflows with AI Virtual Agents, and protect infrastructure with Managed IT Support.">
+<title>PrimeOps — Enterprise Operational Intelligence &amp; Infrastructure Security</title>
+<meta name="title" content="PrimeOps — Enterprise Operational Intelligence & Infrastructure Security">
+<meta name="description" content="Understand your operational environment, automate workflows with AI Virtual Agents, and protect infrastructure with Managed IT & Observability.">
 <meta name="keywords" content="Operational Intelligence, Managed IT, AI Virtual Agents, Cloud Drive, Observability, Exposure Management, PrimeOps">
 <meta name="robots" content="index, follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -20,13 +20,14 @@
     --navy-2:#10203A;
     --navy-dark:#060C17;
     --white:#FFFFFF;
-    --paper:#F4F5F7; /* Tom pastel suave */
+    --paper:#F4F5F7; /* Tom pastel limpo */
     --graphite:#232A33;
-    --slate:#475467; /* Contraste otimizado para leitura */
+    --slate:#475467; /* Contraste elevado para leitura rápida */
     --blue-accent:#2E5578;
     --blue-accent-hover:#3A6790;
     --copper:#C47A3A;
     --green-ok:#10B981;
+    --red-alert:#EF4444;
     --line-l:rgba(35,42,51,0.13);
     --line-d:rgba(255,255,255,0.12);
     --serif:'Fraunces', serif;
@@ -48,7 +49,7 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
   @media (max-width:640px){ .wrap{padding:0 24px;} }
 
-  /* HEADER & LOGO INTEGRATION */
+  /* HEADER & NAVIGATION */
   header{
     position:sticky;top:0;z-index:80;
     background:rgba(255,255,255,0.96);
@@ -60,7 +61,7 @@
     display:flex;align-items:center;justify-content:space-between;
   }
   
-  /* ESTILIZAÇÃO DA LOGO ADAPTADA PARA AZUL ESCURO */
+  /* BRAND LOGO - TEXTO EM AZUL ESCURO SOBRE FUNDO LIMPO */
   .brand-logo-wrap {
     display: flex;
     align-items: center;
@@ -78,7 +79,7 @@
     font-family: var(--sans);
     font-weight: 700;
     font-size: 20px;
-    color: var(--navy); /* Texto em azul escuro */
+    color: var(--navy);
     letter-spacing: 0.04em;
     line-height: 1;
   }
@@ -91,10 +92,10 @@
     margin-top: 3px;
   }
 
-  .navlinks{display:flex;gap:36px;}
-  .navlinks a{font-size:14px;color:var(--slate);transition:color .15s;}
+  .navlinks{display:flex;gap:32px;}
+  .navlinks a{font-size:14px;color:var(--slate);transition:color .15s;font-weight:500;}
   .navlinks a:hover{color:var(--navy);}
-  .nav-right{display:flex;align-items:center;gap:24px;}
+  .nav-right{display:flex;align-items:center;gap:20px;}
   .lang-toggle{display:flex;gap:2px;font-family:var(--mono);font-size:11.5px;}
   .lang-toggle button{
     background:none;border:1px solid var(--line-l);
@@ -106,9 +107,9 @@
   .btn-contact{
     font-size:13.5px;color:var(--navy);
     border-bottom:1px solid var(--navy);
-    padding-bottom:2px;cursor:pointer;
+    padding-bottom:2px;cursor:pointer;font-weight:600;
   }
-  @media (max-width:860px){ .navlinks{display:none;} }
+  @media (max-width:920px){ .navlinks{display:none;} }
 
   /* HERO */
   .hero{padding:80px 0 70px;}
@@ -145,7 +146,7 @@
   /* DIAGRAM PANEL PASTEL CLEAN */
   .diagram-panel{
     border:1px solid var(--line-l);border-radius:2px;
-    padding:38px 28px;background:var(--paper); /* Fundo pastel limpo */
+    padding:38px 28px;background:var(--paper);
   }
   .diagram{display:flex;flex-direction:column;align-items:center;}
   .d-top{
@@ -182,14 +183,34 @@
   .metric-val{font-family:var(--serif);font-size:26px;color:var(--navy);font-weight:600;}
   .metric-lbl{font-size:11.5px;color:var(--slate);margin-top:2px;font-family:var(--mono);}
 
-  section.block{padding:60px 0;}
-  .head{max-width:660px;margin-bottom:30px;}
+  section.block{padding:70px 0;}
+  .head{max-width:660px;margin-bottom:36px;}
   h2{
     font-family:var(--serif);font-weight:500;
-    font-size:clamp(24px,3vw,32px);line-height:1.28;
+    font-size:clamp(26px,3vw,34px);line-height:1.28;
     color:var(--navy);letter-spacing:-0.01em;
   }
   .head p{color:var(--slate);font-size:15px;margin-top:10px;max-width:58ch;line-height:1.7;}
+
+  /* SEÇÃO SOLUTIONS (SOLUÇÕES) */
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  @media(max-width:768px){ .solutions-grid { grid-template-columns: 1fr; } }
+  .sol-card {
+    border: 1px solid var(--line-l);
+    border-radius: 2px;
+    padding: 28px;
+    background: var(--white);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .sol-card:hover { border-color: var(--navy); transform: translateY(-2px); }
+  .sol-num { font-family: var(--mono); font-size: 11px; color: var(--copper); margin-bottom: 12px; }
+  .sol-card h3 { font-family: var(--serif); font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+  .sol-card p { font-size: 14px; color: var(--slate); line-height: 1.6; }
 
   /* WHAT WE DO & DASHBOARD NOC */
   .whatwedo{background:var(--navy-dark);color:#EDEEF0;padding:70px 0;}
@@ -286,8 +307,8 @@
   .legend-line-sub { width: 10px; height: 2px; background: var(--blue-accent); border-top: 1px dashed var(--blue-accent); }
 
   .noc-svg-chart { width: 100%; height: 65px; overflow: visible; }
-  .line-main { fill: none; stroke: var(--copper); stroke-width: 2; filter: drop-shadow(0 0 4px rgba(196,122,58,0.3)); transition: d 0.8s ease-in-out; }
-  .line-sub { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 3 3; opacity: 0.8; transition: d 0.8s ease-in-out; }
+  .line-main { fill: none; stroke: var(--copper); stroke-width: 2; filter: drop-shadow(0 0 4px rgba(196,122,58,0.3)); transition: d 0.6s ease-in-out; }
+  .line-sub { fill: none; stroke: var(--blue-accent); stroke-width: 1.5; stroke-dasharray: 3 3; opacity: 0.8; transition: d 0.6s ease-in-out; }
 
   .noc-side-charts {
     display: flex;
@@ -337,6 +358,42 @@
   .node-item { display: flex; align-items: center; gap: 5px; }
   .node-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-ok); }
 
+  /* SEÇÃO METHOD (MÉTODO OPERACIONAL) */
+  .method-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+  }
+  @media(max-width:900px){ .method-steps { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width:540px){ .method-steps { grid-template-columns: 1fr; } }
+  
+  .method-step-card {
+    background: var(--paper);
+    border: 1px solid var(--line-l);
+    border-radius: 2px;
+    padding: 24px 18px;
+    position: relative;
+  }
+  .method-step-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--copper);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .method-step-card h3 {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .method-step-card p {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.55;
+  }
+
   /* PRICING GRID */
   .pricing-grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
@@ -369,35 +426,60 @@
   }
   .btn-card:hover{ background:var(--navy); color:#fff; }
 
-  /* WIDGET FIXO */
+  /* SEÇÃO ABOUT (SOBRE A PRIMEOPS) */
+  .about-section {
+    background: var(--paper);
+    border-top: 1px solid var(--line-l);
+    border-bottom: 1px solid var(--line-l);
+    padding: 70px 0;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media(max-width:840px){ .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+  .about-content h2 { font-family: var(--serif); font-size: 30px; color: var(--navy); margin-bottom: 16px; }
+  .about-content p { font-size: 15px; color: var(--slate); line-height: 1.7; margin-bottom: 16px; }
+  .about-pillars { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .about-pillars li { font-size: 13.5px; color: var(--graphite); display: flex; align-items: center; gap: 10px; font-weight: 500; }
+  .about-pillars li::before { content: "■"; color: var(--copper); font-size: 10px; }
+
+  /* WIDGET STATUS BAR FIXO */
   .status-widget-bar {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background: var(--navy-dark);
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.18);
     border-radius: 4px;
-    padding: 10px 14px;
+    padding: 10px 16px;
     color: #fff;
     font-family: var(--mono);
     font-size: 11px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.45);
     z-index: 99;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
   }
-  .widget-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-ok); box-shadow:0 0 6px var(--green-ok); }
+  .widget-status-info { display: flex; align-items: center; gap: 8px; }
+  .widget-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green-ok); box-shadow:0 0 8px var(--green-ok); }
+  .widget-links { display: flex; align-items: center; gap: 10px; }
+  .widget-noc-link { color: #A9B2C0; text-decoration: underline; font-size: 10.5px; cursor: pointer; }
+  .widget-noc-link:hover { color: #fff; }
   .widget-action {
     background: var(--blue-accent);
     color: #fff;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 2px;
-    font-size: 10.5px;
+    font-size: 11px;
     cursor: pointer;
     border: none;
     font-family: var(--sans);
     font-weight: 600;
+    transition: background 0.15s ease;
   }
   .widget-action:hover { background: var(--blue-accent-hover); }
 
@@ -448,7 +530,7 @@
 
 <header>
   <nav aria-label="Main Navigation">
-    <!-- MARCA COM LOGO OFICIAL EM AZUL ESCURO -->
+    <!-- BRAND LOGO ADAPTADO COM TEXTO AZUL ESCURO -->
     <div class="brand-logo-wrap">
       <svg class="brand-icon" viewBox="0 0 100 100" fill="none">
         <circle cx="40" cy="50" r="32" stroke="#007AFF" stroke-width="6" stroke-dasharray="160 40" />
@@ -464,9 +546,9 @@
 
     <div class="navlinks">
       <a href="#solutions" data-i18n="nav_solutions">Solutions</a>
-      <a href="#pricing" data-i18n="nav_pricing">Products &amp; Pricing</a>
-      <a href="#method" data-i18n="nav_method">Method</a>
       <a href="#whatwedo" data-i18n="nav_intel">Intelligence</a>
+      <a href="#method" data-i18n="nav_method">Method</a>
+      <a href="#pricing" data-i18n="nav_pricing">Products &amp; Pricing</a>
       <a href="#about" data-i18n="nav_about">About</a>
     </div>
     <div class="nav-right">
@@ -491,7 +573,7 @@
       </div>
     </div>
     
-    <!-- DIAGRAMA LIMPO EM TOM PASTEL -->
+    <!-- DIAGRAMA PASTEL LIMPO -->
     <div class="diagram-panel">
       <div class="diagram">
         <div class="d-top"><span class="d-dot"></span>PRIMEOPS</div>
@@ -519,6 +601,42 @@
     <div class="metric-item"><div class="metric-val">E&amp;O Covered</div><div class="metric-lbl" data-i18n="m4">Professional Liability Insured</div></div>
   </div>
 </div>
+
+<!-- SEÇÃO SOLUTIONS (COMPLETA) -->
+<section class="block" id="solutions">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="sol_title">Enterprise Solutions &amp; Infrastructure Capabilities</h2>
+      <p data-i18n="sol_sub">Designed for mission-critical operations requiring stability, automation, and full visibility.</p>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="sol-card">
+        <div class="sol-num">// 01</div>
+        <h3 data-i18n="s1_h">Cloud &amp; Infrastructure Engineering</h3>
+        <p data-i18n="s1_p">High-speed dedicated cloud drives, server administration, network reorganization, and automated redundancy backup designed for scalable enterprise workloads.</p>
+      </div>
+
+      <div class="sol-card">
+        <div class="sol-num">// 02</div>
+        <h3 data-i18n="s2_h">24/7 Observability &amp; Managed NOC</h3>
+        <p data-i18n="s2_p">Active multi-cluster health tracking, real-time latency monitoring, incident management, and proactive Helpdesk support across corporate workstations.</p>
+      </div>
+
+      <div class="sol-card">
+        <div class="sol-num">// 03</div>
+        <h3 data-i18n="s3_h">Autonomous AI Virtual Agents</h3>
+        <p data-i18n="s3_p">Custom conversational agents integrated into n8n and CRM workflows to handle scheduling, triage, and automated incident resolution in under 2 minutes.</p>
+      </div>
+
+      <div class="sol-card">
+        <div class="sol-num">// 04</div>
+        <h3 data-i18n="s4_h">Exposure Management &amp; IoT Security</h3>
+        <p data-i18n="s4_p">Continuous attack surface auditing, hardware setup, site surveys, and secure IoT integration for residential and industrial facility automation.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- INTELIGÊNCIA / DASHBOARD NOC -->
 <section class="whatwedo" id="whatwedo">
@@ -572,7 +690,7 @@
         </div>
       </div>
 
-      <!-- SEÇÃO MULTI-GRÁFICOS COM ESCALA MENOR E DINÂMICA REALISTA (-15m) -->
+      <!-- SEÇÃO MULTI-GRÁFICOS REVISED (-15m ESCALA REALISTA) -->
       <div class="noc-charts-row">
         <div class="noc-main-chart">
           <div class="noc-chart-legend">
@@ -588,8 +706,8 @@
 
           <div class="chart-grid-pattern"></div>
           <svg class="noc-svg-chart" viewBox="0 0 500 65" preserveAspectRatio="none">
-            <path id="svg-line-2" class="line-sub" d="M0,35 L125,48 L250,20 L375,42 L500,25" />
-            <path id="svg-line-1" class="line-main" d="M0,18 L125,38 L250,10 L375,45 L500,12" />
+            <path id="svg-line-2" class="line-sub" d="M0,35 L83,52 L166,18 L250,42 L333,22 L416,48 L500,25" />
+            <path id="svg-line-1" class="line-main" d="M0,18 L83,38 L166,10 L250,55 L333,14 L416,42 L500,12" />
           </svg>
 
           <!-- ESCALA TEMPORAL REFINADA DE -15 MINUTES -->
@@ -645,8 +763,44 @@
   </div>
 </section>
 
+<!-- SEÇÃO METHOD (COMPLETA) -->
+<section class="block" id="method">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i18n="meth_title">Our Operational Method</h2>
+      <p data-i18n="meth_sub">Built to understand your architecture before recommending or changing a single parameter.</p>
+    </div>
+
+    <div class="method-steps">
+      <div class="method-step-card">
+        <div class="method-step-num">PHASE 01 // TELEMETRY</div>
+        <h3 data-i18n="m1_h">Observe &amp; Map</h3>
+        <p data-i18n="m1_p">Deployment of non-intrusive monitoring sensors to establish baseline metrics across infrastructure, endpoints, and traffic flows.</p>
+      </div>
+
+      <div class="method-step-card">
+        <div class="method-step-num">PHASE 02 // CONTEXT</div>
+        <h3 data-i18n="m2_h">Analyze &amp; Correlate</h3>
+        <p data-i18n="m2_p">Telemetry data is structured to identify exposure gaps, bottlenecks, and security vulnerabilities without operational disruption.</p>
+      </div>
+
+      <div class="method-step-card">
+        <div class="method-step-num">PHASE 03 // ARCHITECTURE</div>
+        <h3 data-i18n="m3_h">Decide &amp; Design</h3>
+        <p data-i18n="m3_p">Our engineering team designs precise architectural interventions and custom AI agent workflows tailored to business SLAs.</p>
+      </div>
+
+      <div class="method-step-card">
+        <div class="method-step-num">PHASE 04 // EXECUTION</div>
+        <h3 data-i18n="m4_h">Automate &amp; Protect</h3>
+        <p data-i18n="m4_p">Controlled deployment of automation, active NOC monitoring, and continuous exposure defense under liability insurance coverage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SEÇÃO DE PREÇOS -->
-<section class="block" id="pricing">
+<section class="block" id="pricing" style="background:var(--paper);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);">
   <div class="wrap">
     <div class="head">
       <h2 data-i18n="p_title">Products &amp; Pricing</h2>
@@ -701,11 +855,36 @@
   </div>
 </section>
 
-<!-- WIDGET FIXO -->
+<!-- SEÇÃO ABOUT (COMPLETA) -->
+<section class="about-section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-content">
+      <h2 data-i18n="ab_title">Architecting Secure &amp; Scalable Infrastructure</h2>
+      <p data-i18n="ab_p1">PrimeOps is an enterprise-grade technology and security company specializing in robust infrastructure, automated monitoring, advanced AI virtual agents, and global digital operations.</p>
+      <p data-i18n="ab_p2">Our mission is to eliminate operational blind spots through continuous observability, allowing organizations to scale with institutional trust and complete system clarity.</p>
+      <ul class="about-pillars">
+        <li data-i18n="ab_l1">Enterprise E&amp;O Professional Liability Insured</li>
+        <li data-i18n="ab_l2">AES-256 Cloud Encryption Standards</li>
+        <li data-i18n="ab_l3">Strict Compliance with LGPD &amp; GDPR Privacy Guidelines</li>
+      </ul>
+    </div>
+    <div class="diagram-panel" style="background:#fff;">
+      <div style="font-family:var(--serif);font-size:18px;color:var(--navy);margin-bottom:12px;font-weight:600;">PrimeOps Operations</div>
+      <p style="font-size:13.5px;color:var(--slate);line-height:1.6;">Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WIDGET STATUS BAR FIXO -->
 <div class="status-widget-bar">
-  <span class="widget-dot"></span>
-  <span>System Status: Operational</span>
-  <button class="widget-action" onclick="openModal('Architecture Meeting Request')">Schedule Architecture Call</button>
+  <div class="widget-status-info">
+    <span class="widget-dot"></span>
+    <span>System Status: Operational</span>
+  </div>
+  <div class="widget-links">
+    <a href="#whatwedo" class="widget-noc-link">View NOC Panel</a>
+    <button class="widget-action" onclick="openModal('Architecture Meeting Request')">Schedule Call</button>
+  </div>
 </div>
 
 <!-- MODAL FORM -->
@@ -749,9 +928,9 @@
       <div class="footer-brand"><div class="fb1">PRIMEOPS</div><div class="fb2">Operational Intelligence &amp; Exposure Management</div></div>
       <div class="footer-links">
         <a href="#solutions">Solutions</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#method">Method</a>
         <a href="#whatwedo">Intelligence</a>
+        <a href="#method">Method</a>
+        <a href="#pricing">Pricing</a>
         <a href="#about">About</a>
       </div>
     </div>
@@ -770,12 +949,25 @@ const translations = {
     hero_cta1:"View Products & Pricing →", hero_cta2:"Our Method →",
     m1:"Uptime SLA Monitoring", m2:"AI Agent Response Time", m3:"Cloud Encryption Standard", m4:"Professional Liability Insured",
     diag_infra:"Infrastructure", diag_telemetry:"Observability", diag_exposure:"Exposure", diag_intelligence:"INTELLIGENCE", diag_decision:"DECISION & AUTOMATION",
+    sol_title:"Enterprise Solutions & Infrastructure Capabilities", sol_sub:"Designed for mission-critical operations requiring stability, automation, and full visibility.",
+    s1_h:"Cloud & Infrastructure Engineering", s1_p:"High-speed dedicated cloud drives, server administration, network reorganization, and automated redundancy backup designed for scalable enterprise workloads.",
+    s2_h:"24/7 Observability & Managed NOC", s2_p:"Active multi-cluster health tracking, real-time latency monitoring, incident management, and proactive Helpdesk support across corporate workstations.",
+    s3_h:"Autonomous AI Virtual Agents", s3_p:"Custom conversational agents integrated into n8n and CRM workflows to handle scheduling, triage, and automated incident resolution in under 2 minutes.",
+    s4_h:"Exposure Management & IoT Security", s4_p:"Continuous attack surface auditing, hardware setup, site surveys, and secure IoT integration for residential and industrial facility automation.",
     wwd_title:"From operational data to operational intelligence.", wwd_sub:"Real-time observability suite across enterprise nodes.",
+    meth_title:"Our Operational Method", meth_sub:"Built to understand your architecture before recommending or changing a single parameter.",
+    m1_h:"Observe & Map", m1_p:"Deployment of non-intrusive monitoring sensors to establish baseline metrics across infrastructure, endpoints, and traffic flows.",
+    m2_h:"Analyze & Correlate", m2_p:"Telemetry data is structured to identify exposure gaps, bottlenecks, and security vulnerabilities without operational disruption.",
+    m3_h:"Decide & Design", m3_p:"Our engineering team designs precise architectural interventions and custom AI agent workflows tailored to business SLAs.",
+    m4_h:"Automate & Protect", m4_p:"Controlled deployment of automation, active NOC monitoring, and continuous exposure defense under liability insurance coverage.",
     p_title:"Products & Pricing", p_sub:"Select an operational tier to configure requirements with our engineering team.",
     p1_h:"Cloud Drive & Backup", p1_desc:"High-speed secure storage, cloud drive hosting and automated redundancy backup.", p1_s:"No setup fee",
     p2_h:"AI Virtual Agents", p2_desc:"Autonomous conversational agents, appointment scheduling, and CRM workflow triggers.",
     p3_h:"Managed IT & Helpdesk", p3_desc:"Full remote IT support, Windows Admin, server maintenance & NOC active monitoring.", p3_s:"Min. 10 Workstations",
     p4_h:"On-Site & Smart IoT", p4_desc:"Hardware setup, network reorganization, or residential & industrial IoT automation projects.", p4_s:"Includes Site Survey",
+    ab_title:"Architecting Secure & Scalable Infrastructure", ab_p1:"PrimeOps is an enterprise-grade technology and security company specializing in robust infrastructure, automated monitoring, advanced AI virtual agents, and global digital operations.",
+    ab_p2:"Our mission is to eliminate operational blind spots through continuous observability, allowing organizations to scale with institutional trust and complete system clarity.",
+    ab_l1:"Enterprise E&O Professional Liability Insured", ab_l2:"AES-256 Cloud Encryption Standards", ab_l3:"Strict Compliance with LGPD & GDPR Privacy Guidelines",
     btn_stripe:"Request Drive Setup", btn_scope:"Configure Agent Scope", btn_quote:"Get Per-Device Quote", btn_wise:"Request Custom Invoice",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
     lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
@@ -788,12 +980,25 @@ const translations = {
     hero_cta1:"Ver Produtos & Preços →", hero_cta2:"Nosso Método →",
     m1:"Monitoramento SLA Uptime", m2:"Resposta do Agente IA", m3:"Padrão Criptográfico Cloud", m4:"Seguro Responsabilidade Civil E&O",
     diag_infra:"Infraestrutura", diag_telemetry:"Observabilidade", diag_exposure:"Exposição", diag_intelligence:"INTELIGÊNCIA", diag_decision:"DECISÃO & AUTOMAÇÃO",
+    sol_title:"Soluções Corporativas & Infraestrutura", sol_sub:"Desenvolvidas para operações de missão crítica que exigem estabilidade, automação e visibilidade total.",
+    s1_h:"Engenharia de Cloud & Infraestrutura", s1_p:"Drives dedicados de alta velocidade, administração de servidores, reorganização de redes e backups automatizados para cargas corporativas.",
+    s2_h:"Observabilidade 24/7 & NOC Gerenciado", s2_p:"Acompanhamento multi-cluster em tempo real, monitoramento de latência, gestão de incidentes e suporte técnico Helpdesk em estações corporativas.",
+    s3_h:"Agentes Virtuais Autônomos de IA", s3_p:"Agentes conversacionais integrados ao n8n e CRM para agendamento, triagem e resolução automatizada de chamados em menos de 2 minutos.",
+    s4_h:"Gestão de Exposição & Segurança IoT", s4_p:"Auditoria contínua de superfície de ataque, configuração de hardware, vistorias técnicas e automação IoT segura para instalações corporativas.",
     wwd_title:"Do dado à inteligência operacional.", wwd_sub:"Suíte de observabilidade em tempo real em nós corporativos.",
+    meth_title:"Nosso Método Operacional", meth_sub:"Criado para entender a arquitetura do cliente antes de recomendar ou alterar qualquer parâmetro.",
+    m1_h:"Observar & Mapear", m1_p:"Implantação de sensores não-intrusivos de monitoramento para estabelecer métricas de infraestrutura, tráfego e endpoints.",
+    m2_h:"Analisar & Correlacionar", m2_p:"Estruturação de dados de telemetria para identificar gargalos, brechas de exposição e vulnerabilidades sem interrupção operacional.",
+    m3_h:"Decidir & Projetar", m3_p:"Engenharia de intervenções arquitetônicas e fluxos de IA sob medida alinhados aos SLAs do negócio.",
+    m4_h:"Automatizar & Proteger", m4_p:"Execução controlada de automações, monitoramento ativo via NOC e defesa contínua de exposição sob cobertura de seguro E&O.",
     p_title:"Produtos & Preços", p_sub:"Selecione um nível operacional para configurar requisitos com nossa equipe.",
     p1_h:"Drive em Nuvem & Backup", p1_desc:"Armazenamento seguro corporativo e rotinas automáticas de backup.", p1_s:"Sem taxa de setup",
     p2_h:"Agentes Virtuais de IA", p2_desc:"Agentes conversacionais autônomos, agendamento e gatilhos de CRM.",
     p3_h:"TI Gerenciada & Helpdesk", p3_desc:"Suporte remoto completo, Windows Admin, manutenção e monitoramento NOC.", p3_s:"Mínimo 10 Máquinas",
     p4_h:"Projetos & Automação Smart", p4_desc:"Reorganização de redes corporativas e automação industrial/predial.", p4_s:"Inclui Estudo de Viabilidade",
+    ab_title:"Arquitetando Infraestruturas Seguras e Escaláveis", ab_p1:"A PrimeOps é uma empresa de tecnologia e segurança corporativa especializada em infraestrutura robusta, monitoramento automatizado, agentes de IA e operações digitais.",
+    ab_p2:"Nossa missão é eliminar pontos cegos operacionais por meio de observabilidade contínua, permitindo que organizações se expandam com confiança institucional.",
+    ab_l1:"Seguro de Responsabilidade Civil Profissional E&O", ab_l2:"Criptografia AES-256 Padrão Corporativo", ab_l3:"Conformidade Estrita com Diretrizes LGPD e GDPR",
     btn_stripe:"Solicitar Setup Drive", btn_scope:"Configurar Escopo Agente", btn_quote:"Cotar por Dispositivo", btn_wise:"Solicitar Fatura Wise",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
     lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
@@ -833,7 +1038,7 @@ function handleFormSubmit(event) {
   });
 }
 
-// ANIMAÇÃO DE TELEMETRIA COM OSCILAÇÃO RÁPIDA E DINÂMICA
+// ANIMAÇÃO DE TELEMETRIA DO GRÁFICO (REALS-LIKE OSCILLATION)
 setInterval(() => {
   const ramVal = (Math.random() * 4 + 44).toFixed(1);
   const rpsVal = Math.floor(Math.random() * 250 + 4750);
@@ -843,12 +1048,16 @@ setInterval(() => {
   if(ramEl) ramEl.innerText = `${ramVal}%`;
   if(rpsEl) rpsEl.innerText = rpsVal.toLocaleString('en-US');
 
-  const h1 = Math.floor(Math.random() * 35) + 12;
-  const h2 = Math.floor(Math.random() * 40) + 10;
+  // Gerando pontos de oscilação mais diversificados e realistas para a linha do gráfico
+  const h1 = Math.floor(Math.random() * 30) + 12;
+  const h2 = Math.floor(Math.random() * 38) + 8;
+  const h3 = Math.floor(Math.random() * 32) + 14;
 
   const line1 = document.getElementById('svg-line-1');
-  if(line1) line1.setAttribute('d', `M0,18 L125,${h1} L250,10 L375,${h2} L500,12`);
-}, 2000);
+  const line2 = document.getElementById('svg-line-2');
+  if(line1) line1.setAttribute('d', `M0,18 L83,${h1} L166,10 L250,${h2} L333,${h3} L416,42 L500,12`);
+  if(line2) line2.setAttribute('d', `M0,35 L83,${h2+10} L166,18 L250,${h1+12} L333,22 L416,48 L500,25`);
+}, 1800);
 
 setLang('en');
 </script>
