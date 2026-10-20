@@ -158,6 +158,19 @@ Operations should evolve through observation, measurement, and feedback.
 
 ---
 
+## Security and Privacy Policies
+
+Operational policies are maintained in [`docs/`](docs/README.md). They include:
+
+* [Information Security Policy](docs/SECURITY_POLICY.md) aligned as an implementation reference with ISO/IEC 27001:2022, NIST CSF 2.0, and CIS Controls v8.1.
+* [Incident Response Policy](docs/INCIDENT_RESPONSE_POLICY.md) for detection, containment, recovery, communication, and lessons learned.
+* [LGPD Data Protection Policy](docs/LGPD_DATA_PROTECTION_POLICY.md) for personal-data governance, data-subject rights, suppliers, and privacy by design.
+* [Data Retention Policy](docs/DATA_RETENTION_POLICY.md) for retention, deletion, backups, and requests from data subjects.
+
+These documents are operational baselines. They do not claim ISO certification, LGPD/GDPR/HIPAA compliance, legal approval, or contractual guarantees. Final approval requires the responsible leadership, security, DPO/encarregado, and legal counsel.
+
+---
+
 ## Security
 
 This repository contains the public website source code.
