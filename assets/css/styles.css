@@ -566,8 +566,9 @@
   
   .form-group{margin-bottom:12px;}
   .form-group label{display:block;font-size:10.5px;font-family:var(--mono);color:var(--slate);margin-bottom:4px;}
-  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea{
+  .form-group input[type="text"], .form-group input[type="email"], .form-group textarea, .form-group select{
     width:100%;padding:8px 10px;border:1px solid var(--line-l);font-family:var(--sans);font-size:13px;
+    background:var(--white);color:var(--graphite);
   }
 
   .lgpd-consent{

@@ -524,13 +524,35 @@
       
       <form id="modal-form" action="https://formspree.io/f/mrpevljb" method="POST">
         <input type="hidden" name="source" value="primeops-company-website">
+        <input type="hidden" name="language" id="form-language" value="en">
+        <input type="hidden" name="privacy_policy_version" value="1.0">
+        <input type="hidden" name="consent_timestamp" id="consent-timestamp">
         <div class="form-group">
-          <label for="input-name" data-i18n="lbl_name">NAME / COMPANY</label>
-          <input type="text" id="input-name" name="name" required autocomplete="name" placeholder="John Doe / Acme Corp" data-i18n-placeholder="placeholder_name">
+          <label for="input-name" data-i18n="lbl_name">FULL NAME</label>
+          <input type="text" id="input-name" name="name" required autocomplete="name" maxlength="120" placeholder="John Doe" data-i18n-placeholder="placeholder_name">
+        </div>
+        <div class="form-group">
+          <label for="input-company" data-i18n="lbl_company">COMPANY</label>
+          <input type="text" id="input-company" name="company" required autocomplete="organization" maxlength="160" placeholder="Acme Corp" data-i18n-placeholder="placeholder_company">
+        </div>
+        <div class="form-group">
+          <label for="input-country" data-i18n="lbl_country">COUNTRY</label>
+          <input type="text" id="input-country" name="country" required autocomplete="country-name" maxlength="80" placeholder="United States" data-i18n-placeholder="placeholder_country">
         </div>
         <div class="form-group">
           <label for="input-email" data-i18n="lbl_email">WORK EMAIL</label>
-          <input type="email" id="input-email" name="email" required autocomplete="email" placeholder="john@company.com" data-i18n-placeholder="placeholder_email">
+          <input type="email" id="input-email" name="email" required autocomplete="email" maxlength="160" placeholder="john@company.com" data-i18n-placeholder="placeholder_email">
+        </div>
+        <div class="form-group">
+          <label for="input-service" data-i18n="lbl_service">SERVICE OF INTEREST</label>
+          <select id="input-service" name="service" required>
+            <option value="" data-i18n="service_placeholder">Select a service</option>
+            <option value="cloud_drive" data-i18n="service_cloud">Cloud Drive &amp; Backup</option>
+            <option value="ai_agents" data-i18n="service_ai">AI Virtual Agents</option>
+            <option value="managed_it" data-i18n="service_it">Managed IT &amp; Helpdesk</option>
+            <option value="smart_iot" data-i18n="service_iot">On-Site &amp; Smart IoT</option>
+            <option value="other" data-i18n="service_other">Other / Not sure yet</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="modal-msg" data-i18n="lbl_msg">PROJECT PARAMETERS</label>
@@ -539,7 +561,7 @@
         </div>
         <div class="lgpd-consent">
           <input type="checkbox" id="lgpd_agree" name="privacy_consent" value="accepted" required>
-          <label for="lgpd_agree" data-i18n="lbl_lgpd">I consent to LGPD & GDPR privacy guidelines for proposal requests.</label>
+          <label for="lgpd_agree"><span data-i18n="lbl_lgpd">I have read the privacy notice and authorize PrimeOps to use these details to respond to my request.</span> <a href="privacy-en.html" data-legal-key="privacy" target="_blank" rel="noopener" data-i18n="privacy_notice_link">Privacy notice</a></label>
         </div>
         <button type="submit" class="btn-submit" data-i18n="btn_send">Submit Request</button>
         <div id="form-status" class="form-status" role="status" aria-live="polite"></div>

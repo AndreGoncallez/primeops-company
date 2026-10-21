@@ -64,10 +64,11 @@ const translations = {
     ab_l1:"Professional liability coverage subject to applicable terms", ab_l2:"Encryption controls defined by service scope", ab_l3:"Controls designed to support LGPD & GDPR privacy requirements",
     ab_card_h:"PrimeOps Operations", ab_card_p:"Delivering stability across cloud nodes, helpdesk support, and autonomous AI agents for clients worldwide.",
     
-    f_privacy:"Privacy Policy & LGPD", f_cookies:"Cookies", f_terms:"Terms", f_dpo:"DPO Contact", cookie_text:"We use local storage only to remember your preferences. Non-essential technologies are activated only after your choice.", cookie_accept:"Accept", cookie_reject:"Reject", cookie_configure:"Configure", privacy_notice_link:"Privacy notice", cookie_preferences_link:"Learn more about cookies and preferences", footer_legal:"© 2026 PrimeOps LLC. All rights reserved. Professional liability coverage subject to applicable terms.", form_help:"Please do not include passwords, credentials, health information or other sensitive data.", placeholder_name:"John Doe / Acme Corp", placeholder_email:"john@company.com", placeholder_message:"Describe requirements…", form_success:"Request submitted", form_success_p:"Our team will review your request and reach out shortly.",
+    f_privacy:"Privacy Policy & LGPD", f_cookies:"Cookies", f_terms:"Terms", f_dpo:"DPO Contact", cookie_text:"We use local storage only to remember your preferences. Non-essential technologies are activated only after your choice.", cookie_accept:"Accept", cookie_reject:"Reject", cookie_configure:"Configure", privacy_notice_link:"Privacy notice", cookie_preferences_link:"Learn more about cookies and preferences", footer_legal:"© 2026 PrimeOps LLC. All rights reserved. Professional liability coverage subject to applicable terms.", form_help:"Please do not include passwords, credentials, health information or other sensitive data.", placeholder_name:"John Doe", placeholder_company:"Acme Corp", placeholder_country:"United States", placeholder_email:"john@company.com", placeholder_message:"Describe requirements…", form_success:"Request submitted", form_success_p:"Our team will review your request and reach out shortly.",
     modal_h:"Request Proposal / Scope", modal_p:"Select required parameters for a tailored proposal.",
-    lbl_name:"NAME / COMPANY", lbl_email:"WORK EMAIL", lbl_msg:"PROJECT PARAMETERS",
-    lbl_lgpd:"I have read the privacy notice and agree that PrimeOps may use these details to respond to my request.", form_sending:"Sending request…", form_error:"We could not send your request. Please try again.", btn_send:"Submit Request"
+    lbl_name:"FULL NAME", lbl_company:"COMPANY", lbl_country:"COUNTRY", lbl_email:"WORK EMAIL", lbl_service:"SERVICE OF INTEREST", lbl_msg:"PROJECT PARAMETERS",
+    service_placeholder:"Select a service", service_cloud:"Cloud Drive & Backup", service_ai:"AI Virtual Agents", service_it:"Managed IT & Helpdesk", service_iot:"On-Site & Smart IoT", service_other:"Other / Not sure yet",
+    lbl_lgpd:"I have read the privacy notice and authorize PrimeOps to use these details to respond to my request.", form_sending:"Sending request…", form_error:"We could not send your request. Please try again.", btn_send:"Submit Request"
   },
   pt: {
     nav_solutions:"Soluções", nav_pricing:"Produtos & Preços", nav_method:"Método", nav_intel:"Inteligência", nav_about:"Sobre", nav_contact:"Contato",
@@ -134,10 +135,11 @@ const translations = {
     ab_l1:"Cobertura de responsabilidade sujeita aos termos aplicáveis", ab_l2:"Controles de criptografia definidos pelo escopo do serviço", ab_l3:"Controles projetados para apoiar requisitos LGPD e GDPR",
     ab_card_h:"Operações PrimeOps", ab_card_p:"Oferecendo estabilidade em nós de nuvem, suporte helpdesk e agentes autônomos de IA para clientes em todo o mundo.",
     
-    f_privacy:"Política de Privacidade & LGPD", f_cookies:"Cookies", f_terms:"Termos", f_dpo:"Contato DPO", cookie_text:"Usamos armazenamento local apenas para lembrar suas preferências. Tecnologias não essenciais só serão ativadas após sua escolha.", cookie_accept:"Aceitar", cookie_reject:"Recusar", cookie_configure:"Configurar", privacy_notice_link:"Aviso de privacidade", cookie_preferences_link:"Saiba mais sobre cookies e preferências", footer_legal:"© 2026 PrimeOps LLC. Todos os direitos reservados. Cobertura de responsabilidade sujeita aos termos aplicáveis.", form_help:"Não inclua senhas, credenciais, dados de saúde ou outras informações sensíveis.", placeholder_name:"Nome / Empresa", placeholder_email:"nome@empresa.com", placeholder_message:"Descreva os requisitos…", form_success:"Solicitação enviada", form_success_p:"Nossa equipe analisará sua solicitação e entrará em contato.", pricing_note:"*Valores em reais são estimativas e podem variar conforme câmbio, impostos, IOF quando aplicável, spread cambial, tarifas bancárias e meio de pagamento. O escopo e o preço final serão confirmados antes da contratação.",
+    f_privacy:"Política de Privacidade & LGPD", f_cookies:"Cookies", f_terms:"Termos", f_dpo:"Contato DPO", cookie_text:"Usamos armazenamento local apenas para lembrar suas preferências. Tecnologias não essenciais só serão ativadas após sua escolha.", cookie_accept:"Aceitar", cookie_reject:"Recusar", cookie_configure:"Configurar", privacy_notice_link:"Aviso de privacidade", cookie_preferences_link:"Saiba mais sobre cookies e preferências", footer_legal:"© 2026 PrimeOps LLC. Todos os direitos reservados. Cobertura de responsabilidade sujeita aos termos aplicáveis.", form_help:"Não inclua senhas, credenciais, dados de saúde ou outras informações sensíveis.", placeholder_name:"Nome completo", placeholder_company:"Nome da empresa", placeholder_country:"Brasil", placeholder_email:"nome@empresa.com", placeholder_message:"Descreva os requisitos…", form_success:"Solicitação enviada", form_success_p:"Nossa equipe analisará sua solicitação e entrará em contato.", pricing_note:"*Valores em reais são estimativas e podem variar conforme câmbio, impostos, IOF quando aplicável, spread cambial, tarifas bancárias e meio de pagamento. O escopo e o preço final serão confirmados antes da contratação.",
     modal_h:"Solicitar Proposta / Escopo", modal_p:"Selecione os parâmetros do projeto para receber uma proposta.",
-    lbl_name:"NOME / EMPRESA", lbl_email:"E-MAIL CORPORATIVO", lbl_msg:"PARÂMETROS DO PROJETO",
-    lbl_lgpd:"Li o aviso de privacidade e autorizo o uso destes dados para que a PrimeOps responda à minha solicitação.", form_sending:"Enviando solicitação…", form_error:"Não foi possível enviar sua solicitação. Tente novamente.", btn_send:"Enviar Solicitação"
+    lbl_name:"NOME COMPLETO", lbl_company:"EMPRESA", lbl_country:"PAÍS", lbl_email:"E-MAIL CORPORATIVO", lbl_service:"SERVIÇO DE INTERESSE", lbl_msg:"PARÂMETROS DO PROJETO",
+    service_placeholder:"Selecione um serviço", service_cloud:"Drive em Nuvem e Backup", service_ai:"Agentes Virtuais de IA", service_it:"TI Gerenciada e Helpdesk", service_iot:"Projetos Presenciais e Smart IoT", service_other:"Outro / Ainda não sei",
+    lbl_lgpd:"Li o aviso de privacidade e autorizo a PrimeOps a usar estes dados para responder à minha solicitação.", form_sending:"Enviando solicitação…", form_error:"Não foi possível enviar sua solicitação. Tente novamente.", btn_send:"Enviar Solicitação"
   }
 };
 
@@ -155,6 +157,8 @@ function setLang(lang){
   const selected = translations[lang] ? lang : 'en';
   document.getElementById('html-root').lang = selected;
   document.documentElement.dataset.lang = selected;
+  const formLanguage = document.getElementById('form-language');
+  if (formLanguage) formLanguage.value = selected;
   document.getElementById('btn-en').classList.toggle('active', selected==='en');
   document.getElementById('btn-pt').classList.toggle('active', selected==='pt');
   document.getElementById('btn-en').setAttribute('aria-pressed', String(selected==='en'));
@@ -213,6 +217,9 @@ async function handleFormSubmit(event) {
   const form = event.target;
   const submit = form.querySelector('[type="submit"]');
   const status = document.getElementById('form-status');
+  const consent = document.getElementById('lgpd_agree');
+  const consentTimestamp = document.getElementById('consent-timestamp');
+  if (consent?.checked && consentTimestamp) consentTimestamp.value = new Date().toISOString();
   submit.disabled = true;
   status.className = 'form-status';
   status.textContent = translations[document.documentElement.lang]?.form_sending || 'Sending request…';
@@ -260,4 +267,3 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('modal-form').addEventListener('submit', handleFormSubmit);
   restorePreferences();
 });
-
